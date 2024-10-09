@@ -32,6 +32,7 @@ function App() {
           Edit <code>src/App.tsx</code> and save to reload.
           Chris
           Olivia Bouvier
+          Connor Griffith
         </p>
         <a
           className="App-link"
