@@ -30,7 +30,12 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
+          
           Tarun Baskaran
+          Connor Griffith
+          Chris
+          Olivia Bouvier
+          
         </p>
         <a
           className="App-link"
