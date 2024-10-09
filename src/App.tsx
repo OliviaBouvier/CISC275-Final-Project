@@ -1,7 +1,16 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Navbar } from 'react-bootstrap';
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link,
+} from "react-router-dom";
+import {Home} from "./pages/home";
+import {BasicQuestions} from "./pages/basicQuestions";
+import {DetailedQuestions} from "./pages/detailedQuestions";
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -26,6 +35,33 @@ function App() {
   }
   return (
     <div className="App">
+      <Router>
+            <Navbar />
+            <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/basicQuestions">Basic Questions</Link>
+            </li>
+            <li>
+              <Link to="/detailedQuestions">Detailed Questions</Link>
+            </li>
+          </ul>
+        </nav>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route
+                    path="/basicQuestions"
+                    element={<BasicQuestions />}
+                />
+                <Route
+                    path="/detailedQuestions"
+                    element={<DetailedQuestions />}
+                />
+            </Routes>
+        </Router>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
