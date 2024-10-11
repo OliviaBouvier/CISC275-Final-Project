@@ -39,7 +39,7 @@ function App() {
             <Navbar />
               <NavBarElements />
             <Routes>
-                <Route path="/starter-helpi" element={<Home />} />
+                <Route path="/" element={<Home />} />
                 <Route
                     path="/basicQuestions"
                     element={<BasicQuestions />}
