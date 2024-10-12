@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import { Button, Form, Navbar } from 'react-bootstrap';
 import {
     BrowserRouter as Router,
     Routes,
-    Route,
-    Link,
+    Route
 } from "react-router-dom";
+//import logo from './logo.svg';
 import {Home} from "./pages/home";
 import {BasicQuestions} from "./pages/basicQuestions";
 import {DetailedQuestions} from "./pages/detailedQuestions";
+import {NavBarElements} from "./components/NavBar/NavBarElements"
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -37,19 +38,7 @@ function App() {
     <div className="App">
       <Router>
             <Navbar />
-            <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/basicQuestions">Basic Questions</Link>
-            </li>
-            <li>
-              <Link to="/detailedQuestions">Detailed Questions</Link>
-            </li>
-          </ul>
-        </nav>
+              <NavBarElements />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route
@@ -62,26 +51,6 @@ function App() {
                 />
             </Routes>
         </Router>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-          
-          Tarun Baskaran
-          Connor Griffith
-          Chris
-          Olivia Bouvier
-          
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
