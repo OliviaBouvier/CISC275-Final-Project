@@ -4,6 +4,9 @@ import { ChangeQuestionOneB, ChangeQuestionTwoB, ChangeQuestionThreeB, ChangeQue
 export function BasicQuestions(){
     return (<div>
         <h1>Basic Questions</h1>
+        <p>
+            A simplified version of the quiz containing only multiple choice questions. 
+        </p>
         <div><ChangeQuestionOneB></ChangeQuestionOneB></div>
         <pre></pre>
         <div><ChangeQuestionTwoB></ChangeQuestionTwoB></div>

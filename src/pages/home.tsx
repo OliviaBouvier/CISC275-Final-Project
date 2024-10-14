@@ -1,7 +1,7 @@
 import logo from '../logo.svg';
 
 export function Home(){
-    return <div><h1>Home Page</h1>
+  return (<div><h1>Home Page</h1>
     <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -24,4 +24,5 @@ export function Home(){
       </header>
       
       </div>
+  )
 }
