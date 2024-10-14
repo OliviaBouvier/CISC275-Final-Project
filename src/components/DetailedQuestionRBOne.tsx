@@ -64,7 +64,7 @@ export function ChangeQuestionTwoDT(): React.JSX.Element {
                     inline
                     key={answersListTwo.id}
                     type="radio"
-                    name="BasicQuestionOne"
+                    name="BasicQuestionTwo"
                     onChange={updateAnswerTwo}
                     id={`answer-check-${answersListTwo.id}`}
                     label={answersListTwo.id}
@@ -103,7 +103,7 @@ export function ChangeQuestionThreeDT(): React.JSX.Element {
                     inline
                     key={answersListThree.id}
                     type="radio"
-                    name="BasicQuestionOne"
+                    name="BasicQuestionThree"
                     onChange={updateAnswerThree}
                     id={`answer-check-${answersListThree.id}`}
                     label={answersListThree.id}
@@ -142,7 +142,7 @@ export function ChangeQuestionOneFourDT(): React.JSX.Element {
                     inline
                     key={answersListFour.id}
                     type="radio"
-                    name="BasicQuestionOne"
+                    name="BasicQuestionFour"
                     onChange={updateAnswerFour}
                     id={`answer-check-${answersListFour.id}`}
                     label={answersListFour.id}
@@ -181,7 +181,7 @@ export function ChangeQuestionOneFiveDT(): React.JSX.Element {
                     inline
                     key={answersListFive.id}
                     type="radio"
-                    name="BasicQuestionOne"
+                    name="BasicQuestionFive"
                     onChange={updateAnswerFive}
                     id={`answer-check-${answersListFive.id}`}
                     label={answersListFive.id}
@@ -220,7 +220,7 @@ export function ChangeQuestionOneSixDT(): React.JSX.Element {
                     inline
                     key={answersListSix.id}
                     type="radio"
-                    name="BasicQuestionOne"
+                    name="BasicQuestionSix"
                     onChange={updateAnswerSix}
                     id={`answer-check-${answersListSix.id}`}
                     label={answersListSix.id}
@@ -259,7 +259,7 @@ export function ChangeQuestionOneSevenDT(): React.JSX.Element {
                     inline
                     key={answersListSeven.id}
                     type="radio"
-                    name="BasicQuestionOne"
+                    name="BasicQuestionSeven"
                     onChange={updateAnswerSeven}
                     id={`answer-check-${answersListSeven.id}`}
                     label={answersListSeven.id}
