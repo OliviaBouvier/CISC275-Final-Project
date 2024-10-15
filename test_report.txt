@@ -37,7 +37,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (112 ms)
+  ✕ renders learn react link (99 ms)
 
   ● renders learn react link
 
@@ -132,14 +132,16 @@ FAIL src/App.test.tsx
 ----------------------------|---------|----------|---------|---------|-------------------
 File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------------|---------|----------|---------|---------|-------------------
-All files                   |    7.36 |    16.66 |    3.92 |    7.36 |                   
+All files                   |    6.79 |    16.66 |    3.63 |    6.79 |                   
  src                        |   28.57 |    16.66 |      20 |   28.57 |                   
-  App.tsx                   |      60 |       50 |   33.33 |      60 | 20,28-34          
-  index.tsx                 |       0 |      100 |     100 |       0 | 7-19              
+  App.tsx                   |      60 |       50 |   33.33 |      60 | 22,30-36          
+  index.tsx                 |       0 |      100 |     100 |       0 | 8-20              
   reportWebVitals.ts        |       0 |        0 |       0 |       0 | 3-10              
  src/components             |       0 |      100 |       0 |       0 |                   
   BasicQuestionRBOne.tsx    |       0 |      100 |       0 |       0 | 5-258             
   DetailedQuestionRBOne.tsx |       0 |      100 |       0 |       0 | 5-258             
+  basicButton.tsx           |       0 |      100 |       0 |       0 | 5-10              
+  detailedButton.tsx        |       0 |      100 |       0 |       0 | 5-10              
  src/components/NavBar      |     100 |      100 |     100 |     100 |                   
   NavBarElements.tsx        |     100 |      100 |     100 |     100 |                   
   index.tsx                 |       0 |        0 |       0 |       0 |                   
@@ -151,7 +153,7 @@ All files                   |    7.36 |    16.66 |    3.92 |    7.36 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.297 s
+Time:        3.243 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
