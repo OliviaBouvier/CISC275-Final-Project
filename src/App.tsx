@@ -11,6 +11,8 @@ import {
 import {Home} from "./pages/home";
 import {BasicQuestions} from "./pages/basicQuestions";
 import {DetailedQuestions} from "./pages/detailedQuestions";
+import {BasicButton} from "./components/basicButton";
+import {DetailedButton} from "./components/detailedButton";
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -22,7 +24,7 @@ if (prevKey !== null) {
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
-  
+
   //sets the local storage item to the api key the user inputed
   function handleSubmit() {
     localStorage.setItem(saveKeyData, JSON.stringify(key));
@@ -51,7 +53,19 @@ function App() {
           </ul>
         </nav>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={
+                  <>
+                    <Home /> 
+                    <div>
+                      <header className="App-header">  
+                        <BasicButton />
+                      </header> 
+                      <header className="App-header">  
+                        <DetailedButton />
+                      </header>
+                    </div>
+                  </>
+                } />
                 <Route
                     path="/basicQuestions"
                     element={<BasicQuestions />}
@@ -62,7 +76,7 @@ function App() {
                 />
             </Routes>
         </Router>
-      <Form>
+       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
         <br></br>
