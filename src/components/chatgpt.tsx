@@ -4,9 +4,10 @@ import OpenAI from "openai";
 
 interface ChatGPTProps {
     apiKey: string;
+    chatGPTcontents: string;
 }
 
-export function ChatGPT({ apiKey }: ChatGPTProps): React.JSX.Element {
+export function ChatGPT({ apiKey, chatGPTcontents }: ChatGPTProps): React.JSX.Element {
     const [message, setMessage] = useState<string>("");
     const [contents, setContents] = useState<string>("");
     const [response, setResponse] = useState<string>("");

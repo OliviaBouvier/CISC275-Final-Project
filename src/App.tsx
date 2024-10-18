@@ -14,6 +14,7 @@ import {BasicButton} from "./components/basicButton";
 import {DetailedButton} from "./components/detailedButton";
 import {NavBarElements} from "./components/NavBar/NavBarElements"
 import { ChatGPT } from './components/chatgpt';
+import { ChatGPTContents } from './components/BasicQuestionRBOne';
 
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
@@ -65,7 +66,7 @@ function App() {
                 />
             </Routes>
         </Router>
-        <ChatGPT apiKey={key} />
+        <ChatGPT apiKey={key} chatGPTcontents={ChatGPTContents()}/>
        <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>

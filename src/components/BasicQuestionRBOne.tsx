@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
+let chatGPTcontents: string = "";
+
 export function ChangeQuestionOneB(): React.JSX.Element {
     const [answer, setChangeAnswer] = useState<string>("Select an answer");
 
@@ -33,7 +35,7 @@ export function ChangeQuestionOneB(): React.JSX.Element {
                     checked={answer === answersList.id}
                 />
             ))}
-
+            {chatGPTcontents += `My level of education is ${answer}. `}
             <div>
                 You have picked the answer: {answer}
             </div>
@@ -72,7 +74,7 @@ export function ChangeQuestionTwoB(): React.JSX.Element {
                     checked={answerTwo === answersListTwo.id}
                 />
             ))}
-
+            {chatGPTcontents += `I hope to pursue a career in ${answerTwo}. `}
             <div>
                 You have picked the answer: {answerTwo}
             </div>
@@ -111,7 +113,7 @@ export function ChangeQuestionThreeB(): React.JSX.Element {
                     checked={answerThree === answersListThree.id}
                 />
             ))}
-
+            {chatGPTcontents += `To answer the question as to whether I've taken a career quiz before, I would say ${answerThree}. `}
             <div>
                 You have picked the answer: {answerThree}
             </div>
@@ -150,7 +152,7 @@ export function ChangeQuestionOneFourB(): React.JSX.Element {
                     checked={answerFour === answersListFour.id}
                 />
             ))}
-
+            {chatGPTcontents += `I would describe my personality as ${answerFour}. `}
             <div>
                 You have picked the answer: {answerFour}
             </div>
@@ -189,7 +191,7 @@ export function ChangeQuestionOneFiveB(): React.JSX.Element {
                     checked={answerFive === answersListFive.id}
                 />
             ))}
-
+            {chatGPTcontents += `In school, I enjoyed ${answerFive} the most.` }
             <div>
                 You have picked the answer: {answerFive}
             </div>
@@ -228,7 +230,7 @@ export function ChangeQuestionOneSixB(): React.JSX.Element {
                     checked={answerSix === answersListSix.id}
                 />
             ))}
-
+            {chatGPTcontents += `I prefer working in ${answerSix}`}
             <div>
                 You have picked the answer: {answerSix}
             </div>
@@ -267,10 +269,14 @@ export function ChangeQuestionOneSevenB(): React.JSX.Element {
                     checked={answerSeven === answersListSeven.id}
                 />
             ))}
-
+            {chatGPTcontents += `I am naturally good at ${answerSeven}`}
             <div>
                 You have picked the answer: {answerSeven}
             </div>
         </div>
     );
+}
+
+export function ChatGPTContents(){
+    return chatGPTcontents;
 }
