@@ -22,10 +22,15 @@ export function ChatGPT({ apiKey }: ChatGPTProps): React.JSX.Element {
             const completion = await openai.chat.completions.create({
                 model: "gpt-4",
                 messages: [
-                    { role: "system", content: "You are a helpful assistant who gives career advice." },
+                    { role: "system", content: "You create detailed reports informing users of potential careers based on their preferences" },
                     {
                         role: "user",
-                        content: `${contents}`,
+                        content: `Create a report with format: 
+                        "career name
+                        career description
+                        why the user is suited to this career
+                        similar careers"
+                        based on the following: ${contents}`,
                     },
                 ],
             });
