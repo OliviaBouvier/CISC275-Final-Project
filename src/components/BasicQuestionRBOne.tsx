@@ -7,14 +7,25 @@ export function ChangeQuestionOneB(): React.JSX.Element {
     const [answer, setChangeAnswer] = useState<string>("Select an answer");
 
     function updateAnswer(event: React.ChangeEvent<HTMLInputElement>) {
-        setChangeAnswer(event.target.value);
+        const newAnswer = event.target.value; // Use the new answer directly
+        setChangeAnswer(newAnswer);
+
+        if (chatGPTcontents.includes("My level of education is")) {
+            chatGPTcontents = chatGPTcontents.replace(
+                /My level of education is .+?(\. |$)/, 
+                `My level of education is ${newAnswer}. `
+            );
+        } else {
+            chatGPTcontents += `My level of education is ${newAnswer}. `;
+        }
     }
+    
 
     const answers = [
-        { id: "temp1" },
-        { id: "temp2" },
-        { id: "temp3" },
-        { id: "temp4" },
+        { id: "high school" },
+        { id: "Bachelor's degree" },
+        { id: "Master's degree" },
+        { id: "PhD" },
     ];
 
     return (
@@ -35,10 +46,11 @@ export function ChangeQuestionOneB(): React.JSX.Element {
                     checked={answer === answersList.id}
                 />
             ))}
-            {chatGPTcontents += `My level of education is ${answer}. `}
+
             <div>
                 You have picked the answer: {answer}
             </div>
+            <div>{chatGPTcontents}</div>
         </div>
     );
 }
@@ -46,14 +58,24 @@ export function ChangeQuestionTwoB(): React.JSX.Element {
     const [answerTwo, setChangeAnswerTwo] = useState<string>("Select an answer");
 
     function updateAnswerTwo(event: React.ChangeEvent<HTMLInputElement>) {
-        setChangeAnswerTwo(event.target.value);
+        const newAnswer = event.target.value; // Use the new answer directly
+        setChangeAnswerTwo(newAnswer);
+
+        if (chatGPTcontents.includes("I want to pursue a career in")) {
+            chatGPTcontents = chatGPTcontents.replace(
+                /I want to pursue a career in .+?(\. |$)/, 
+                `I want to pursue a career in ${newAnswer}. `
+            );
+        } else {
+            chatGPTcontents += `I want to pursue a career in ${newAnswer}. `;
+        }
     }
 
     const answersTwo = [
-        { id: "temp5" },
-        { id: "temp6" },
-        { id: "temp7" },
-        { id: "temp8" },
+        { id: "technology" },
+        { id: "healthcare" },
+        { id: "construction" },
+        { id: "business" },
     ];
 
     return (
@@ -74,7 +96,6 @@ export function ChangeQuestionTwoB(): React.JSX.Element {
                     checked={answerTwo === answersListTwo.id}
                 />
             ))}
-            {chatGPTcontents += `I hope to pursue a career in ${answerTwo}. `}
             <div>
                 You have picked the answer: {answerTwo}
             </div>
@@ -85,14 +106,24 @@ export function ChangeQuestionThreeB(): React.JSX.Element {
     const [answerThree, setChangeAnswerThree] = useState<string>("Select an answer");
 
     function updateAnswerThree(event: React.ChangeEvent<HTMLInputElement>) {
-        setChangeAnswerThree(event.target.value);
+        const newAnswer = event.target.value; // Use the new answer directly
+        setChangeAnswerThree(newAnswer);
+
+        if (chatGPTcontents.includes("To answer the question as to whether I've taken a career quiz before, I would say")) {
+            chatGPTcontents = chatGPTcontents.replace(
+                /To answer the question as to whether I've taken a career quiz before, I would say .+?(\. |$)/, 
+                `To answer the question as to whether I've taken a career quiz before, I would say ${newAnswer}. `
+            );
+        } else {
+            chatGPTcontents += `To answer the question as to whether I've taken a career quiz before, I would say ${newAnswer}. `;
+        }
     }
 
     const answersThree = [
-        { id: "temp9" },
-        { id: "temp10" },
-        { id: "temp11" },
-        { id: "temp12" },
+        { id: "yes, within the past year" },
+        { id: "yes, but a while ago" },
+        { id: "no" },
+        { id: "I don't remember" },
     ];
 
     return (
@@ -113,7 +144,6 @@ export function ChangeQuestionThreeB(): React.JSX.Element {
                     checked={answerThree === answersListThree.id}
                 />
             ))}
-            {chatGPTcontents += `To answer the question as to whether I've taken a career quiz before, I would say ${answerThree}. `}
             <div>
                 You have picked the answer: {answerThree}
             </div>
@@ -124,14 +154,24 @@ export function ChangeQuestionOneFourB(): React.JSX.Element {
     const [answerFour, setChangeAnswerFour] = useState<string>("Select an answer");
 
     function updateAnswerFour(event: React.ChangeEvent<HTMLInputElement>) {
-        setChangeAnswerFour(event.target.value);
+        const newAnswer = event.target.value; // Use the new answer directly
+        setChangeAnswerFour(newAnswer);
+
+        if (chatGPTcontents.includes("I would describe my personality as")) {
+            chatGPTcontents = chatGPTcontents.replace(
+                /I would describe my personality as .+?(\. |$)/, 
+                `I would describe my personality as ${newAnswer}. `
+            );
+        } else {
+            chatGPTcontents += `I would describe my personality as ${newAnswer}. `;
+        }
     }
 
     const answersFour = [
-        { id: "temp13" },
-        { id: "temp14" },
-        { id: "temp15" },
-        { id: "temp16" },
+        { id: "outgoing" },
+        { id: "shy" },
+        { id: "adventurous" },
+        { id: "creative" },
     ];
 
     return (
@@ -152,7 +192,6 @@ export function ChangeQuestionOneFourB(): React.JSX.Element {
                     checked={answerFour === answersListFour.id}
                 />
             ))}
-            {chatGPTcontents += `I would describe my personality as ${answerFour}. `}
             <div>
                 You have picked the answer: {answerFour}
             </div>
@@ -163,14 +202,24 @@ export function ChangeQuestionOneFiveB(): React.JSX.Element {
     const [answerFive, setChangeAnswerFive] = useState<string>("Select an answer");
 
     function updateAnswerFive(event: React.ChangeEvent<HTMLInputElement>) {
-        setChangeAnswerFive(event.target.value);
+        const newAnswer = event.target.value; // Use the new answer directly
+        setChangeAnswerFive(newAnswer);
+
+        if (chatGPTcontents.includes("In school, I enjoyed")) {
+            chatGPTcontents = chatGPTcontents.replace(
+                /In school, I enjoyed .+?(\. |$)/, 
+                `In school, I enjoyed ${newAnswer}. `
+            );
+        } else {
+            chatGPTcontents += `In school, I enjoyed ${newAnswer}. `;
+        }
     }
 
     const answersFive = [
-        { id: "temp17" },
-        { id: "temp18" },
-        { id: "temp19" },
-        { id: "temp20" },
+        { id: "math/science" },
+        { id: "history" },
+        { id: "art/music" },
+        { id: "English" },
     ];
 
     return (
@@ -191,7 +240,6 @@ export function ChangeQuestionOneFiveB(): React.JSX.Element {
                     checked={answerFive === answersListFive.id}
                 />
             ))}
-            {chatGPTcontents += `In school, I enjoyed ${answerFive} the most.` }
             <div>
                 You have picked the answer: {answerFive}
             </div>
@@ -202,14 +250,24 @@ export function ChangeQuestionOneSixB(): React.JSX.Element {
     const [answerSix, setChangeAnswerSix] = useState<string>("Select an answer");
 
     function updateAnswerSix(event: React.ChangeEvent<HTMLInputElement>) {
-        setChangeAnswerSix(event.target.value);
+        const newAnswer = event.target.value; // Use the new answer directly
+        setChangeAnswerSix(newAnswer);
+
+        if (chatGPTcontents.includes("I prefer working in a")) {
+            chatGPTcontents = chatGPTcontents.replace(
+                /I prefer working in a .+?(\. |$)/, 
+                `I prefer working in a ${newAnswer}. `
+            );
+        } else {
+            chatGPTcontents += `I prefer working in a ${newAnswer}. `;
+        }
     }
 
     const answersSix = [
-        { id: "temp21" },
-        { id: "temp22" },
-        { id: "temp23" },
-        { id: "temp24" },
+        { id: "structure office setting" },
+        { id: "open workspace" },
+        { id: "fast-paced, dynamic environment" },
+        { id: "quiet space" },
     ];
 
     return (
@@ -230,7 +288,6 @@ export function ChangeQuestionOneSixB(): React.JSX.Element {
                     checked={answerSix === answersListSix.id}
                 />
             ))}
-            {chatGPTcontents += `I prefer working in ${answerSix}`}
             <div>
                 You have picked the answer: {answerSix}
             </div>
@@ -241,14 +298,24 @@ export function ChangeQuestionOneSevenB(): React.JSX.Element {
     const [answerSeven, setChangeAnswerSeven] = useState<string>("Select an answer");
 
     function updateAnswerSeven(event: React.ChangeEvent<HTMLInputElement>) {
-        setChangeAnswerSeven(event.target.value);
+        const newAnswer = event.target.value; // Use the new answer directly
+        setChangeAnswerSeven(newAnswer);
+
+        if (chatGPTcontents.includes("I am naturally good at")) {
+            chatGPTcontents = chatGPTcontents.replace(
+                /I am naturally good at .+?(\. |$)/, 
+                `I am naturally good at ${newAnswer}. `
+            );
+        } else {
+            chatGPTcontents += `I am naturally good at ${newAnswer}. `;
+        }
     }
 
     const answersSeven = [
-        { id: "temp25" },
-        { id: "temp26" },
-        { id: "temp27" },
-        { id: "temp28" },
+        { id: "solving problems" },
+        { id: "being creative" },
+        { id: "communicating with others" },
+        { id: "managing details and plans" },
     ];
 
     return (
@@ -269,7 +336,7 @@ export function ChangeQuestionOneSevenB(): React.JSX.Element {
                     checked={answerSeven === answersListSeven.id}
                 />
             ))}
-            {chatGPTcontents += `I am naturally good at ${answerSeven}`}
+            {/* {chatGPTcontents += `I am naturally good at ${answerSeven}`} */}
             <div>
                 You have picked the answer: {answerSeven}
             </div>

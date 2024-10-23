@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button} from "react-bootstrap";
 import OpenAI from "openai";
 
 interface ChatGPTProps {
@@ -8,13 +8,13 @@ interface ChatGPTProps {
 }
 
 export function ChatGPT({ apiKey, chatGPTcontents }: ChatGPTProps): React.JSX.Element {
-    const [message, setMessage] = useState<string>("");
-    const [contents, setContents] = useState<string>("");
+//    const [message, setMessage] = useState<string>("");
+//    const [contents, setContents] = useState<string>(chatGPTcontents);
     const [response, setResponse] = useState<string>("");
 
-    function updateMessage(event: React.ChangeEvent<HTMLInputElement>) {
-        setMessage(event.target.value);
-    }
+    // function updateMessage(event: React.ChangeEvent<HTMLInputElement>) {
+    //     setMessage(event.target.value);
+    // }
 
     async function handleChatGPTSubmission() {
         const openai = new OpenAI({apiKey, dangerouslyAllowBrowser: true});
@@ -31,7 +31,7 @@ export function ChatGPT({ apiKey, chatGPTcontents }: ChatGPTProps): React.JSX.El
                         career description
                         why the user is suited to this career
                         similar careers"
-                        based on the following: ${contents}`,
+                        based on the following: ${chatGPTcontents}`,
                     },
                 ],
             });
@@ -47,12 +47,12 @@ export function ChatGPT({ apiKey, chatGPTcontents }: ChatGPTProps): React.JSX.El
 
     return (
         <div>
-            <Form.Group>
+            {/* <Form.Group>
                 <Form.Label>ChatGPT input: </Form.Label>
                 <Form.Control value={message} onChange={updateMessage} />
-            </Form.Group>
+            </Form.Group> */}
             <Button onClick={() => {
-                    setContents(message);
+                    //setContents(message);
                     handleChatGPTSubmission();
                 }}>Submit to ChatGPT</Button>
         
