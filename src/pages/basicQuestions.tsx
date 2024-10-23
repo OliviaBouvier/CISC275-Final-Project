@@ -22,12 +22,6 @@ export function BasicQuestions() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
-        <Form>
-        <Form.Label>API Key:</Form.Label>
-        <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-        <br></br>
-        <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-      </Form>
     
     return (
         <div style={{ position: 'relative', width: '80%', margin: '0 auto', textAlign: 'center' }}>
@@ -78,7 +72,14 @@ export function BasicQuestions() {
                 </div>
             </div>
             <div>{ChatGPTContents()}</div>
+            
         <ChatGPT apiKey={key} chatGPTcontents= {ChatGPTContents()}/>
+        <Form>
+            <Form.Label>API Key:</Form.Label>
+            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+            <br></br>
+            <Button className="Submit-Button" onClick={handleSubmit}>Submit API key</Button>
+        </Form>
         </div>
     );
 }

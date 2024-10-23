@@ -50,7 +50,6 @@ export function ChangeQuestionOneB(): React.JSX.Element {
             <div>
                 You have picked the answer: {answer}
             </div>
-            <div>{chatGPTcontents}</div>
         </div>
     );
 }
