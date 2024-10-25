@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Spinner, Alert} from "react-bootstrap";
 import OpenAI from "openai";
 
 interface ChatGPTProps {
@@ -10,6 +10,8 @@ export function ChatGPT({ apiKey }: ChatGPTProps): React.JSX.Element {
     const [message, setMessage] = useState<string>("");
     const [contents, setContents] = useState<string>("");
     const [response, setResponse] = useState<string>("");
+    const [loading, setLoading] = useState<boolean>(false);
+    const [submitted, setSubmitted] = useState<boolean>(false);
 
     function updateMessage(event: React.ChangeEvent<HTMLInputElement>) {
         setMessage(event.target.value);
@@ -34,8 +36,11 @@ export function ChatGPT({ apiKey }: ChatGPTProps): React.JSX.Element {
             if (completion.choices[0].message.content != null){
                 setResponse(completion.choices[0].message.content);
             }
+            setSubmitted(true);
         } catch (error) {
             console.error("Error fetching completion:", error);
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -48,7 +53,17 @@ export function ChatGPT({ apiKey }: ChatGPTProps): React.JSX.Element {
             <Button onClick={() => {
                     setContents(message);
                     handleChatGPTSubmission();
-                }}>Submit to ChatGPT</Button>
+                }}
+                disabled ={loading}
+                >
+                    {loading ? <Spinner as ="span" animation="border" size="sm" /> : "Submit to ChatGPT"}
+                    </Button>
+                
+                {submitted && (
+                    <Alert variant="success" className="mt-3">
+                        Response successfully recorded!
+                    </Alert>
+                )}
         
         <p>{response}</p>
         </div>
