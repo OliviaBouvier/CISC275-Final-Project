@@ -1,24 +1,30 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
-export function ChangeQuestionOneB(): React.JSX.Element {
-    const [answer, setChangeAnswer] = useState<string>("Select an answer");
+export function ChangeQuestionOneB({
+    setAnswer,
+  }: {
+    setAnswer: (value: string) => void;
+  }): React.JSX.Element {
+    const [answer, setChangeAnswer] = useState<string>("");
 
     function updateAnswer(event: React.ChangeEvent<HTMLInputElement>) {
         setChangeAnswer(event.target.value);
+        setAnswer(event.target.value);
     }
 
     const answers = [
-        { id: "temp1" },
-        { id: "temp2" },
-        { id: "temp3" },
-        { id: "temp4" },
+        { id: "High school" },
+        { id: "Undergraduate" },
+        { id: "Bachelors degree" },
+        { id: "Masters degree" },
+        { id: "PhD" }
     ];
 
     return (
         <div>
             <div>
-                Question One: Mock question....
+                What is your current level of education?
             </div>
             {answers.map((answersList) => (
                 <Form.Check
@@ -40,24 +46,31 @@ export function ChangeQuestionOneB(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionTwoB(): React.JSX.Element {
-    const [answerTwo, setChangeAnswerTwo] = useState<string>("Select an answer");
+export function ChangeQuestionTwoB({
+    setAnswer,
+  }: {
+    setAnswer: (value: string) => void;
+  }): React.JSX.Element {
+    const [answerTwo, setChangeAnswerTwo] = useState<string>("");
 
     function updateAnswerTwo(event: React.ChangeEvent<HTMLInputElement>) {
         setChangeAnswerTwo(event.target.value);
+        setAnswer(event.target.value);
     }
 
     const answersTwo = [
-        { id: "temp5" },
-        { id: "temp6" },
-        { id: "temp7" },
-        { id: "temp8" },
+        { id: "Technology field" },
+        { id: "Medicla field" },
+        { id: "Business field" },
+        { id: "Teaching field" },
+        { id: "Trades (Plumbing, HVAC, etc)" },
+        { id: "Other" }
     ];
 
     return (
         <div>
             <div>
-                Question Two: Mock question....
+                What career category would you most likely pursue?
             </div>
             {answersTwo.map((answersListTwo) => (
                 <Form.Check
@@ -79,24 +92,28 @@ export function ChangeQuestionTwoB(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionThreeB(): React.JSX.Element {
-    const [answerThree, setChangeAnswerThree] = useState<string>("Select an answer");
+export function ChangeQuestionThreeB({
+    setAnswer,
+  }: {
+    setAnswer: (value: string) => void;
+  }): React.JSX.Element {
+    const [answerThree, setChangeAnswerThree] = useState<string>("");
 
     function updateAnswerThree(event: React.ChangeEvent<HTMLInputElement>) {
         setChangeAnswerThree(event.target.value);
+        setAnswer(event.target.value);
     }
 
     const answersThree = [
-        { id: "temp9" },
-        { id: "temp10" },
-        { id: "temp11" },
-        { id: "temp12" },
+        { id: "Yes" },
+        { id: "No" },
+        { id: "Yes, but over a year ago" },
     ];
 
     return (
         <div>
             <div>
-                Question Three: Mock question....
+                Have you taken a career quiz before?
             </div>
             {answersThree.map((answersListThree) => (
                 <Form.Check
@@ -118,24 +135,30 @@ export function ChangeQuestionThreeB(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionOneFourB(): React.JSX.Element {
-    const [answerFour, setChangeAnswerFour] = useState<string>("Select an answer");
+export function ChangeQuestionOneFourB({
+    setAnswer,
+  }: {
+    setAnswer: (value: string) => void;
+  }): React.JSX.Element {
+    const [answerFour, setChangeAnswerFour] = useState<string>("");
 
     function updateAnswerFour(event: React.ChangeEvent<HTMLInputElement>) {
         setChangeAnswerFour(event.target.value);
+        setAnswer(event.target.value);
     }
 
     const answersFour = [
-        { id: "temp13" },
-        { id: "temp14" },
-        { id: "temp15" },
-        { id: "temp16" },
+        { id: "Outgoing" },
+        { id: "Shy" },
+        { id: "Creative" },
+        { id: "Adventurous" },
+        { id: "Focused" }
     ];
 
     return (
         <div>
             <div>
-                Question Four: Mock question....
+                What describes your personality the best?
             </div>
             {answersFour.map((answersListFour) => (
                 <Form.Check
@@ -157,24 +180,30 @@ export function ChangeQuestionOneFourB(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionOneFiveB(): React.JSX.Element {
-    const [answerFive, setChangeAnswerFive] = useState<string>("Select an answer");
+export function ChangeQuestionOneFiveB({
+    setAnswer,
+  }: {
+    setAnswer: (value: string) => void;
+  }): React.JSX.Element {
+    const [answerFive, setChangeAnswerFive] = useState<string>("");
 
     function updateAnswerFive(event: React.ChangeEvent<HTMLInputElement>) {
         setChangeAnswerFive(event.target.value);
+        setAnswer(event.target.value);
     }
 
     const answersFive = [
-        { id: "temp17" },
-        { id: "temp18" },
-        { id: "temp19" },
-        { id: "temp20" },
+        { id: "Math" },
+        { id: "Science" },
+        { id: "History" },
+        { id: "English" },
+        { id: "Art" }
     ];
 
     return (
         <div>
             <div>
-                Question Five: Mock question....
+                What subject did you most enjoy in school?
             </div>
             {answersFive.map((answersListFive) => (
                 <Form.Check
@@ -196,24 +225,29 @@ export function ChangeQuestionOneFiveB(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionOneSixB(): React.JSX.Element {
-    const [answerSix, setChangeAnswerSix] = useState<string>("Select an answer");
+export function ChangeQuestionOneSixB({
+    setAnswer,
+  }: {
+    setAnswer: (value: string) => void;
+  }): React.JSX.Element {
+    const [answerSix, setChangeAnswerSix] = useState<string>("");
 
     function updateAnswerSix(event: React.ChangeEvent<HTMLInputElement>) {
         setChangeAnswerSix(event.target.value);
+        setAnswer(event.target.value);
     }
 
     const answersSix = [
-        { id: "temp21" },
-        { id: "temp22" },
-        { id: "temp23" },
-        { id: "temp24" },
+        { id: "Structured" },
+        { id: "Open" },
+        { id: "Fast-Paced" },
+        { id: "Quiet/Focused" },
     ];
 
     return (
         <div>
             <div>
-                Question Six: Mock question....
+                What is your preferred work environment?
             </div>
             {answersSix.map((answersListSix) => (
                 <Form.Check
@@ -235,24 +269,29 @@ export function ChangeQuestionOneSixB(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionOneSevenB(): React.JSX.Element {
-    const [answerSeven, setChangeAnswerSeven] = useState<string>("Select an answer");
+export function ChangeQuestionOneSevenB({
+    setAnswer,
+  }: {
+    setAnswer: (value: string) => void;
+  }): React.JSX.Element {
+    const [answerSeven, setChangeAnswerSeven] = useState<string>("");
 
     function updateAnswerSeven(event: React.ChangeEvent<HTMLInputElement>) {
         setChangeAnswerSeven(event.target.value);
+        setAnswer(event.target.value);
     }
 
     const answersSeven = [
-        { id: "temp25" },
-        { id: "temp26" },
-        { id: "temp27" },
-        { id: "temp28" },
+        { id: "Solving Problems" },
+        { id: "Being creative" },
+        { id: "Communicating" },
+        { id: "Managing plans/people" },
     ];
 
     return (
         <div>
             <div>
-                Question Seven: Mock question....
+                What are you most naturally good at?
             </div>
             {answersSeven.map((answersListSeven) => (
                 <Form.Check
