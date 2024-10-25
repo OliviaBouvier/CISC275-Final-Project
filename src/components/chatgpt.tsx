@@ -23,10 +23,10 @@ export function ChatGPT({ apiKey, chatGPTcontents }: ChatGPTProps): React.JSX.El
             const completion = await openai.chat.completions.create({
                 model: "gpt-4",
                 messages: [
-                    { role: "system", content: "You create detailed reports informing users of potential careers based on their preferences" },
+                    { role: "system", content: "You are a helpful assistant" },
                     {
                         role: "user",
-                        content: `Create a report with format: 
+                        content: `Create a report describing a potential career for me with format: 
                         "career name
                         career description
                         why the user is suited to this career
@@ -51,6 +51,7 @@ export function ChatGPT({ apiKey, chatGPTcontents }: ChatGPTProps): React.JSX.El
                 <Form.Label>ChatGPT input: </Form.Label>
                 <Form.Control value={message} onChange={updateMessage} />
             </Form.Group> */}
+            {/* <div>Submitting to ChatGPT: {ChatGPTContents()}</div> */}
             <Button onClick={() => {
                     //setContents(message);
                     handleChatGPTSubmission();

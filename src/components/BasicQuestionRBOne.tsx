@@ -1,9 +1,19 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
+import { ChatGPT } from "./chatgpt";
 
 let chatGPTcontents: string = "";
 
-export function ChangeQuestionOneB(): React.JSX.Element {
+interface RadioButtonsProps{
+    apiKey: string;
+}
+
+export function RadioButtons({apiKey}: RadioButtonsProps){
+const[contents, setContents] = useState<string>("");
+
+
+
+function ChangeQuestionOneB(): React.JSX.Element {
     const [answer, setChangeAnswer] = useState<string>("Select an answer");
 
     function updateAnswer(event: React.ChangeEvent<HTMLInputElement>) {
@@ -18,6 +28,7 @@ export function ChangeQuestionOneB(): React.JSX.Element {
         } else {
             chatGPTcontents += `My level of education is ${newAnswer}. `;
         }
+        setContents(chatGPTcontents);
     }
     
 
@@ -50,10 +61,11 @@ export function ChangeQuestionOneB(): React.JSX.Element {
             <div>
                 You have picked the answer: {answer}
             </div>
+            <div>{chatGPTcontents}</div>
         </div>
     );
 }
-export function ChangeQuestionTwoB(): React.JSX.Element {
+function ChangeQuestionTwoB(): React.JSX.Element {
     const [answerTwo, setChangeAnswerTwo] = useState<string>("Select an answer");
 
     function updateAnswerTwo(event: React.ChangeEvent<HTMLInputElement>) {
@@ -68,6 +80,7 @@ export function ChangeQuestionTwoB(): React.JSX.Element {
         } else {
             chatGPTcontents += `I want to pursue a career in ${newAnswer}. `;
         }
+        setContents(chatGPTcontents);
     }
 
     const answersTwo = [
@@ -101,7 +114,7 @@ export function ChangeQuestionTwoB(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionThreeB(): React.JSX.Element {
+function ChangeQuestionThreeB(): React.JSX.Element {
     const [answerThree, setChangeAnswerThree] = useState<string>("Select an answer");
 
     function updateAnswerThree(event: React.ChangeEvent<HTMLInputElement>) {
@@ -116,6 +129,7 @@ export function ChangeQuestionThreeB(): React.JSX.Element {
         } else {
             chatGPTcontents += `To answer the question as to whether I've taken a career quiz before, I would say ${newAnswer}. `;
         }
+        setContents(chatGPTcontents);
     }
 
     const answersThree = [
@@ -149,7 +163,7 @@ export function ChangeQuestionThreeB(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionOneFourB(): React.JSX.Element {
+function ChangeQuestionOneFourB(): React.JSX.Element {
     const [answerFour, setChangeAnswerFour] = useState<string>("Select an answer");
 
     function updateAnswerFour(event: React.ChangeEvent<HTMLInputElement>) {
@@ -164,6 +178,7 @@ export function ChangeQuestionOneFourB(): React.JSX.Element {
         } else {
             chatGPTcontents += `I would describe my personality as ${newAnswer}. `;
         }
+        setContents(chatGPTcontents);
     }
 
     const answersFour = [
@@ -197,7 +212,7 @@ export function ChangeQuestionOneFourB(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionOneFiveB(): React.JSX.Element {
+function ChangeQuestionOneFiveB(): React.JSX.Element {
     const [answerFive, setChangeAnswerFive] = useState<string>("Select an answer");
 
     function updateAnswerFive(event: React.ChangeEvent<HTMLInputElement>) {
@@ -212,6 +227,7 @@ export function ChangeQuestionOneFiveB(): React.JSX.Element {
         } else {
             chatGPTcontents += `In school, I enjoyed ${newAnswer}. `;
         }
+        setContents(chatGPTcontents);
     }
 
     const answersFive = [
@@ -245,7 +261,7 @@ export function ChangeQuestionOneFiveB(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionOneSixB(): React.JSX.Element {
+function ChangeQuestionOneSixB(): React.JSX.Element {
     const [answerSix, setChangeAnswerSix] = useState<string>("Select an answer");
 
     function updateAnswerSix(event: React.ChangeEvent<HTMLInputElement>) {
@@ -260,6 +276,7 @@ export function ChangeQuestionOneSixB(): React.JSX.Element {
         } else {
             chatGPTcontents += `I prefer working in a ${newAnswer}. `;
         }
+        setContents(chatGPTcontents);
     }
 
     const answersSix = [
@@ -293,7 +310,7 @@ export function ChangeQuestionOneSixB(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionOneSevenB(): React.JSX.Element {
+function ChangeQuestionOneSevenB(): React.JSX.Element {
     const [answerSeven, setChangeAnswerSeven] = useState<string>("Select an answer");
 
     function updateAnswerSeven(event: React.ChangeEvent<HTMLInputElement>) {
@@ -308,6 +325,7 @@ export function ChangeQuestionOneSevenB(): React.JSX.Element {
         } else {
             chatGPTcontents += `I am naturally good at ${newAnswer}. `;
         }
+        setContents(chatGPTcontents);
     }
 
     const answersSeven = [
@@ -343,6 +361,56 @@ export function ChangeQuestionOneSevenB(): React.JSX.Element {
     );
 }
 
-export function ChatGPTContents(){
-    return chatGPTcontents;
+function ChatGPTContents(){
+    return contents;
+}
+
+return(
+    <div style={{ position: 'relative', width: '80%', margin: '0 auto', textAlign: 'center' }}>
+            
+             {/* Container for the questions and lines */}
+             <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
+                 {/* Left column of questions */}
+                 <div style={{ width: '45%', textAlign: 'center' }}>
+                     <div>{ChangeQuestionOneB()}</div>
+                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
+                     <div>{ChangeQuestionThreeB()}</div>
+                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
+                     <div>{ChangeQuestionOneFiveB()}</div>
+                 </div>
+                 {/* Vertical Line */}
+                 <div style={{ width: '10px', display: 'flex', alignItems: 'center' }}>
+                     <div
+                         style={{
+                             height: '115%',
+                             borderLeft: '3px solid grey',
+                             marginLeft: '5px',
+                         }}
+                     ></div>
+                 </div>
+
+                 {/* Right column of questions */}
+                 <div style={{ width: '45%', textAlign: 'center' }}>
+                     <div>{ChangeQuestionTwoB()}</div>
+                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
+                     <div>{ChangeQuestionOneFourB()}</div>
+                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
+                     <div>{ChangeQuestionOneSixB()}</div>
+                 </div>
+             </div>
+
+             {/* Question 7 with surrounding box */}
+             <div style={{  display: 'inline-block', padding: '20px', textAlign: 'center' }}>
+                 {/* Box with thicker bottom line */}
+                 <div style={{ 
+                     border: '3px solid grey', 
+                     padding: '20px', 
+                     display: 'inline-block', 
+                     width: '60%' 
+                 }}>
+                     {ChangeQuestionOneSevenB()}
+                 </div>
+             </div>
+    <ChatGPT apiKey = {apiKey} chatGPTcontents={ChatGPTContents()}/>
+</div>)
 }
