@@ -37,7 +37,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (107 ms)
+  ✕ renders learn react link (100 ms)
 
   ● renders learn react link
 
@@ -164,27 +164,27 @@ go away.[0m
 ----------------------------|---------|----------|---------|---------|-------------------
 File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------------|---------|----------|---------|---------|-------------------
-All files                   |   10.83 |       25 |    5.08 |   10.83 |                   
+All files                   |    8.44 |    18.75 |    5.08 |    8.44 |                   
  src                        |   28.57 |    16.66 |      20 |   28.57 |                   
   App.tsx                   |      60 |       50 |   33.33 |      60 | 23,31-37          
   index.tsx                 |       0 |      100 |     100 |       0 | 8-20              
   reportWebVitals.ts        |       0 |        0 |       0 |       0 | 3-10              
- src/components             |    6.31 |    33.33 |       2 |    6.31 |                   
-  BasicQuestionRBOne.tsx    |       0 |      100 |       0 |       0 | 5-258             
-  DetailedQuestionRBOne.tsx |       0 |      100 |       0 |       0 | 5-258             
+ src/components             |     5.5 |    33.33 |       2 |     5.5 |                   
+  BasicQuestionRBOne.tsx    |       0 |      100 |       0 |       0 | 9-297             
+  DetailedQuestionRBOne.tsx |       0 |      100 |       0 |       0 | 9-298             
   basicButton.tsx           |       0 |      100 |       0 |       0 | 5-10              
   chatgpt.tsx               |   35.29 |    33.33 |      25 |   35.29 | 17-43,54-55       
   detailedButton.tsx        |       0 |      100 |       0 |       0 | 5-10              
  src/components/NavBar      |     100 |      100 |     100 |     100 |                   
   NavBarElements.tsx        |     100 |      100 |     100 |     100 |                   
   index.tsx                 |       0 |        0 |       0 |       0 |                   
- src/pages                  |       0 |      100 |       0 |       0 |                   
-  basicQuestions.tsx        |       0 |      100 |       0 |       0 | 12                
-  detailedQuestions.tsx     |       0 |      100 |       0 |       0 | 4                 
+ src/pages                  |       0 |        0 |       0 |       0 |                   
+  basicQuestions.tsx        |       0 |        0 |       0 |       0 | 14-25             
+  detailedQuestions.tsx     |       0 |        0 |       0 |       0 | 7-19              
   home.tsx                  |       0 |      100 |       0 |       0 | 4                 
 ----------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.536 s
+Time:        3.4 s
 Ran all test suites.
