@@ -1,6 +1,6 @@
 import { Button, Form } from "react-bootstrap";
 //import { ChangeQuestionOneB, ChangeQuestionTwoB, ChangeQuestionThreeB, ChangeQuestionOneFourB, ChangeQuestionOneFiveB, ChangeQuestionOneSixB, ChangeQuestionOneSevenB, ChatGPTContents} from "../components/BasicQuestionRBOne";
-import { ChatGPT } from "../components/chatgpt";
+//import { ChatGPT } from "../components/chatgpt";
 import { RadioButtons } from "../components/BasicQuestionRBOne";
 import { useState } from "react";
 

@@ -72,7 +72,7 @@ export function ChatGPT({ apiKey, chatGPTcontents }: ChatGPTProps): React.JSX.El
                     </Alert>
                 )}
         
-        <p>{response}</p>
+        <pre>{response}</pre>
         </div>
     );
 }

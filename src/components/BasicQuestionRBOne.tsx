@@ -61,7 +61,6 @@ function ChangeQuestionOneB(): React.JSX.Element {
             <div>
                 You have picked the answer: {answer}
             </div>
-            <div>{chatGPTcontents}</div>
         </div>
     );
 }
@@ -366,8 +365,7 @@ function ChatGPTContents(){
 }
 
 return(
-    <div style={{ position: 'relative', width: '80%', margin: '0 auto', textAlign: 'center' }}>
-            
+    <div style={{ position: 'relative', width: '80%', margin: '0 auto', textAlign: 'center' }}>           
              {/* Container for the questions and lines */}
              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
                  {/* Left column of questions */}
