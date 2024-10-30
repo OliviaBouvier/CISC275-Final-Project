@@ -17,43 +17,21 @@ export function DetailedQuestions(){
     const completed=progress===100;
 
     return (<div>
-        <h1>Detailed Questions</h1>
-    return (<div> 
+    <div> 
     <h1>Detailed Questions</h1>
     <p>
         A more detailed version of the quiz containing more specific questions. There is no time limit.
     </p>
-        <div><ChangeQuestionOneDT setAnswer={setAnswer1}></ChangeQuestionOneDT></div>
-        <pre></pre>
-        <div><ChangeQuestionTwoDT setAnswer={setAnswer2}></ChangeQuestionTwoDT></div>
-        <pre></pre>
-        <div><ChangeQuestionThreeDT setAnswer={setAnswer3}></ChangeQuestionThreeDT></div>
-        <pre></pre>
-        <div><ChangeQuestionOneFourDT setAnswer={setAnswer4}></ChangeQuestionOneFourDT></div>
-        <pre></pre>
-        <div><ChangeQuestionOneFiveDT setAnswer={setAnswer5}></ChangeQuestionOneFiveDT></div>
-        <pre></pre>
-        <div><ChangeQuestionOneSixDT setAnswer={setAnswer6}></ChangeQuestionOneSixDT></div>
-        <pre></pre>
-        <div><ChangeQuestionOneSevenDT setAnswer={setAnswer7}></ChangeQuestionOneSevenDT></div>
-        <pre></pre>
-        <ProgressBar now={progress} label={`${Math.round(progress)}%`} className="progressBar"></ProgressBar>
-        <pre></pre>
-        {completed && (
-        <div className="feedback">
-          <h4>Quiz completed!</h4>
-        </div>
-      )}
-        </div>);
+        </div>;
     {/* Container for the questions and lines */}
     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
                 {/* Left column of questions */}
                 <div style={{ width: '45%', textAlign: 'center' }}>
-                    <div><ChangeQuestionOneDT /></div>
+                    <div><ChangeQuestionOneDT setAnswer={setAnswer1} /></div>
                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                    <div><ChangeQuestionThreeDT /></div>
+                    <div><ChangeQuestionThreeDT setAnswer={setAnswer3} /></div>
                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                    <div><ChangeQuestionOneFiveDT /></div>
+                    <div><ChangeQuestionOneFiveDT setAnswer={setAnswer5} /></div>
                 </div>
 
                 {/* Vertical Line */}
@@ -69,11 +47,11 @@ export function DetailedQuestions(){
 
                 {/* Right column of questions */}
                 <div style={{ width: '45%', textAlign: 'center' }}>
-                    <div><ChangeQuestionTwoDT /></div>
+                    <div><ChangeQuestionTwoDT setAnswer={setAnswer2} /></div>
                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                    <div><ChangeQuestionOneFourDT /></div>
+                    <div><ChangeQuestionOneFourDT setAnswer={setAnswer4} /></div>
                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                    <div><ChangeQuestionOneSixDT /></div>
+                    <div><ChangeQuestionOneSixDT setAnswer={setAnswer6} /></div>
                 </div>
             </div>
 
@@ -86,9 +64,17 @@ export function DetailedQuestions(){
                     display: 'inline-block', 
                     width: '60%' 
                 }}>
-                    <ChangeQuestionOneSevenDT />
+                    <ChangeQuestionOneSevenDT setAnswer={setAnswer7} />
                 </div>
             </div>
+            <ProgressBar now={progress} label={`${Math.round(progress)}%`} className="progressBar"></ProgressBar>
+            <pre></pre>
+            {completed && (
+            <div className="feedback">
+            <h4>Quiz completed!</h4>
+            </div>
+      )}
         </div>
+        
     );
 }
