@@ -27,11 +27,12 @@ export function DetailedQuestions(){
     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
                 {/* Left column of questions */}
                 <div style={{ width: '45%', textAlign: 'center' }}>
-                    <div><ChangeQuestionOneDT setAnswer={setAnswer1} /></div>
+
+                    <div><ChangeQuestionOneDT setAnswer={setAnswer1}/></div>
                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                    <div><ChangeQuestionThreeDT setAnswer={setAnswer3} /></div>
+                    <div><ChangeQuestionThreeDT setAnswer={setAnswer3}/></div>
                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                    <div><ChangeQuestionOneFiveDT setAnswer={setAnswer5} /></div>
+                    <div><ChangeQuestionOneFiveDT setAnswer={setAnswer5}/></div>
                 </div>
 
                 {/* Vertical Line */}
@@ -47,11 +48,11 @@ export function DetailedQuestions(){
 
                 {/* Right column of questions */}
                 <div style={{ width: '45%', textAlign: 'center' }}>
-                    <div><ChangeQuestionTwoDT setAnswer={setAnswer2} /></div>
+                    <div><ChangeQuestionTwoDT setAnswer={setAnswer2}/></div>
                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                    <div><ChangeQuestionOneFourDT setAnswer={setAnswer4} /></div>
+                    <div><ChangeQuestionOneFourDT setAnswer={setAnswer4}/></div>
                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                    <div><ChangeQuestionOneSixDT setAnswer={setAnswer6} /></div>
+                    <div><ChangeQuestionOneSixDT setAnswer={setAnswer6}/></div>
                 </div>
             </div>
 
@@ -64,7 +65,7 @@ export function DetailedQuestions(){
                     display: 'inline-block', 
                     width: '60%' 
                 }}>
-                    <ChangeQuestionOneSevenDT setAnswer={setAnswer7} />
+                    <ChangeQuestionOneSevenDT setAnswer={setAnswer7}/>
                 </div>
             </div>
             <ProgressBar now={progress} label={`${Math.round(progress)}%`} className="progressBar"></ProgressBar>

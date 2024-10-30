@@ -4,18 +4,19 @@ import OpenAI from "openai";
 
 interface ChatGPTProps {
     apiKey: string;
+    chatGPTcontents: string;
 }
 
-export function ChatGPT({ apiKey }: ChatGPTProps): React.JSX.Element {
-    const [message, setMessage] = useState<string>("");
-    const [contents, setContents] = useState<string>("");
+export function ChatGPT({ apiKey, chatGPTcontents }: ChatGPTProps): React.JSX.Element {
+//    const [message, setMessage] = useState<string>("");
+//    const [contents, setContents] = useState<string>(chatGPTcontents);
     const [response, setResponse] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
     const [submitted, setSubmitted] = useState<boolean>(false);
 
-    function updateMessage(event: React.ChangeEvent<HTMLInputElement>) {
-        setMessage(event.target.value);
-    }
+    // function updateMessage(event: React.ChangeEvent<HTMLInputElement>) {
+    //     setMessage(event.target.value);
+    // }
 
     async function handleChatGPTSubmission() {
         const openai = new OpenAI({apiKey, dangerouslyAllowBrowser: true});
@@ -24,10 +25,15 @@ export function ChatGPT({ apiKey }: ChatGPTProps): React.JSX.Element {
             const completion = await openai.chat.completions.create({
                 model: "gpt-4",
                 messages: [
-                    { role: "system", content: "You are a helpful assistant who gives career advice." },
+                    { role: "system", content: "You are a helpful assistant" },
                     {
                         role: "user",
-                        content: `${contents}`,
+                        content: `Create a report describing a potential career for me with format: 
+                        "career name
+                        career description
+                        why the user is suited to this career
+                        similar careers"
+                        based on the following: ${chatGPTcontents}`,
                     },
                 ],
             });
@@ -46,12 +52,13 @@ export function ChatGPT({ apiKey }: ChatGPTProps): React.JSX.Element {
 
     return (
         <div>
-            <Form.Group>
+            {/* <Form.Group>
                 <Form.Label>ChatGPT input: </Form.Label>
                 <Form.Control value={message} onChange={updateMessage} />
-            </Form.Group>
+            </Form.Group> */}
+            {/* <div>Submitting to ChatGPT: {ChatGPTContents()}</div> */}
             <Button onClick={() => {
-                    setContents(message);
+                    //setContents(message);
                     handleChatGPTSubmission();
                 }}
                 disabled ={loading}
@@ -65,7 +72,7 @@ export function ChatGPT({ apiKey }: ChatGPTProps): React.JSX.Element {
                     </Alert>
                 )}
         
-        <p>{response}</p>
+        <pre>{response}</pre>
         </div>
     );
 }
