@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form, Spinner, Alert} from "react-bootstrap";
+import { Button, Spinner, Alert} from "react-bootstrap";
 import OpenAI from "openai";
 
 interface ChatGPTProps {
