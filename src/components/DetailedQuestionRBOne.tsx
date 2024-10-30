@@ -1,31 +1,37 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
-export function ChangeQuestionOneDT(): React.JSX.Element {
-    const [answer, setChangeAnswer] = useState<string>("Select an answer");
+export function ChangeQuestionOneDT({
+    setAnswer,
+  }: {
+    setAnswer: (value: string) => void;
+  }): React.JSX.Element {
+    const [answer, setChangeAnswer] = useState<string>("");
 
     function updateAnswer(event: React.ChangeEvent<HTMLInputElement>) {
         setChangeAnswer(event.target.value);
+        setAnswer(event.target.value);
     }
 
     const answers = [
-        { id: "temp1" },
-        { id: "temp2" },
-        { id: "temp3" },
-        { id: "temp4" },
+        { id: "Five (Great)" },
+        { id: "Four" },
+        { id: "Three (Neutral)" },
+        { id: "Two " },
+        { id: "One (Not great)" }
     ];
 
     return (
         <div>
             <div>
-                Question One: Mock question....
+                One being the least and five being the best, how good is your work ethic?   
             </div>
             {answers.map((answersList) => (
                 <Form.Check
                     inline
                     key={answersList.id}
                     type="radio"
-                    name="BasicQuestionOne"
+                    name="DetailedQuestionOne"
                     onChange={updateAnswer}
                     id={`answer-check-${answersList.id}`}
                     label={answersList.id}
@@ -40,31 +46,37 @@ export function ChangeQuestionOneDT(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionTwoDT(): React.JSX.Element {
-    const [answerTwo, setChangeAnswerTwo] = useState<string>("Select an answer");
+export function ChangeQuestionTwoDT({
+    setAnswer,
+  }: {
+    setAnswer: (value: string) => void;
+  }): React.JSX.Element {
+    const [answerTwo, setChangeAnswerTwo] = useState<string>("");
 
     function updateAnswerTwo(event: React.ChangeEvent<HTMLInputElement>) {
         setChangeAnswerTwo(event.target.value);
+        setAnswer(event.target.value);
     }
 
     const answersTwo = [
-        { id: "temp5" },
-        { id: "temp6" },
-        { id: "temp7" },
-        { id: "temp8" },
+        { id: "Five (Great)" },
+        { id: "Four" },
+        { id: "Three (Neutral)" },
+        { id: "Two " },
+        { id: "One (Not great)" }
     ];
 
     return (
         <div>
             <div>
-                Question Two: Mock question....
+                One being the least and five being the best, how good would your peers say your work ethic is?
             </div>
             {answersTwo.map((answersListTwo) => (
                 <Form.Check
                     inline
                     key={answersListTwo.id}
                     type="radio"
-                    name="BasicQuestionTwo"
+                    name="DetailedQuestionTwo"
                     onChange={updateAnswerTwo}
                     id={`answer-check-${answersListTwo.id}`}
                     label={answersListTwo.id}
@@ -79,31 +91,38 @@ export function ChangeQuestionTwoDT(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionThreeDT(): React.JSX.Element {
-    const [answerThree, setChangeAnswerThree] = useState<string>("Select an answer");
+export function ChangeQuestionThreeDT({
+    setAnswer,
+  }: {
+    setAnswer: (value: string) => void;
+  }): React.JSX.Element {
+    const [answerThree, setChangeAnswerThree] = useState<string>("");
 
     function updateAnswerThree(event: React.ChangeEvent<HTMLInputElement>) {
         setChangeAnswerThree(event.target.value);
+        setAnswer(event.target.value);
     }
 
     const answersThree = [
-        { id: "temp9" },
-        { id: "temp10" },
-        { id: "temp11" },
-        { id: "temp12" },
+        { id: "Technology Field" },
+        { id: "Medical Field" },
+        { id: "Science Field" },
+        { id: "Teaching" },
+        { id: "Trades" },
+        { id: "Manual Labor"}
     ];
 
     return (
         <div>
             <div>
-                Question Three: Mock question....
+                Choose whichever career field you would most likely pursue
             </div>
             {answersThree.map((answersListThree) => (
                 <Form.Check
                     inline
                     key={answersListThree.id}
                     type="radio"
-                    name="BasicQuestionThree"
+                    name="DetailedQuestionThree"
                     onChange={updateAnswerThree}
                     id={`answer-check-${answersListThree.id}`}
                     label={answersListThree.id}
@@ -118,31 +137,34 @@ export function ChangeQuestionThreeDT(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionOneFourDT(): React.JSX.Element {
-    const [answerFour, setChangeAnswerFour] = useState<string>("Select an answer");
+export function ChangeQuestionOneFourDT({
+    setAnswer,
+  }: {
+    setAnswer: (value: string) => void;
+  }): React.JSX.Element {
+    const [answerFour, setChangeAnswerFour] = useState<string>("");
 
     function updateAnswerFour(event: React.ChangeEvent<HTMLInputElement>) {
         setChangeAnswerFour(event.target.value);
+        setAnswer(event.target.value);
     }
 
     const answersFour = [
-        { id: "temp13" },
-        { id: "temp14" },
-        { id: "temp15" },
-        { id: "temp16" },
+        { id: "On my own" },
+        { id: "In a group" },
     ];
 
     return (
         <div>
             <div>
-                Question Four: Mock question....
+                If you had a choice of working on your own or as a group which would your choose?
             </div>
             {answersFour.map((answersListFour) => (
                 <Form.Check
                     inline
                     key={answersListFour.id}
                     type="radio"
-                    name="BasicQuestionFour"
+                    name="DetailedQuestionFour"
                     onChange={updateAnswerFour}
                     id={`answer-check-${answersListFour.id}`}
                     label={answersListFour.id}
@@ -157,31 +179,36 @@ export function ChangeQuestionOneFourDT(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionOneFiveDT(): React.JSX.Element {
-    const [answerFive, setChangeAnswerFive] = useState<string>("Select an answer");
+export function ChangeQuestionOneFiveDT({
+    setAnswer,
+  }: {
+    setAnswer: (value: string) => void;
+  }): React.JSX.Element {
+    const [answerFive, setChangeAnswerFive] = useState<string>("");
 
     function updateAnswerFive(event: React.ChangeEvent<HTMLInputElement>) {
         setChangeAnswerFive(event.target.value);
+        setAnswer(event.target.value);
     }
 
     const answersFive = [
-        { id: "temp17" },
-        { id: "temp18" },
-        { id: "temp19" },
-        { id: "temp20" },
+        { id: "High stress, always something going on" },
+        { id: "Laid back, little to no stress" },
+        { id: "Bouncing between high and low stress" },
+        { id: "Right in the middle of high and low stress" },
     ];
 
     return (
         <div>
             <div>
-                Question Five: Mock question....
+                What kind of work environment would best suit you?
             </div>
             {answersFive.map((answersListFive) => (
                 <Form.Check
                     inline
                     key={answersListFive.id}
                     type="radio"
-                    name="BasicQuestionFive"
+                    name="DetailedQuestionFive"
                     onChange={updateAnswerFive}
                     id={`answer-check-${answersListFive.id}`}
                     label={answersListFive.id}
@@ -196,31 +223,36 @@ export function ChangeQuestionOneFiveDT(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionOneSixDT(): React.JSX.Element {
-    const [answerSix, setChangeAnswerSix] = useState<string>("Select an answer");
+export function ChangeQuestionOneSixDT({
+    setAnswer,
+  }: {
+    setAnswer: (value: string) => void;
+  }): React.JSX.Element {
+    const [answerSix, setChangeAnswerSix] = useState<string>("");
 
     function updateAnswerSix(event: React.ChangeEvent<HTMLInputElement>) {
         setChangeAnswerSix(event.target.value);
+        setAnswer(event.target.value);
     }
 
     const answersSix = [
-        { id: "temp21" },
-        { id: "temp22" },
-        { id: "temp23" },
-        { id: "temp24" },
+        { id: "Very outgoing, love to be around others" },
+        { id: "Don't mind being around people or alone but prefer to be around people" },
+        { id: "Don't mind being around people or alone but prefer to be alone" },
+        { id: "Don't like being around other people at all" },
     ];
 
     return (
         <div>
             <div>
-                Question Six: Mock question....
+                How would you describe your personality?
             </div>
             {answersSix.map((answersListSix) => (
                 <Form.Check
                     inline
                     key={answersListSix.id}
                     type="radio"
-                    name="BasicQuestionSix"
+                    name="DetailedQuestionSix"
                     onChange={updateAnswerSix}
                     id={`answer-check-${answersListSix.id}`}
                     label={answersListSix.id}
@@ -235,31 +267,39 @@ export function ChangeQuestionOneSixDT(): React.JSX.Element {
         </div>
     );
 }
-export function ChangeQuestionOneSevenDT(): React.JSX.Element {
-    const [answerSeven, setChangeAnswerSeven] = useState<string>("Select an answer");
+export function ChangeQuestionOneSevenDT({
+    setAnswer,
+  }: {
+    setAnswer: (value: string) => void;
+  }): React.JSX.Element {
+    const [answerSeven, setChangeAnswerSeven] = useState<string>("");
 
     function updateAnswerSeven(event: React.ChangeEvent<HTMLInputElement>) {
         setChangeAnswerSeven(event.target.value);
+        setAnswer(event.target.value);
     }
 
     const answersSeven = [
-        { id: "temp25" },
-        { id: "temp26" },
-        { id: "temp27" },
-        { id: "temp28" },
+        { id: "Docture/nurse" },
+        { id: "Plumber" },
+        { id: "Construction" },
+        { id: "Teacher" },
+        { id: "IT" },
+        { id: "Chemical scientist" },
+        { id: "archaeologist" }
     ];
 
     return (
         <div>
             <div>
-                Question Seven: Mock question....
+                Out of all the jobs listed, which would you want to be the most?
             </div>
             {answersSeven.map((answersListSeven) => (
                 <Form.Check
                     inline
                     key={answersListSeven.id}
                     type="radio"
-                    name="BasicQuestionSeven"
+                    name="DetailedQuestionSeven"
                     onChange={updateAnswerSeven}
                     id={`answer-check-${answersListSeven.id}`}
                     label={answersListSeven.id}

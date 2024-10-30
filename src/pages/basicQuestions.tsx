@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 //import { ChatGPT } from "../components/chatgpt";
 import { RadioButtons } from "../components/BasicQuestionRBOne";
 import { useState } from "react";
+//import { ProgressBar } from "react-bootstrap";
 
 export function BasicQuestions() {
     let keyData = "";

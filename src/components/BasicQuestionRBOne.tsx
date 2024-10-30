@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Form, ProgressBar } from "react-bootstrap";
 import { ChatGPT } from "./chatgpt";
 
 let chatGPTcontents: string = "";
@@ -11,6 +11,17 @@ interface RadioButtonsProps{
 export function RadioButtons({apiKey}: RadioButtonsProps){
 const[contents, setContents] = useState<string>("");
 
+const [answer1, setAnswer1] = useState<string>("");
+    const [answer2, setAnswer2] = useState<string>("");
+    const [answer3, setAnswer3] = useState<string>("");
+    const [answer4, setAnswer4] = useState<string>("");
+    const [answer5, setAnswer5] = useState<string>("");
+    const [answer6, setAnswer6] = useState<string>("");
+    const [answer7, setAnswer7] = useState<string>("");
+
+    const feedback=[answer1,answer2,answer3,answer4,answer5,answer6,answer7].filter(Boolean).length;
+    const progress=(feedback/7)*100;
+    const completed=progress===100;
 
 
 function ChangeQuestionOneB(): React.JSX.Element {
@@ -19,6 +30,7 @@ function ChangeQuestionOneB(): React.JSX.Element {
     function updateAnswer(event: React.ChangeEvent<HTMLInputElement>) {
         const newAnswer = event.target.value; // Use the new answer directly
         setChangeAnswer(newAnswer);
+        setAnswer1(newAnswer);
 
         if (chatGPTcontents.includes("My level of education is")) {
             chatGPTcontents = chatGPTcontents.replace(
@@ -58,10 +70,8 @@ function ChangeQuestionOneB(): React.JSX.Element {
                 />
             ))}
 
-            <div>
-                You have picked the answer: {answer}
-            </div>
-        </div>
+        <div>You have picked the answer: {answer}</div>
+      </div>
     );
 }
 function ChangeQuestionTwoB(): React.JSX.Element {
@@ -70,6 +80,7 @@ function ChangeQuestionTwoB(): React.JSX.Element {
     function updateAnswerTwo(event: React.ChangeEvent<HTMLInputElement>) {
         const newAnswer = event.target.value; // Use the new answer directly
         setChangeAnswerTwo(newAnswer);
+        setAnswer2(newAnswer);
 
         if (chatGPTcontents.includes("I want to pursue a career in")) {
             chatGPTcontents = chatGPTcontents.replace(
@@ -119,6 +130,7 @@ function ChangeQuestionThreeB(): React.JSX.Element {
     function updateAnswerThree(event: React.ChangeEvent<HTMLInputElement>) {
         const newAnswer = event.target.value; // Use the new answer directly
         setChangeAnswerThree(newAnswer);
+        setAnswer3(newAnswer);
 
         if (chatGPTcontents.includes("To answer the question as to whether I've taken a career quiz before, I would say")) {
             chatGPTcontents = chatGPTcontents.replace(
@@ -168,6 +180,7 @@ function ChangeQuestionOneFourB(): React.JSX.Element {
     function updateAnswerFour(event: React.ChangeEvent<HTMLInputElement>) {
         const newAnswer = event.target.value; // Use the new answer directly
         setChangeAnswerFour(newAnswer);
+        setAnswer4(newAnswer);
 
         if (chatGPTcontents.includes("I would describe my personality as")) {
             chatGPTcontents = chatGPTcontents.replace(
@@ -217,6 +230,7 @@ function ChangeQuestionOneFiveB(): React.JSX.Element {
     function updateAnswerFive(event: React.ChangeEvent<HTMLInputElement>) {
         const newAnswer = event.target.value; // Use the new answer directly
         setChangeAnswerFive(newAnswer);
+        setAnswer5(newAnswer);
 
         if (chatGPTcontents.includes("In school, I enjoyed")) {
             chatGPTcontents = chatGPTcontents.replace(
@@ -266,6 +280,7 @@ function ChangeQuestionOneSixB(): React.JSX.Element {
     function updateAnswerSix(event: React.ChangeEvent<HTMLInputElement>) {
         const newAnswer = event.target.value; // Use the new answer directly
         setChangeAnswerSix(newAnswer);
+        setAnswer6(newAnswer);
 
         if (chatGPTcontents.includes("I prefer working in a")) {
             chatGPTcontents = chatGPTcontents.replace(
@@ -315,6 +330,7 @@ function ChangeQuestionOneSevenB(): React.JSX.Element {
     function updateAnswerSeven(event: React.ChangeEvent<HTMLInputElement>) {
         const newAnswer = event.target.value; // Use the new answer directly
         setChangeAnswerSeven(newAnswer);
+        setAnswer7(newAnswer);
 
         if (chatGPTcontents.includes("I am naturally good at")) {
             chatGPTcontents = chatGPTcontents.replace(
@@ -409,6 +425,13 @@ return(
                      {ChangeQuestionOneSevenB()}
                  </div>
              </div>
+             <ProgressBar now={progress} label={`${Math.round(progress)}%`} className="progressBar"></ProgressBar>
+        <pre></pre>
+        {completed && (
+        <div className="feedback">
+          <h4>Quiz completed!</h4>
+        </div>
+      )}
     <ChatGPT apiKey = {apiKey} chatGPTcontents={ChatGPTContents()}/>
 </div>)
 }
