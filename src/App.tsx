@@ -10,8 +10,8 @@ import {
 import {Home} from "./pages/home";
 import {BasicQuestions} from "./pages/basicQuestions";
 import {DetailedQuestions} from "./pages/detailedQuestions";
-import {BasicButton} from "./components/basicButton";
-import {DetailedButton} from "./components/detailedButton";
+// import {BasicButton} from "./components/basicButton";
+// import {DetailedButton} from "./components/detailedButton";
 import {NavBarElements} from "./components/NavBar/NavBarElements"
 //import { ChatGPT } from './components/chatgpt';
 //import { ChatGPTContents } from './components/BasicQuestionRBOne';
@@ -48,14 +48,14 @@ function App() {
                 <Route path="/starter-helpi/" element={
                   <>
                     <Home /> 
-                    <div>
+                    {/* <div>
                       <header className="App-header">  
                         <BasicButton />
                       </header> 
                       <header className="App-header">  
                         <DetailedButton />
                       </header>
-                    </div>
+                    </div> */}
                   </>
                 } />
                 <Route
