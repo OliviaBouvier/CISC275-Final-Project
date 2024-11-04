@@ -46,6 +46,7 @@ function ChangeQuestionOneB(): React.JSX.Element {
 
     const answers = [
         { id: "high school" },
+        { id: "Undergraduate" },
         { id: "Bachelor's degree" },
         { id: "Master's degree" },
         { id: "PhD" },
@@ -54,7 +55,7 @@ function ChangeQuestionOneB(): React.JSX.Element {
     return (
         <div>
             <div>
-                Question One: Mock question....
+                What is your current level of education?
             </div>
             {answers.map((answersList) => (
                 <Form.Check
@@ -94,16 +95,18 @@ function ChangeQuestionTwoB(): React.JSX.Element {
     }
 
     const answersTwo = [
-        { id: "technology" },
-        { id: "healthcare" },
-        { id: "construction" },
-        { id: "business" },
+        { id: "Technological field" },
+        { id: "Medicla field" },
+        { id: "Business field" },
+        { id: "Teaching field" },
+        { id: "Trades (Plumbing, HVAC, etc)" },
+        { id: "Other" }
     ];
 
     return (
         <div>
             <div>
-                Question Two: Mock question....
+                What career category would you most likely pursue?
             </div>
             {answersTwo.map((answersListTwo) => (
                 <Form.Check
@@ -144,16 +147,15 @@ function ChangeQuestionThreeB(): React.JSX.Element {
     }
 
     const answersThree = [
-        { id: "yes, within the past year" },
-        { id: "yes, but a while ago" },
-        { id: "no" },
-        { id: "I don't remember" },
+        { id: "Yes, within the past year" },
+        { id: "Yes, but a while ago" },
+        { id: "No" },
     ];
 
     return (
         <div>
             <div>
-                Question Three: Mock question....
+                Have you taken a career quiz before?
             </div>
             {answersThree.map((answersListThree) => (
                 <Form.Check
@@ -194,16 +196,17 @@ function ChangeQuestionOneFourB(): React.JSX.Element {
     }
 
     const answersFour = [
-        { id: "outgoing" },
-        { id: "shy" },
-        { id: "adventurous" },
-        { id: "creative" },
+        { id: "Outgoing" },
+        { id: "Shy" },
+        { id: "Creative" },
+        { id: "Adventurous" },
+        { id: "Focused" }
     ];
 
     return (
         <div>
             <div>
-                Question Four: Mock question....
+                What describes your personality the best?
             </div>
             {answersFour.map((answersListFour) => (
                 <Form.Check
@@ -244,16 +247,17 @@ function ChangeQuestionOneFiveB(): React.JSX.Element {
     }
 
     const answersFive = [
-        { id: "math/science" },
-        { id: "history" },
-        { id: "art/music" },
+        { id: "Math" },
+        { id: "Science" },
+        { id: "History" },
         { id: "English" },
+        { id: "Art" }
     ];
 
     return (
         <div>
             <div>
-                Question Five: Mock question....
+                What subject did you most enjoy in school?
             </div>
             {answersFive.map((answersListFive) => (
                 <Form.Check
@@ -294,16 +298,16 @@ function ChangeQuestionOneSixB(): React.JSX.Element {
     }
 
     const answersSix = [
-        { id: "structure office setting" },
-        { id: "open workspace" },
-        { id: "fast-paced, dynamic environment" },
-        { id: "quiet space" },
+        { id: "Structured" },
+        { id: "Open" },
+        { id: "Fast-Paced" },
+        { id: "Quiet/Focused" },
     ];
 
     return (
         <div>
             <div>
-                Question Six: Mock question....
+                What is your preferred work environment?
             </div>
             {answersSix.map((answersListSix) => (
                 <Form.Check
@@ -344,16 +348,16 @@ function ChangeQuestionOneSevenB(): React.JSX.Element {
     }
 
     const answersSeven = [
-        { id: "solving problems" },
-        { id: "being creative" },
-        { id: "communicating with others" },
-        { id: "managing details and plans" },
+        { id: "Solving Problems" },
+        { id: "Being creative" },
+        { id: "Communicating" },
+        { id: "Managing plans/people" },
     ];
 
     return (
         <div>
             <div>
-                Question Seven: Mock question....
+                What are you most naturally good at?
             </div>
             {answersSeven.map((answersListSeven) => (
                 <Form.Check
