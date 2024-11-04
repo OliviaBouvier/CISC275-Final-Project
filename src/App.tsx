@@ -48,14 +48,6 @@ function App() {
                 <Route path="/starter-helpi/" element={
                   <>
                     <Home /> 
-                    {/* <div>
-                      <header className="App-header">  
-                        <BasicButton />
-                      </header> 
-                      <header className="App-header">  
-                        <DetailedButton />
-                      </header>
-                    </div> */}
                   </>
                 } />
                 <Route
@@ -68,13 +60,6 @@ function App() {
                 />
             </Routes>
         </Router>
-        {/* <ChatGPT apiKey={key} chatGPTcontents={ChatGPTContents()}/> */}
-       {/* <Form>
-        <Form.Label>API Key:</Form.Label>
-        <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-        <br></br>
-        <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
-      </Form> */}
     </div>
   );
 }

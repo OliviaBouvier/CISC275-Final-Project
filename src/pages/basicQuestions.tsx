@@ -1,9 +1,6 @@
 import { Button, Form } from "react-bootstrap";
-//import { ChangeQuestionOneB, ChangeQuestionTwoB, ChangeQuestionThreeB, ChangeQuestionOneFourB, ChangeQuestionOneFiveB, ChangeQuestionOneSixB, ChangeQuestionOneSevenB, ChatGPTContents} from "../components/BasicQuestionRBOne";
-//import { ChatGPT } from "../components/chatgpt";
-import { RadioButtons } from "../components/BasicQuestionRBOne";
+import { BasicRadioButtons } from "../components/BasicQuestionRBOne";
 import { useState } from "react";
-//import { ProgressBar } from "react-bootstrap";
 
 export function BasicQuestions() {
     let keyData = "";
@@ -26,56 +23,11 @@ export function BasicQuestions() {
   }
     
     return (
-        // <div style={{ position: 'relative', width: '80%', margin: '0 auto', textAlign: 'center' }}>
-            
-        //     {/* Container for the questions and lines */}
-        //     <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
-        //         {/* Left column of questions */}
-        //         <div style={{ width: '45%', textAlign: 'center' }}>
-        //             <div><ChangeQuestionOneB /></div>
-        //             <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-        //             <div><ChangeQuestionThreeB /></div>
-        //             <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-        //             <div><ChangeQuestionOneFiveB /></div>
-        //         </div>
-        //         {/* Vertical Line */}
-        //         <div style={{ width: '10px', display: 'flex', alignItems: 'center' }}>
-        //             <div
-        //                 style={{
-        //                     height: '115%',
-        //                     borderLeft: '3px solid grey',
-        //                     marginLeft: '5px',
-        //                 }}
-        //             ></div>
-        //         </div>
-
-        //         {/* Right column of questions */}
-        //         <div style={{ width: '45%', textAlign: 'center' }}>
-        //             <div><ChangeQuestionTwoB /></div>
-        //             <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-        //             <div><ChangeQuestionOneFourB /></div>
-        //             <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-        //             <div><ChangeQuestionOneSixB /></div>
-        //         </div>
-        //     </div>
-
-        //     {/* Question 7 with surrounding box */}
-        //     <div style={{  display: 'inline-block', padding: '20px', textAlign: 'center' }}>
-        //         {/* Box with thicker bottom line */}
-        //         <div style={{ 
-        //             border: '3px solid grey', 
-        //             padding: '20px', 
-        //             display: 'inline-block', 
-        //             width: '60%' 
-        //         }}>
-        //             <ChangeQuestionOneSevenB />
-        //         </div>
-        //     </div>
             
         <div>
         <h1>Basic Questions</h1>
         <p>A simplified version of the quiz containing only multiple choice questions. There is no time limit.</p>
-        <RadioButtons apiKey={key}/>
+        <BasicRadioButtons apiKey={key}/>
         <Form>
             <Form.Label>API Key:</Form.Label>
             <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
