@@ -182,7 +182,7 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
       </div>
     );
   }
-  function ChangeQuestionOneFourDT(): React.JSX.Element {
+  function ChangeQuestionFourDT(): React.JSX.Element {
     const [answerFour, setChangeAnswerFour] = useState<string>("");
 
     function updateAnswerFour(event: React.ChangeEvent<HTMLInputElement>) {
@@ -227,7 +227,7 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
       </div>
     );
   }
-  function ChangeQuestionOneFiveDT(): React.JSX.Element {
+  function ChangeQuestionFiveDT(): React.JSX.Element {
     const [answerFive, setChangeAnswerFive] = useState<string>("");
 
     function updateAnswerFive(event: React.ChangeEvent<HTMLInputElement>) {
@@ -278,7 +278,7 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
       </div>
     );
   }
-  function ChangeQuestionOneSixDT(): React.JSX.Element {
+  function ChangeQuestionSixDT(): React.JSX.Element {
     const [answerSix, setChangeAnswerSix] = useState<string>("");
 
     function updateAnswerSix(event: React.ChangeEvent<HTMLInputElement>) {
@@ -327,7 +327,7 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
       </div>
     );
   }
-  function ChangeQuestionOneSevenDT(): React.JSX.Element {
+  function ChangeQuestionSevenDT(): React.JSX.Element {
     const [answerSeven, setChangeAnswerSeven] = useState<string>("");
 
     function updateAnswerSeven(event: React.ChangeEvent<HTMLInputElement>) {
@@ -402,7 +402,7 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
             <div>{ChangeQuestionThreeDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionOneFiveDT()}</div>
+            <div>{ChangeQuestionFiveDT()}</div>
             </div>
 
           {/* Vertical Line */}
@@ -420,9 +420,9 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
           <div style={{ width: "45%", textAlign: "center" }}>
             <div>{ChangeQuestionTwoDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionOneFourDT()}</div>
+            <div>{ChangeQuestionFourDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionOneSixDT()}</div>
+            <div>{ChangeQuestionSixDT()}</div>
           </div>
         </div>
         <div
@@ -441,7 +441,7 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
               width: "60%",
             }}
           >
-            {ChangeQuestionOneSevenDT()}
+            {ChangeQuestionSevenDT()}
           </div>
         </div>
         <ProgressBar
