@@ -174,7 +174,7 @@ function ChangeQuestionThreeB(): React.JSX.Element {
         </div>
     );
 }
-function ChangeQuestionOneFourB(): React.JSX.Element {
+function ChangeQuestionFourB(): React.JSX.Element {
     const [answerFour, setChangeAnswerFour] = useState<string>("Select an answer");
 
     function updateAnswerFour(event: React.ChangeEvent<HTMLInputElement>) {
@@ -225,7 +225,7 @@ function ChangeQuestionOneFourB(): React.JSX.Element {
         </div>
     );
 }
-function ChangeQuestionOneFiveB(): React.JSX.Element {
+function ChangeQuestionFiveB(): React.JSX.Element {
     const [answerFive, setChangeAnswerFive] = useState<string>("Select an answer");
 
     function updateAnswerFive(event: React.ChangeEvent<HTMLInputElement>) {
@@ -276,7 +276,7 @@ function ChangeQuestionOneFiveB(): React.JSX.Element {
         </div>
     );
 }
-function ChangeQuestionOneSixB(): React.JSX.Element {
+function ChangeQuestionSixB(): React.JSX.Element {
     const [answerSix, setChangeAnswerSix] = useState<string>("Select an answer");
 
     function updateAnswerSix(event: React.ChangeEvent<HTMLInputElement>) {
@@ -326,7 +326,7 @@ function ChangeQuestionOneSixB(): React.JSX.Element {
         </div>
     );
 }
-function ChangeQuestionOneSevenB(): React.JSX.Element {
+function ChangeQuestionSevenB(): React.JSX.Element {
     const [answerSeven, setChangeAnswerSeven] = useState<string>("Select an answer");
 
     function updateAnswerSeven(event: React.ChangeEvent<HTMLInputElement>) {
@@ -388,11 +388,11 @@ return(
              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
                  {/* Left column of questions */}
                  <div style={{ width: '45%', textAlign: 'center' }}>
-                     <div>{ChangeQuestionOneB()}</div>
-                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
                      <div>{ChangeQuestionThreeB()}</div>
                      <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                     <div>{ChangeQuestionOneFiveB()}</div>
+                     <div>{ChangeQuestionOneB()}</div>
+                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
+                     <div>{ChangeQuestionFiveB()}</div>
                  </div>
                  {/* Vertical Line */}
                  <div style={{ width: '10px', display: 'flex', alignItems: 'center' }}>
@@ -409,9 +409,9 @@ return(
                  <div style={{ width: '45%', textAlign: 'center' }}>
                      <div>{ChangeQuestionTwoB()}</div>
                      <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                     <div>{ChangeQuestionOneFourB()}</div>
+                     <div>{ChangeQuestionFourB()}</div>
                      <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                     <div>{ChangeQuestionOneSixB()}</div>
+                     <div>{ChangeQuestionSixB()}</div>
                  </div>
              </div>
 
@@ -424,7 +424,7 @@ return(
                      display: 'inline-block', 
                      width: '60%' 
                  }}>
-                     {ChangeQuestionOneSevenB()}
+                     {ChangeQuestionSevenB()}
                  </div>
              </div>
              <ProgressBar now={progress} label={`${Math.round(progress)}%`} className="progressBar"></ProgressBar>
