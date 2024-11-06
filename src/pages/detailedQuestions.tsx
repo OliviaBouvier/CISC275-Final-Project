@@ -1,81 +1,49 @@
-import { ChangeQuestionOneDT, ChangeQuestionTwoDT, ChangeQuestionThreeDT, ChangeQuestionOneFourDT, ChangeQuestionOneFiveDT, ChangeQuestionOneSixDT, ChangeQuestionOneSevenDT} from "../components/DetailedQuestionRBOne";
 import React, { useState } from "react";
-import { ProgressBar } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
+import { DetailedRadioButtons } from "../components/DetailedQuestionRBOne";
 
-export function DetailedQuestions(){
+export function DetailedQuestions() {
+  let keyData = "";
+  const saveKeyData = "MYKEY";
+  const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
+  if (prevKey !== null) {
+    keyData = JSON.parse(prevKey);
+  }
+  const [key, setKey] = useState<string>(keyData); //for api key input
 
-    const [answer1, setAnswer1] = useState<string>("");
-    const [answer2, setAnswer2] = useState<string>("");
-    const [answer3, setAnswer3] = useState<string>("");
-    const [answer4, setAnswer4] = useState<string>("");
-    const [answer5, setAnswer5] = useState<string>("");
-    const [answer6, setAnswer6] = useState<string>("");
-    const [answer7, setAnswer7] = useState<string>("");
-    
-    const feedback=[answer1,answer2,answer3,answer4,answer5,answer6,answer7].filter(Boolean).length;
-    const progress=(feedback/7)*100;
-    const completed=progress===100;
+  //sets the local storage item to the api key the user inputed
+  function handleSubmit() {
+    localStorage.setItem(saveKeyData, JSON.stringify(key));
+    window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
+  }
 
-    return (<div>
-    <div> 
-    <h1>Detailed Questions</h1>
-    <p>
-        A more detailed version of the quiz containing more specific questions. There is no time limit.
-    </p>
-        </div>;
-    {/* Container for the questions and lines */}
-    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
-                {/* Left column of questions */}
-                <div style={{ width: '45%', textAlign: 'center' }}>
+  //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
+  function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
+    setKey(event.target.value);
+  }
 
-                    <div><ChangeQuestionOneDT setAnswer={setAnswer1}/></div>
-                    <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                    <div><ChangeQuestionThreeDT setAnswer={setAnswer3}/></div>
-                    <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                    <div><ChangeQuestionOneFiveDT setAnswer={setAnswer5}/></div>
-                </div>
-
-                {/* Vertical Line */}
-                <div style={{ width: '10px', display: 'flex', alignItems: 'center' }}>
-                    <div
-                        style={{
-                            height: '115%',
-                            borderLeft: '3px solid grey',
-                            marginLeft: '5px',
-                        }}
-                    ></div>
-                </div>
-
-                {/* Right column of questions */}
-                <div style={{ width: '45%', textAlign: 'center' }}>
-                    <div><ChangeQuestionTwoDT setAnswer={setAnswer2}/></div>
-                    <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                    <div><ChangeQuestionOneFourDT setAnswer={setAnswer4}/></div>
-                    <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                    <div><ChangeQuestionOneSixDT setAnswer={setAnswer6}/></div>
-                </div>
-            </div>
-
-            {/* Question 7 with surrounding box */}
-            <div style={{  display: 'inline-block', padding: '20px', textAlign: 'center' }}>
-                {/* Box with thicker bottom line */}
-                <div style={{ 
-                    border: '3px solid grey', 
-                    padding: '20px', 
-                    display: 'inline-block', 
-                    width: '60%' 
-                }}>
-                    <ChangeQuestionOneSevenDT setAnswer={setAnswer7}/>
-                </div>
-            </div>
-            <ProgressBar now={progress} label={`${Math.round(progress)}%`} className="progressBar"></ProgressBar>
-            <pre></pre>
-            {completed && (
-            <div className="feedback">
-            <h4>Quiz completed!</h4>
-            </div>
-      )}
-        </div>
-        
-    );
+  return (
+    <div>
+      <div>
+        <h1>Detailed Questions</h1>
+        <p>
+          A more detailed version of the quiz containing more specific
+          questions. There is no time limit.
+        </p>
+      </div>
+      <DetailedRadioButtons apiKey={key}/>
+      <Form>
+        <Form.Label>API Key:</Form.Label>
+        <Form.Control
+          type="password"
+          placeholder="Insert API Key Here"
+          onChange={changeKey}
+        ></Form.Control>
+        <br></br>
+        <Button className="Submit-Button" onClick={handleSubmit}>
+          Submit API key
+        </Button>
+      </Form>
+    </div>
+  );
 }

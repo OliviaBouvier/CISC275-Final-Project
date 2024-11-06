@@ -4,11 +4,11 @@ import { ChatGPT } from "./chatgpt";
 
 let chatGPTcontents: string = "";
 
-interface RadioButtonsProps{
+interface BasicRadioButtonsProps{
     apiKey: string;
 }
 
-export function RadioButtons({apiKey}: RadioButtonsProps){
+export function BasicRadioButtons({apiKey}: BasicRadioButtonsProps){
 const[contents, setContents] = useState<string>("");
 
 const [answer1, setAnswer1] = useState<string>("");
@@ -46,7 +46,6 @@ function ChangeQuestionOneB(): React.JSX.Element {
 
     const answers = [
         { id: "high school" },
-        { id: "Undergraduate" },
         { id: "Bachelor's degree" },
         { id: "Master's degree" },
         { id: "PhD" },
@@ -55,7 +54,7 @@ function ChangeQuestionOneB(): React.JSX.Element {
     return (
         <div>
             <div>
-                What is your current level of education?
+            What is your current level of education?
             </div>
             {answers.map((answersList) => (
                 <Form.Check
@@ -95,18 +94,16 @@ function ChangeQuestionTwoB(): React.JSX.Element {
     }
 
     const answersTwo = [
-        { id: "Technological field" },
-        { id: "Medicla field" },
-        { id: "Business field" },
-        { id: "Teaching field" },
-        { id: "Trades (Plumbing, HVAC, etc)" },
-        { id: "Other" }
+        { id: "technology" },
+        { id: "healthcare" },
+        { id: "construction" },
+        { id: "business" },
     ];
 
     return (
         <div>
             <div>
-                What career category would you most likely pursue?
+            What career category would you most likely pursue?
             </div>
             {answersTwo.map((answersListTwo) => (
                 <Form.Check
@@ -147,15 +144,16 @@ function ChangeQuestionThreeB(): React.JSX.Element {
     }
 
     const answersThree = [
-        { id: "Yes, within the past year" },
-        { id: "Yes, but a while ago" },
-        { id: "No" },
+        { id: "yes, within the past year" },
+        { id: "yes, but a while ago" },
+        { id: "no" },
+        { id: "I don't remember" },
     ];
 
     return (
         <div>
             <div>
-                Have you taken a career quiz before?
+            Have you taken a career quiz before?
             </div>
             {answersThree.map((answersListThree) => (
                 <Form.Check
@@ -176,7 +174,7 @@ function ChangeQuestionThreeB(): React.JSX.Element {
         </div>
     );
 }
-function ChangeQuestionOneFourB(): React.JSX.Element {
+function ChangeQuestionFourB(): React.JSX.Element {
     const [answerFour, setChangeAnswerFour] = useState<string>("Select an answer");
 
     function updateAnswerFour(event: React.ChangeEvent<HTMLInputElement>) {
@@ -227,7 +225,7 @@ function ChangeQuestionOneFourB(): React.JSX.Element {
         </div>
     );
 }
-function ChangeQuestionOneFiveB(): React.JSX.Element {
+function ChangeQuestionFiveB(): React.JSX.Element {
     const [answerFive, setChangeAnswerFive] = useState<string>("Select an answer");
 
     function updateAnswerFive(event: React.ChangeEvent<HTMLInputElement>) {
@@ -278,7 +276,7 @@ function ChangeQuestionOneFiveB(): React.JSX.Element {
         </div>
     );
 }
-function ChangeQuestionOneSixB(): React.JSX.Element {
+function ChangeQuestionSixB(): React.JSX.Element {
     const [answerSix, setChangeAnswerSix] = useState<string>("Select an answer");
 
     function updateAnswerSix(event: React.ChangeEvent<HTMLInputElement>) {
@@ -298,10 +296,10 @@ function ChangeQuestionOneSixB(): React.JSX.Element {
     }
 
     const answersSix = [
-        { id: "Structured" },
-        { id: "Open" },
-        { id: "Fast-Paced" },
-        { id: "Quiet/Focused" },
+        { id: "structure office setting" },
+        { id: "open workspace" },
+        { id: "fast-paced, dynamic environment" },
+        { id: "quiet space" },
     ];
 
     return (
@@ -328,7 +326,7 @@ function ChangeQuestionOneSixB(): React.JSX.Element {
         </div>
     );
 }
-function ChangeQuestionOneSevenB(): React.JSX.Element {
+function ChangeQuestionSevenB(): React.JSX.Element {
     const [answerSeven, setChangeAnswerSeven] = useState<string>("Select an answer");
 
     function updateAnswerSeven(event: React.ChangeEvent<HTMLInputElement>) {
@@ -390,11 +388,11 @@ return(
              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
                  {/* Left column of questions */}
                  <div style={{ width: '45%', textAlign: 'center' }}>
-                     <div>{ChangeQuestionOneB()}</div>
-                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
                      <div>{ChangeQuestionThreeB()}</div>
                      <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                     <div>{ChangeQuestionOneFiveB()}</div>
+                     <div>{ChangeQuestionOneB()}</div>
+                     <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
+                     <div>{ChangeQuestionFiveB()}</div>
                  </div>
                  {/* Vertical Line */}
                  <div style={{ width: '10px', display: 'flex', alignItems: 'center' }}>
@@ -411,9 +409,9 @@ return(
                  <div style={{ width: '45%', textAlign: 'center' }}>
                      <div>{ChangeQuestionTwoB()}</div>
                      <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                     <div>{ChangeQuestionOneFourB()}</div>
+                     <div>{ChangeQuestionFourB()}</div>
                      <hr style={{ borderTop: '3px solid black', margin: '20px 0' }} />
-                     <div>{ChangeQuestionOneSixB()}</div>
+                     <div>{ChangeQuestionSixB()}</div>
                  </div>
              </div>
 
@@ -426,7 +424,7 @@ return(
                      display: 'inline-block', 
                      width: '60%' 
                  }}>
-                     {ChangeQuestionOneSevenB()}
+                     {ChangeQuestionSevenB()}
                  </div>
              </div>
              <ProgressBar now={progress} label={`${Math.round(progress)}%`} className="progressBar"></ProgressBar>
