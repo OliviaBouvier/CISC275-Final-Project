@@ -7,7 +7,7 @@ export function Home(){
   return (
   <div className="home-container">
     <header className="App-header">
-      <h1 className="home-top-left-title">Career Helpi 🧳</h1>
+      <h1 className="home-top-left-title">Career Helpi</h1>
 
       <div className="main-content">
         <div className="quiz-sections">
@@ -19,7 +19,9 @@ export function Home(){
                 It includes basic questions to help you get started.
               </p>
             </div>
-            <BasicButton />
+            <div>
+              <BasicButton />
+            </div>
           </div>
 
           <div className="quiz-section">
