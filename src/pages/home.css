@@ -1,12 +1,12 @@
 .home-top-left-title{
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 25px;
+    left: 550px;
     font-size: 3em; 
     font-weight: bold;
-    color: #eadada; 
+    color: yellow; 
     margin: 0;
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Arial", Arial, Helvetica, sans-serif, sans-serif;
 }
   
 .home-container {
@@ -37,8 +37,8 @@
 .quiz-section {
     display: flex;
     align-items: center;
-    margin-top: 10px;
-    margin-bottom: 200px;
+    margin-top: -150px;
+    margin-bottom: 50px;
     justify-content: flex-start;
     width: 100%;
 }
@@ -46,10 +46,9 @@
 .quiz-description {
     max-width: 400px;
     margin-left: 50px;
-    margin-top: 110px;
+    margin-top: 100px;
     padding: 15px;
-    background-color: #f0f0f5;
-    border: 1px solid #ddd;
+    background-color: lightskyblue;
     border-radius: 8px;
 }
 
@@ -65,25 +64,44 @@
 
 .intro-box {
     max-width: 30%;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 60px;
+    margin-bottom: 150px;
     margin-left: 200px;
     margin-right: 50px;
     padding: 20px;
-    background-color: #f0f0f5;
-    border: 1 px solid #ccc;
-    border-radius: 8px;
+    background-color: lightskyblue;
+    /* border: 1 px solid #ccc; */
+    /* border-radius: 8px; */
     color: #333;
     line-height: 1.8;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .home-footer {
-    background-color: #a7adb3;
+    background-color: #212429;
     text-align: center;
     padding: 20px;
     position: relative;
     width: 100%;
     margin-top: 0px;
     box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    color: lightskyblue
+}
+
+.detailed-button {
+    margin-top: 500px;
+    margin-left: -280px;
+    font-size: medium;
+    font-weight: bold;
+    color: #212429;
+    background-color: yellow;
+}
+
+.basic-button {
+    margin-top: 410px;
+    margin-left: -400px;
+    font-size: medium;
+    font-weight: bold;
+    color: #212429;
+    background-color: yellow;
 }

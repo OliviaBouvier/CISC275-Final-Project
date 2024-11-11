@@ -8,7 +8,7 @@ export function BasicButton(){
         navigate("/basicQuestions");
     };
     return (
-        <Button onClick={handleClick}>
+        <Button className = "basic-button" onClick={handleClick}>
             Basic Questions
         </Button>
     );

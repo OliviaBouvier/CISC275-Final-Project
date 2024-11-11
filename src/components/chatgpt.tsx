@@ -8,15 +8,9 @@ interface ChatGPTProps {
 }
 
 export function ChatGPT({ apiKey, chatGPTcontents }: ChatGPTProps): React.JSX.Element {
-//    const [message, setMessage] = useState<string>("");
-//    const [contents, setContents] = useState<string>(chatGPTcontents);
     const [response, setResponse] = useState<string>("");
     const [loading, setLoading] = useState<boolean>(false);
     const [submitted, setSubmitted] = useState<boolean>(false);
-
-    // function updateMessage(event: React.ChangeEvent<HTMLInputElement>) {
-    //     setMessage(event.target.value);
-    // }
 
     async function handleChatGPTSubmission() {
         const openai = new OpenAI({apiKey, dangerouslyAllowBrowser: true});
@@ -52,13 +46,7 @@ export function ChatGPT({ apiKey, chatGPTcontents }: ChatGPTProps): React.JSX.El
 
     return (
         <div>
-            {/* <Form.Group>
-                <Form.Label>ChatGPT input: </Form.Label>
-                <Form.Control value={message} onChange={updateMessage} />
-            </Form.Group> */}
-            {/* <div>Submitting to ChatGPT: {ChatGPTContents()}</div> */}
             <Button onClick={() => {
-                    //setContents(message);
                     handleChatGPTSubmission();
                 }}
                 disabled ={loading}

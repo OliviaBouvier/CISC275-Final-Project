@@ -8,7 +8,7 @@ export function DetailedButton(){
         navigate("/detailedQuestions");
     };
     return (
-        <Button onClick={handleClick}>
+        <Button className = "detailed-button" onClick={handleClick}>
             Detailed Questions
         </Button>
     );

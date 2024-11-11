@@ -370,7 +370,6 @@ function ChangeQuestionSevenB(): React.JSX.Element {
                     checked={answerSeven === answersListSeven.id}
                 />
             ))}
-            {/* {chatGPTcontents += `I am naturally good at ${answerSeven}`} */}
             <div>
                 You have picked the answer: {answerSeven}
             </div>
