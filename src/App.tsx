@@ -10,6 +10,7 @@ import {Home} from "./pages/home";
 import {BasicQuestions} from "./pages/basicQuestions";
 import {DetailedQuestions} from "./pages/detailedQuestions";
 import {NavBarElements} from "./components/NavBar/NavBarElements"
+import {About} from "./pages/about";
 
 function App() {
   return (
@@ -31,6 +32,10 @@ function App() {
                 <Route
                     path="/detailedQuestions"
                     element={<DetailedQuestions />}
+                />
+                <Route
+                    path="/about" 
+                    element={<About />}
                 />
             </Routes>
         </Router>

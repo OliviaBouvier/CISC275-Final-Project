@@ -1,0 +1,10 @@
+import React from 'react';
+import './about.css';
+
+export const About = () => (
+    <div className="page-content">
+        <h1>About Us</h1>
+        <p>Our mission is to help individuals discover fulfilling careers through personalized assessments and guidance</p>
+        <h2>Meet the Team</h2>
+    </div>
+);
