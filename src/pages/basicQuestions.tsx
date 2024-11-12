@@ -1,5 +1,5 @@
 import { Button, Form } from "react-bootstrap";
-import { BasicRadioButtons } from "../components/BasicQuestionRBOne";
+import { BasicMultipleChoice } from "../components/BasicQuestionRBOne";
 import { useState } from "react";
 
 export function BasicQuestions() {
@@ -27,7 +27,7 @@ export function BasicQuestions() {
         <div>
         <h1>Basic Questions</h1>
         <p>A simplified version of the quiz containing only multiple choice questions. There is no time limit.</p>
-        <BasicRadioButtons apiKey={key}/>
+        <BasicMultipleChoice apiKey={key}/>
         <Form>
             <Form.Label>API Key:</Form.Label>
             <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>

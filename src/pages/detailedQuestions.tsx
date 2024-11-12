@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { DetailedRadioButtons } from "../components/DetailedQuestionRBOne";
+import { DetailedMultipleChoice } from "../components/DetailedQuestionRBOne";
 
 export function DetailedQuestions() {
   let keyData = "";
@@ -31,7 +31,7 @@ export function DetailedQuestions() {
           questions. There is no time limit.
         </p>
       </div>
-      <DetailedRadioButtons apiKey={key}/>
+      <DetailedMultipleChoice apiKey={key}/>
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control
