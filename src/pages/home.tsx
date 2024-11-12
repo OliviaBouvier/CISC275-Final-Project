@@ -19,9 +19,7 @@ export function Home(){
                 It includes basic questions to help you get started.
               </p>
             </div>
-            <div>
               <BasicButton />
-            </div>
           </div>
 
           <div className="quiz-section">
