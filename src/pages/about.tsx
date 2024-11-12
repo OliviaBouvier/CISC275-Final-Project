@@ -9,6 +9,8 @@ export const About = () => (
         <div className="about-body">
         <p>Our mission is to help individuals discover fulfilling careers through personalized assessments and guidance</p>
         <h2>Meet the Team</h2>
+        <div className="team-box">
         </div>
     </div>
+</div>
 );
