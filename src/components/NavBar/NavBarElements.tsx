@@ -7,6 +7,7 @@ export function NavBarElements(){
     <pre><span><Link to="/starter-helpi/" className='nav-link'>Home</Link></span></pre>
     <pre><span><Link to="/basicQuestions" className='nav-link'>Basic Questions</Link></span></pre>
     <pre><span><Link to="/detailedQuestions" className='nav-link'>Detailed Questions</Link></span></pre>
+    <pre><span><Link to="/about" className="nav-link">About</Link></span></pre>
   </nav>
  )
 }
