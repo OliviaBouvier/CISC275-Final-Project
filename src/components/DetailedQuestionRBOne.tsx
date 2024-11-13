@@ -336,7 +336,7 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         { id: "Teacher" },
         { id: "IT" },
         { id: "Chemical scientist" },
-        { id: "archaeologist" },
+        { id: "Archaeologist" },
       ];
 
       return (
@@ -364,30 +364,30 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         setChangeAnswerEight(event.target.value);
         setAnswer8(event.target.value);
   
-        if (chatGPTcontents.includes("I would say my work ethic is")) {
+        if (chatGPTcontents.includes("What is your optimal yearly salary?")) {
           chatGPTcontents = chatGPTcontents.replace(
-            /On a scale of 1 to 5, I would say my work ethic is .+?(\. |$)/,
-            `On a scale of 1 to 5, I would say my work ethic is ${newAnswer}. `
+            /What is your optimal yearly salary? .+?(\. |$)/,
+            `What is your optimal yearly salary? ${newAnswer}. `
           );
         } else {
-          chatGPTcontents += `On a scale of 1 to 5, I would say my work ethic is ${newAnswer}. `;
+          chatGPTcontents += `What is your optimal yearly salary? ${newAnswer}. `;
         }
         setContents(chatGPTcontents);
       }
   
       const answersEight = [
-        { id: "Five (Great)" },
-        { id: "Four" },
-        { id: "Three (Neutral)" },
-        { id: "Two " },
-        { id: "One (Not great)" },
+        { id: "120k+" },
+        { id: "100-120k" },
+        { id: "80-100k" },
+        { id: "60-80k" },
+        { id: "40-60k" },
+        { id: "Below 40k" }
       ];
   
       return (
         <div>
           <div>
-            One being the least and five being the best, how good is your work
-            ethic?
+          What is your optimal yearly salary?
           </div>
           <select value={answerEight} onChange={updateAnswer}>
                   <option disabled></option>
@@ -409,30 +409,29 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         setChangeAnswerNine(event.target.value);
         setAnswer9(event.target.value);
   
-        if (chatGPTcontents.includes("I would say my work ethic is")) {
+        if (chatGPTcontents.includes("Do you want to make a positive impact at your job?")) {
           chatGPTcontents = chatGPTcontents.replace(
-            /On a scale of 1 to 5, I would say my work ethic is .+?(\. |$)/,
-            `On a scale of 1 to 5, I would say my work ethic is ${newAnswer}. `
+            /Do you want to make a positive impact at your job? .+?(\. |$)/,
+            `Do you want to make a positive impact at your job? ${newAnswer}. `
           );
         } else {
-          chatGPTcontents += `On a scale of 1 to 5, I would say my work ethic is ${newAnswer}. `;
+          chatGPTcontents += `Do you want to make a positive impact at your job? ${newAnswer}. `;
         }
         setContents(chatGPTcontents);
       }
   
       const answersNine = [
-        { id: "Five (Great)" },
-        { id: "Four" },
-        { id: "Three (Neutral)" },
-        { id: "Two " },
-        { id: "One (Not great)" },
+        { id: "Yes, I want to make change" },
+        { id: "Yes, but its not necessary" },
+        { id: "No, but I can if I need to" },
+        { id: "No, I prefer to work alone" },
+        { id: "No" }
       ];
   
       return (
         <div>
           <div>
-            One being the least and five being the best, how good is your work
-            ethic?
+          Do you want to make a positive impact at your job?
           </div>
           <select value={answerNine} onChange={updateAnswer}>
                   <option disabled></option>
@@ -454,30 +453,27 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         setChangeAnswerTen(event.target.value);
         setAnswer10(event.target.value);
   
-        if (chatGPTcontents.includes("I would say my work ethic is")) {
+        if (chatGPTcontents.includes("Do you like working more with people, computers, or numbers more?")) {
           chatGPTcontents = chatGPTcontents.replace(
-            /On a scale of 1 to 5, I would say my work ethic is .+?(\. |$)/,
-            `On a scale of 1 to 5, I would say my work ethic is ${newAnswer}. `
+            /Do you like working more with people, computers, or numbers more? .+?(\. |$)/,
+            `Do you like working more with people, computers, or numbers more? ${newAnswer}. `
           );
         } else {
-          chatGPTcontents += `On a scale of 1 to 5, I would say my work ethic is ${newAnswer}. `;
+          chatGPTcontents += `Do you like working more with people, computers, or numbers more? ${newAnswer}. `;
         }
         setContents(chatGPTcontents);
       }
   
       const answersTen = [
-        { id: "Five (Great)" },
-        { id: "Four" },
-        { id: "Three (Neutral)" },
-        { id: "Two " },
-        { id: "One (Not great)" },
+        { id: "People" },
+        { id: "Computers" },
+        { id: "Numbers" }
       ];
   
       return (
         <div>
           <div>
-            One being the least and five being the best, how good is your work
-            ethic?
+          Do you like working more with people, computers, or numbers more?
           </div>
           <select value={answerTen} onChange={updateAnswer}>
                   <option disabled></option>
@@ -499,30 +495,29 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         setChangeAnswerEleven(event.target.value);
         setAnswer11(event.target.value);
   
-        if (chatGPTcontents.includes("I would say my work ethic is")) {
+        if (chatGPTcontents.includes("On a scale of one to five do you enjoy teaching others?")) {
           chatGPTcontents = chatGPTcontents.replace(
-            /On a scale of 1 to 5, I would say my work ethic is .+?(\. |$)/,
-            `On a scale of 1 to 5, I would say my work ethic is ${newAnswer}. `
+            /On a scale of one to five do you enjoy teaching others? .+?(\. |$)/,
+            `On a scale of one to five do you enjoy teaching others? ${newAnswer}. `
           );
         } else {
-          chatGPTcontents += `On a scale of 1 to 5, I would say my work ethic is ${newAnswer}. `;
+          chatGPTcontents += `On a scale of one to five, do you enjoy teaching others? ${newAnswer}. `;
         }
         setContents(chatGPTcontents);
       }
   
       const answersEleven = [
-        { id: "Five (Great)" },
+        { id: "Five (Most)" },
         { id: "Four" },
         { id: "Three (Neutral)" },
         { id: "Two " },
-        { id: "One (Not great)" },
+        { id: "One (Least)" },
       ];
   
       return (
         <div>
           <div>
-            One being the least and five being the best, how good is your work
-            ethic?
+          On a scale of one to five do you enjoy teaching others?
           </div>
           <select value={answerEleven} onChange={updateAnswer}>
                   <option disabled></option>
@@ -544,13 +539,13 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         setChangeAnswerTwelve(event.target.value);
         setAnswer12(event.target.value);
   
-        if (chatGPTcontents.includes("I would say my work ethic is")) {
+        if (chatGPTcontents.includes("On a scale of one to five, how would you do as a leader?")) {
           chatGPTcontents = chatGPTcontents.replace(
-            /On a scale of 1 to 5, I would say my work ethic is .+?(\. |$)/,
-            `On a scale of 1 to 5, I would say my work ethic is ${newAnswer}. `
+            /On a scale of one to five how would you do as a leader? .+?(\. |$)/,
+            `On a scale of one to five how would you do as a leader? ${newAnswer}. `
           );
         } else {
-          chatGPTcontents += `On a scale of 1 to 5, I would say my work ethic is ${newAnswer}. `;
+          chatGPTcontents += `On a scale of one to five how would you do as a leader? ${newAnswer}. `;
         }
         setContents(chatGPTcontents);
       }
@@ -566,8 +561,7 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
       return (
         <div>
           <div>
-            One being the least and five being the best, how good is your work
-            ethic?
+          On a scale of one to five how would you do as a leader?
           </div>
           <select value={answerTwelve} onChange={updateAnswer}>
                   <option disabled></option>
@@ -589,30 +583,29 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         setChangeAnswerThirteen(event.target.value);
         setAnswer13(event.target.value);
   
-        if (chatGPTcontents.includes("I would say my work ethic is")) {
+        if (chatGPTcontents.includes("On a scale of one to five, how much do you like taking risks?")) {
           chatGPTcontents = chatGPTcontents.replace(
-            /On a scale of 1 to 5, I would say my work ethic is .+?(\. |$)/,
-            `On a scale of 1 to 5, I would say my work ethic is ${newAnswer}. `
+            /On a scale of one to five, how much do you like taking risks? .+?(\. |$)/,
+            `On a scale of one to five, how much do you like taking risks? ${newAnswer}. `
           );
         } else {
-          chatGPTcontents += `On a scale of 1 to 5, I would say my work ethic is ${newAnswer}. `;
+          chatGPTcontents += `On a scale of one to five, how much do you like taking risks? ${newAnswer}. `;
         }
         setContents(chatGPTcontents);
       }
   
       const answersThirteen = [
-        { id: "Five (Great)" },
+        { id: "Five (Most)" },
         { id: "Four" },
         { id: "Three (Neutral)" },
         { id: "Two " },
-        { id: "One (Not great)" },
+        { id: "One (Least)" },
       ];
   
       return (
         <div>
           <div>
-            One being the least and five being the best, how good is your work
-            ethic?
+          On a scale of one to five, how much do you like taking risks?
           </div>
           <select value={answerThirteen} onChange={updateAnswer}>
                   <option disabled></option>
@@ -634,30 +627,29 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         setChangeAnswerFourteen(event.target.value);
         setAnswer14(event.target.value);
   
-        if (chatGPTcontents.includes("I would say my work ethic is")) {
+        if (chatGPTcontents.includes("On a scale of one to five, how important is work-life balance?")) {
           chatGPTcontents = chatGPTcontents.replace(
-            /On a scale of 1 to 5, I would say my work ethic is .+?(\. |$)/,
-            `On a scale of 1 to 5, I would say my work ethic is ${newAnswer}. `
+            /On a scale of one to five, how important is work-life balance? .+?(\. |$)/,
+            `On a scale of one to five, how important is work-life balance? ${newAnswer}. `
           );
         } else {
-          chatGPTcontents += `On a scale of 1 to 5, I would say my work ethic is ${newAnswer}. `;
+          chatGPTcontents += `On a scale of one to five, how important is work-life balance? ${newAnswer}. `;
         }
         setContents(chatGPTcontents);
       }
   
       const answersFourteen = [
-        { id: "Five (Great)" },
+        { id: "Five (Most)" },
         { id: "Four" },
         { id: "Three (Neutral)" },
         { id: "Two " },
-        { id: "One (Not great)" },
+        { id: "One (Least)" },
       ];
   
       return (
         <div>
           <div>
-            One being the least and five being the best, how good is your work
-            ethic?
+          On a scale of one to five, how important is work-life balance?
           </div>
           <select value={answerFourteen} onChange={updateAnswer}>
                   <option disabled></option>
