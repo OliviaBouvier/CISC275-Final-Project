@@ -37,7 +37,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (105 ms)
+  ✕ renders learn react link (97 ms)
 
   ● renders learn react link
 
@@ -59,7 +59,7 @@ FAIL src/App.test.tsx
               [36m<span>[39m
                 [36m<a[39m
                   [33mclass[39m=[32m"nav-link"[39m
-                  [33mhref[39m=[32m"/starter-helpi/"[39m
+                  [33mhref[39m=[32m"#/starter-helpi/"[39m
                 [36m>[39m
                   [0mHome[0m
                 [36m</a>[39m
@@ -69,7 +69,7 @@ FAIL src/App.test.tsx
               [36m<span>[39m
                 [36m<a[39m
                   [33mclass[39m=[32m"nav-link"[39m
-                  [33mhref[39m=[32m"/basicQuestions"[39m
+                  [33mhref[39m=[32m"#/basicQuestions"[39m
                 [36m>[39m
                   [0mBasic Questions[0m
                 [36m</a>[39m
@@ -79,7 +79,7 @@ FAIL src/App.test.tsx
               [36m<span>[39m
                 [36m<a[39m
                   [33mclass[39m=[32m"nav-link"[39m
-                  [33mhref[39m=[32m"/detailedQuestions"[39m
+                  [33mhref[39m=[32m"#/detailedQuestions"[39m
                 [36m>[39m
                   [0mDetailed Questions[0m
                 [36m</a>[39m
@@ -89,7 +89,7 @@ FAIL src/App.test.tsx
               [36m<span>[39m
                 [36m<a[39m
                   [33mclass[39m=[32m"nav-link"[39m
-                  [33mhref[39m=[32m"/about"[39m
+                  [33mhref[39m=[32m"#/about"[39m
                 [36m>[39m
                   [0mAbout[0m
                 [36m</a>[39m
@@ -155,5 +155,5 @@ All files                   |    1.19 |        0 |     1.8 |     1.2 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.585 s
+Time:        3.85 s
 Ran all test suites.
