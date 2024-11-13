@@ -37,7 +37,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (99 ms)
+  ✕ renders learn react link (160 ms)
 
   ● renders learn react link
 
@@ -140,7 +140,7 @@ All files                   |    1.22 |        0 |    1.86 |    1.22 |
   reportWebVitals.ts        |       0 |        0 |       0 |       0 | 3-10              
  src/components             |    0.53 |        0 |       0 |    0.53 |                   
   BasicQuestionRBOne.tsx    |    0.57 |        0 |       0 |    0.57 | 12-638            
-  DetailedQuestionRBOne.tsx |    0.57 |        0 |       0 |    0.57 | 12-679            
+  DetailedQuestionRBOne.tsx |    0.57 |        0 |       0 |    0.57 | 12-671            
   basicButton.tsx           |       0 |      100 |       0 |       0 | 5-10              
   chatgpt.tsx               |       0 |        0 |       0 |       0 | 11-50             
   detailedButton.tsx        |       0 |      100 |       0 |       0 | 5-10              
@@ -155,5 +155,5 @@ All files                   |    1.22 |        0 |    1.86 |    1.22 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.697 s
+Time:        3.647 s
 Ran all test suites.
