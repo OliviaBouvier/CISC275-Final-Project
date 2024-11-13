@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/starter-helpi/static/css/main.c6c1f53b.css",
-    "main.js": "/starter-helpi/static/js/main.c6808185.js",
+    "main.js": "/starter-helpi/static/js/main.3f88f632.js",
     "static/js/453.bad6c33a.chunk.js": "/starter-helpi/static/js/453.bad6c33a.chunk.js",
     "static/media/starry_sky.jpg": "/starter-helpi/static/media/starry_sky.878bcde962da7bcbc7df.jpg",
     "index.html": "/starter-helpi/index.html",
     "main.c6c1f53b.css.map": "/starter-helpi/static/css/main.c6c1f53b.css.map",
-    "main.c6808185.js.map": "/starter-helpi/static/js/main.c6808185.js.map",
+    "main.3f88f632.js.map": "/starter-helpi/static/js/main.3f88f632.js.map",
     "453.bad6c33a.chunk.js.map": "/starter-helpi/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c6c1f53b.css",
-    "static/js/main.c6808185.js"
+    "static/js/main.3f88f632.js"
   ]
 }
