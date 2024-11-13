@@ -11,6 +11,7 @@ export function Home(){
 
       <div className="main-content">
         <div className="quiz-sections">
+
           <div className="quiz-section">
             <div className = "quiz-description">
               <h2 className="description-header-text">Option 1: Basic Questions</h2>
@@ -19,7 +20,9 @@ export function Home(){
                 It includes basic questions to help you get started.
               </p>
             </div>
+            <div>
               <BasicButton />
+            </div>
           </div>
 
           <div className="quiz-section">
