@@ -93,10 +93,10 @@ function ChangeQuestionTwoB(): React.JSX.Element {
     }
 
     const answersTwo = [
-        { id: "technology" },
-        { id: "healthcare" },
-        { id: "construction" },
-        { id: "business" },
+        { id: "Technological" },
+        { id: "Healthcare" },
+        { id: "Construction" },
+        { id: "Business" },
     ];
 
     return (
@@ -138,9 +138,9 @@ function ChangeQuestionThreeB(): React.JSX.Element {
     }
 
     const answersThree = [
-        { id: "yes, within the past year" },
-        { id: "yes, but a while ago" },
-        { id: "no" },
+        { id: "Yes, within the past year" },
+        { id: "Yes, but a while ago" },
+        { id: "No" },
         { id: "I don't remember" },
     ];
 
@@ -275,10 +275,10 @@ function ChangeQuestionSixB(): React.JSX.Element {
     }
 
     const answersSix = [
-        { id: "structure office setting" },
-        { id: "open workspace" },
-        { id: "fast-paced, dynamic environment" },
-        { id: "quiet space" },
+        { id: "Structure office setting" },
+        { id: "Open workspace" },
+        { id: "Fast-paced, dynamic environment" },
+        { id: "Quiet space" },
     ];
 
     return (
@@ -353,7 +353,7 @@ function ChangeQuestionEightB(): React.JSX.Element {
         setChangeAnswerEight(newAnswer);
         setAnswer8(newAnswer);
 
-        if (chatGPTcontents.includes("My level of education is")) {
+        if (chatGPTcontents.includes("Who do you like working with more?")) {
             chatGPTcontents = chatGPTcontents.replace(
                 /Who do you like working with more? .+?(\. |$)/, 
                 `Who do you like working with more? ${newAnswer}. `
@@ -394,27 +394,25 @@ function ChangeQuestionNineB(): React.JSX.Element {
         setChangeAnswerNine(newAnswer);
         setAnswer9(newAnswer);
 
-        if (chatGPTcontents.includes("My level of education is")) {
+        if (chatGPTcontents.includes("Do you prefer working indoors or outdoors?")) {
             chatGPTcontents = chatGPTcontents.replace(
-                /My level of education is .+?(\. |$)/, 
-                `My level of education is ${newAnswer}. `
+                /Do you prefer working indoors or outdoors? .+?(\. |$)/, 
+                `Do you prefer working indoors or outdoors? ${newAnswer}. `
             );
         } else {
-            chatGPTcontents += `My level of education is ${newAnswer}. `;
+            chatGPTcontents += `Do you prefer working indoors or outdoors? ${newAnswer}. `;
         }
         setContents(chatGPTcontents);
     }
     const answersNine = [
-        { id: "high school" },
-        { id: "Bachelor's degree" },
-        { id: "Master's degree" },
-        { id: "PhD" },
+        { id: "Indoors" },
+        { id: "Outdoors" },
     ];
 
     return (
         <div>
             <div>
-            What is your current level of education?
+            Do you prefer working indoors or outdoors?
             </div>
             <select value={answerNine} onChange={updateAnswer}>
                 <option disabled></option>
@@ -436,27 +434,25 @@ function ChangeQuestionTenB(): React.JSX.Element {
         setChangeAnswerTen(newAnswer);
         setAnswer10(newAnswer);
 
-        if (chatGPTcontents.includes("My level of education is")) {
+        if (chatGPTcontents.includes("Do you like solving problems?")) {
             chatGPTcontents = chatGPTcontents.replace(
-                /My level of education is .+?(\. |$)/, 
-                `My level of education is ${newAnswer}. `
+                /Do you like solving problems? .+?(\. |$)/, 
+                `Do you like solving problems? ${newAnswer}. `
             );
         } else {
-            chatGPTcontents += `My level of education is ${newAnswer}. `;
+            chatGPTcontents += `Do you like solving problems? ${newAnswer}. `;
         }
         setContents(chatGPTcontents);
     }
     const answersTen = [
-        { id: "high school" },
-        { id: "Bachelor's degree" },
-        { id: "Master's degree" },
-        { id: "PhD" },
+        { id: "Yes, " },
+        { id: "No" },
     ];
 
     return (
         <div>
             <div>
-            What is your current level of education?
+            Do you like solving problems?
             </div>
             <select value={answerTen} onChange={updateAnswer}>
                 <option disabled></option>
@@ -478,27 +474,25 @@ function ChangeQuestionElevenB(): React.JSX.Element {
         setChangeAnswerEleven(newAnswer);
         setAnswer11(newAnswer);
 
-        if (chatGPTcontents.includes("My level of education is")) {
+        if (chatGPTcontents.includes("Does job salary matter to you?")) {
             chatGPTcontents = chatGPTcontents.replace(
-                /My level of education is .+?(\. |$)/, 
-                `My level of education is ${newAnswer}. `
+                /Does job salary matter to you? .+?(\. |$)/, 
+                `Does job salary matter to you? ${newAnswer}. `
             );
         } else {
-            chatGPTcontents += `My level of education is ${newAnswer}. `;
+            chatGPTcontents += `Does job salary matter to you? ${newAnswer}. `;
         }
         setContents(chatGPTcontents);
     }
     const answersEleven = [
-        { id: "high school" },
-        { id: "Bachelor's degree" },
-        { id: "Master's degree" },
-        { id: "PhD" },
+        { id: "Yes" },
+        { id: "No" },
     ];
 
     return (
         <div>
             <div>
-            What is your current level of education?
+            Does job salary matter to you?
             </div>
             <select value={answerEleven} onChange={updateAnswer}>
                 <option disabled></option>
@@ -520,27 +514,26 @@ function ChangeQuestionTwelveB(): React.JSX.Element {
         setChangeAnswerTwelve(newAnswer);
         setAnswer12(newAnswer);
 
-        if (chatGPTcontents.includes("My level of education is")) {
+        if (chatGPTcontents.includes("Do you want to travel for your job?")) {
             chatGPTcontents = chatGPTcontents.replace(
-                /My level of education is .+?(\. |$)/, 
-                `My level of education is ${newAnswer}. `
+                /Do you want to travel for your job? .+?(\. |$)/, 
+                `Do you want to travel for your job? ${newAnswer}. `
             );
         } else {
-            chatGPTcontents += `My level of education is ${newAnswer}. `;
+            chatGPTcontents += `Do you want to travel for your job? ${newAnswer}. `;
         }
         setContents(chatGPTcontents);
     }
     const answersTwelve = [
-        { id: "high school" },
-        { id: "Bachelor's degree" },
-        { id: "Master's degree" },
-        { id: "PhD" },
+        { id: "Yes" },
+        { id: "No" },
+        { id: "It doesn't matter if I do or don't travel" }
     ];
 
     return (
         <div>
             <div>
-            What is your current level of education?
+            Do you want to travel for your job?
             </div>
             <select value={answerTwelve} onChange={updateAnswer}>
                 <option disabled></option>
@@ -562,27 +555,26 @@ function ChangeQuestionThirteenB(): React.JSX.Element {
         setChangeAnswerThirteen(newAnswer);
         setAnswer13(newAnswer);
 
-        if (chatGPTcontents.includes("My level of education is")) {
+        if (chatGPTcontents.includes("Are you more hands on or theoretical?")) {
             chatGPTcontents = chatGPTcontents.replace(
-                /My level of education is .+?(\. |$)/, 
-                `My level of education is ${newAnswer}. `
+                /Are you more hands on or theoretical? .+?(\. |$)/, 
+                `Are you more hands on or theoretical? ${newAnswer}. `
             );
         } else {
-            chatGPTcontents += `My level of education is ${newAnswer}. `;
+            chatGPTcontents += `Are you more hands on or theoretical? ${newAnswer}. `;
         }
         setContents(chatGPTcontents);
     }
     const answersThirteen = [
-        { id: "high school" },
-        { id: "Bachelor's degree" },
-        { id: "Master's degree" },
-        { id: "PhD" },
+        { id: "Hands on" },
+        { id: "Theoretical" },
+        { id: "Both" }
     ];
 
     return (
         <div>
             <div>
-            What is your current level of education?
+            Are you more hands on or theoretical?
             </div>
             <select value={answerThirteen} onChange={updateAnswer}>
                 <option disabled></option>
@@ -604,27 +596,27 @@ function ChangeQuestionFourteenB(): React.JSX.Element {
         setChangeAnswerFourteen(newAnswer);
         setAnswer14(newAnswer);
 
-        if (chatGPTcontents.includes("My level of education is")) {
+        if (chatGPTcontents.includes("What is your ideal work schedule?")) {
             chatGPTcontents = chatGPTcontents.replace(
-                /My level of education is .+?(\. |$)/, 
-                `My level of education is ${newAnswer}. `
+                /What is your ideal work schedule? .+?(\. |$)/, 
+                `What is your ideal work schedule? ${newAnswer}. `
             );
         } else {
-            chatGPTcontents += `My level of education is ${newAnswer}. `;
+            chatGPTcontents += `What is your ideal work schedule? ${newAnswer}. `;
         }
         setContents(chatGPTcontents);
     }
     const answersFourteen = [
-        { id: "high school" },
-        { id: "Bachelor's degree" },
-        { id: "Master's degree" },
-        { id: "PhD" },
+        { id: "9-5" },
+        { id: "8-4" },
+        { id: "Work from home" },
+        { id: "asynchronous" },
     ];
 
     return (
         <div>
             <div>
-            What is your current level of education?
+            What is your ideal work schedule?
             </div>
             <select value={answerFourteen} onChange={updateAnswer}>
                 <option disabled></option>
