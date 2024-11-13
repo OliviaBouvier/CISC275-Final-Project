@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ProgressBar } from "react-bootstrap";
 import { ChatGPT } from "./chatgpt";
+import confetti from "canvas-confetti";
 
 let chatGPTcontents: string = "";
 
@@ -29,6 +30,14 @@ const[contents, setContents] = useState<string>("");
     const feedback=[answer1,answer2,answer3,answer4,answer5,answer6,answer7,answer8,answer9,answer10,answer11,answer12,answer13,answer14].filter(Boolean).length;
     const progress=(feedback/14)*100;
     const completed=progress===100;
+
+    const launch=()=>{confetti({particleCount:750,spread:150,origin:{y:0.6}})}
+    useEffect(()=>{
+        if(completed){
+            launch();
+        }
+    }, [completed]);
+
 
 
 function ChangeQuestionOneB(): React.JSX.Element {
