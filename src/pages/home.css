@@ -4,7 +4,7 @@
     left: 550px; */
     font-size: 3em; 
     font-weight: bold;
-    color: yellow; 
+    color: white; 
     margin: 0;
     font-family: "Arial", Arial, Helvetica, sans-serif, sans-serif;
 }
@@ -91,7 +91,7 @@
     font-size: medium;
     font-weight: bold;
     color: #212429;
-    background-color: yellow;
+    background-color: white;
     z-index: 1;
     padding: 10px 20px;
     border: none;
