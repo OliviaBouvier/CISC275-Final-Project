@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {Navbar } from 'react-bootstrap';
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Routes,
     Route
 } from "react-router-dom";
