@@ -46,7 +46,7 @@ export function ChatGPT({ apiKey, chatGPTcontents }: ChatGPTProps): React.JSX.El
 
     return (
         <div>
-            <Button onClick={() => {
+            <Button style={{backgroundColor:"white", color:"black"}}onClick={() => {
                     handleChatGPTSubmission();
                 }}
                 disabled ={loading}

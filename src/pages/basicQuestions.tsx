@@ -1,6 +1,7 @@
 import { Button, Form } from "react-bootstrap";
 import { BasicMultipleChoice } from "../components/BasicQuestionRBOne";
 import { useState } from "react";
+import "./basicQuestions.css";
 
 export function BasicQuestions() {
     let keyData = "";
@@ -21,19 +22,22 @@ export function BasicQuestions() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value);
   }
-    
     return (
             
         <div>
-        <h1>Basic Questions</h1>
-        <p>A simplified version of the quiz containing only multiple choice questions. There is no time limit.</p>
+          <div className="background-image">
+        <h1 className="page-title">Basic Questions</h1>
+        <p className="page-subtitle">A simplified version of the quiz containing only multiple choice questions. There is no time limit.</p>
         <BasicMultipleChoice apiKey={key}/>
+        </div>
+        <div className="page-footer">
         <Form>
-            <Form.Label>API Key:</Form.Label>
-            <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+            <Form.Label style={{color:"white"}}>API Key:</Form.Label>
+            <Form.Control style={{backgroundColor:"black",color:"white"}}type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
             <br></br>
-            <Button className="Submit-Button" onClick={handleSubmit}>Submit API key</Button>
+            <Button className="apikey-submit" onClick={handleSubmit}>Submit API key</Button>
         </Form>
+        </div>
         </div>
     );
 }
