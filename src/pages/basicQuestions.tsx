@@ -33,7 +33,7 @@ export function BasicQuestions() {
         <div className="page-footer">
         <Form>
             <Form.Label style={{color:"white"}}>API Key:</Form.Label>
-            <Form.Control style={{backgroundColor:"black",color:"white"}}type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+            <Form.Control style={{backgroundColor:"black",color:"white"}} type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
             <br></br>
             <Button className="apikey-submit" onClick={handleSubmit}>Submit API key</Button>
         </Form>

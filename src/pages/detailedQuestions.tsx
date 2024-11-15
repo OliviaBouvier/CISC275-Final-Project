@@ -38,7 +38,7 @@ export function DetailedQuestions() {
       <div className="page-footer">
       <Form>
         <Form.Label style={{color:"white"}}>API Key:</Form.Label>
-        <Form.Control
+        <Form.Control style={{backgroundColor:"black",color:"white"}}
           type="password"
           placeholder="Insert API Key Here"
           onChange={changeKey}
