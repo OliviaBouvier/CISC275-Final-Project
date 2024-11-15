@@ -654,19 +654,19 @@ return (<div>
     
       {/* Left column of questions */}
       <div style={{ width: "45%", textAlign: "center" }}>
-        <div>{ChangeQuestionThreeB()}</div>
+        <div style={{color:"white"}}>{ChangeQuestionThreeB()}</div>
         <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-        <div>{ChangeQuestionOneB()}</div>
+        <div style={{color:"white"}}>{ChangeQuestionOneB()}</div>
         <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-        <div>{ChangeQuestionFiveB()}</div>
+        <div style={{color:"white"}}>{ChangeQuestionFiveB()}</div>
         <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-        <div>{ChangeQuestionSevenB()}</div>
+        <div style={{color:"white"}}>{ChangeQuestionSevenB()}</div>
+        <hr style={{ borderTop: "3px solid black", margin: "20px 0"}} />
+        <div style={{color:"white"}}>{ChangeQuestionNineB()}</div>
         <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-        <div>{ChangeQuestionNineB()}</div>
+        <div style={{color:"white"}}>{ChangeQuestionElevenB()}</div>
         <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-        <div>{ChangeQuestionElevenB()}</div>
-        <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-        <div>{ChangeQuestionThirteenB()}</div>
+        <div style={{color:"white"}}>{ChangeQuestionThirteenB()}</div>
       </div>
 
       {/* Vertical Line */}
@@ -682,19 +682,19 @@ return (<div>
 
       {/* Right column of questions */}
       <div style={{ width: "45%", textAlign: "center" }}>
-        <div>{ChangeQuestionTwoB()}</div>
+        <div style={{color:"white"}}>{ChangeQuestionTwoB()}</div>
         <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-        <div>{ChangeQuestionFourB()}</div>
+        <div style={{color:"white"}}>{ChangeQuestionFourB()}</div>
         <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-        <div>{ChangeQuestionSixB()}</div>
+        <div style={{color:"white"}}>{ChangeQuestionSixB()}</div>
         <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-        <div>{ChangeQuestionEightB()}</div>
+        <div style={{color:"white"}}>{ChangeQuestionEightB()}</div>
         <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-        <div>{ChangeQuestionTenB()}</div>
+        <div style={{color:"white"}}>{ChangeQuestionTenB()}</div>
         <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-        <div>{ChangeQuestionTwelveB()}</div>
+        <div style={{color:"white"}}>{ChangeQuestionTwelveB()}</div>
         <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-        <div>{ChangeQuestionFourteenB()}</div>
+        <div style={{color:"white"}}>{ChangeQuestionFourteenB()}</div>
       </div>
     </div>
     <div
@@ -713,7 +713,7 @@ return (<div>
     <pre></pre>
     {completed && (
       <div className="feedback">
-        <h4>Quiz completed!</h4>
+        <h4 style={{color:"white"}}>Quiz completed!</h4>
       </div>
     )}
     <ChatGPT apiKey = {apiKey} chatGPTcontents={ChatGPTContents()}/>

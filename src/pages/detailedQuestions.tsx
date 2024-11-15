@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { DetailedMultipleChoice } from "../components/DetailedQuestionRBOne";
+import "./detailedQuestions.css";
 
 export function DetailedQuestions() {
   let keyData = "";
@@ -24,26 +25,30 @@ export function DetailedQuestions() {
 
   return (
     <div>
+      <div className="background-image">
       <div>
-        <h1>Detailed Questions</h1>
-        <p>
+        <h1 className="page-title">Detailed Questions</h1>
+        <p className="page-subtitle">
           A more detailed version of the quiz containing more specific
           questions. There is no time limit.
         </p>
       </div>
       <DetailedMultipleChoice apiKey={key}/>
+      </div>
+      <div className="page-footer">
       <Form>
-        <Form.Label>API Key:</Form.Label>
+        <Form.Label style={{color:"white"}}>API Key:</Form.Label>
         <Form.Control
           type="password"
           placeholder="Insert API Key Here"
           onChange={changeKey}
         ></Form.Control>
         <br></br>
-        <Button className="Submit-Button" onClick={handleSubmit}>
+        <Button className="apikey-submit" onClick={handleSubmit}>
           Submit API key
         </Button>
       </Form>
+      </div>
     </div>
   );
 }
