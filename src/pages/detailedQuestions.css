@@ -1,0 +1,25 @@
+.background-image{
+    background-image: url('../../public/starry_sky.jpg');
+}
+.page-title{
+    font-size: 3em; 
+    color: white; 
+    margin: 0;
+    font-family: "Arial", Arial, Helvetica, sans-serif, sans-serif;
+}
+
+.page-subtitle{
+    color: white; 
+    margin: 0;
+    font-family: "Arial", Arial, Helvetica, sans-serif, sans-serif;
+}
+
+.page-footer{
+    background-color: black;
+    margin-top: -16px;
+}
+
+.apikey-submit{
+    background-color: white;
+    color: black;
+}

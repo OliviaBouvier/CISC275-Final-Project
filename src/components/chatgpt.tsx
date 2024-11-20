@@ -66,7 +66,7 @@ export function ChatGPT({
 
   return (
     <div>
-      <Button
+      <Button style={{backgroundColor:"white", color:"black"}}
         onClick={() => {
           setResponse("");
           handleChatGPTSubmission();
@@ -83,13 +83,13 @@ export function ChatGPT({
         )}
       </Button>
       {!apiKey && (
-        <Alert variant="warning" className="mt-3">
+        <Alert style={{backgroundColor:"black", color:"white", border:"black"}} variant="warning" className="mt-3">
           Please enter an API key before submitting.
         </Alert>
       )}
 
       {error && (
-        <Alert variant="danger" className="mt-3">
+        <Alert style={{backgroundColor:"black", color:"white", border:"black"}} variant="danger" className="mt-3">
           {error}
         </Alert>
       )}
@@ -118,6 +118,7 @@ export function ChatGPT({
         </Modal.Footer>
       </Modal.Dialog>
     </div>)}
+
     </div>
   );
 }

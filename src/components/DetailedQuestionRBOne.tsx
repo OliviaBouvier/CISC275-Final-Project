@@ -686,19 +686,19 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         
           {/* Left column of questions */}
           <div style={{ width: "45%", textAlign: "center" }}>
-            <div>{ChangeQuestionOneDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionOneDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionThreeDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionThreeDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionFiveDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionFiveDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionSevenDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionSevenDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionNineDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionNineDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionElevenDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionElevenDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionThirteenDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionThirteenDT()}</div>
           </div>
 
           {/* Vertical Line */}
@@ -714,19 +714,19 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
 
           {/* Right column of questions */}
           <div style={{ width: "45%", textAlign: "center" }}>
-            <div>{ChangeQuestionTwoDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionTwoDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionFourDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionFourDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionSixDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionSixDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionEightDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionEightDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionTenDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionTenDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionTwelveDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionTwelveDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionFourteenDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionFourteenDT()}</div>
           </div>
         </div>
         <div
@@ -745,7 +745,7 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         <pre></pre>
         {completed && (
           <div className="feedback">
-            <h4>Quiz completed!</h4>
+            <h4 style={{color:"white"}}>Quiz completed!</h4>
           </div>
         )}
         <ChatGPT apiKey = {apiKey} chatGPTcontents={ChatGPTContents()}/>
