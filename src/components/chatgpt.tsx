@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Spinner, Alert } from "react-bootstrap";
 import OpenAI from "openai";
+import Modal from 'react-bootstrap/Modal';
 
 interface ChatGPTProps {
   apiKey: string;
@@ -14,11 +15,16 @@ export function ChatGPT({
   const [response, setResponse] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [showModal, setShowModal] = useState<boolean>(false);
+
+  function toggleModal() {
+    setShowModal(!showModal);
+  }
 
   async function handleChatGPTSubmission() {
     setLoading(true);
     setError(null);
-
+ 
     const openai = new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
 
     try {
@@ -41,12 +47,18 @@ export function ChatGPT({
       // Extract the response and set it in state
       if (completion.choices[0].message.content != null) {
         setResponse(completion.choices[0].message.content);
+        setShowModal(true);
       } else {
         setError("No content received from the API.");
       }
     } catch (error) {
-      setError("Failed to fetch data from OpenAI API. Please make sure your API key was entered correctly and try again.");
-      console.error("Error fetching completion:", JSON.stringify(error, null, 2));
+      setError(
+        "Failed to fetch data from OpenAI API. Please make sure your API key was entered correctly and try again."
+      );
+      console.error(
+        "Error fetching completion:",
+        JSON.stringify(error, null, 2)
+      );
     } finally {
       setLoading(false);
     }
@@ -63,8 +75,8 @@ export function ChatGPT({
       >
         {loading ? (
           <div>
-          <Spinner as="span" animation="border" size="sm" />
-          <div>Please wait while we process your results.</div>
+            <Spinner as="span" animation="border" size="sm" />
+            <div>Please wait while we process your results.</div>
           </div>
         ) : (
           "Submit to ChatGPT"
@@ -88,7 +100,24 @@ export function ChatGPT({
         </Alert>
       )}
 
-      <pre>{response}</pre>
+{showModal && (<div
+      className="modal show"
+      style={{ display: 'block'}}
+    >
+      <Modal.Dialog>
+        <Modal.Header closeButton onClick={toggleModal}>
+          <Modal.Title>Results</Modal.Title>
+        </Modal.Header>
+
+        <Modal.Body>
+          <p><pre>{response}</pre></p>
+        </Modal.Body>
+
+        <Modal.Footer>
+          <Button variant="secondary" onClick={toggleModal}>Close</Button>
+        </Modal.Footer>
+      </Modal.Dialog>
+    </div>)}
     </div>
   );
 }
