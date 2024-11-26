@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Spinner, Alert } from "react-bootstrap";
 import OpenAI from "openai";
-import Modal from 'react-bootstrap/Modal';
+import Modal from "react-bootstrap/Modal";
 
 interface ChatGPTProps {
   apiKey: string;
@@ -30,7 +30,7 @@ export function ChatGPT({
   async function handleChatGPTSubmission() {
     setLoading(true);
     setError(null);
- 
+
     const openai = new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
 
     try {
@@ -46,7 +46,10 @@ export function ChatGPT({
       });
 
       // Extract the response and set it in state
-      if (completionTitle.choices[0].message.content != null && completionTitle.choices[0].message.content !== "") {
+      if (
+        completionTitle.choices[0].message.content != null &&
+        completionTitle.choices[0].message.content !== ""
+      ) {
         setTitle(completionTitle.choices[0].message.content);
         console.log(completionTitle.choices[0].message.content);
       } else {
@@ -54,7 +57,7 @@ export function ChatGPT({
         console.log("The title wasn't generated");
         throw error;
       }
-      
+
       const completionDescription = await openai.chat.completions.create({
         model: "gpt-4",
         messages: [
@@ -66,13 +69,13 @@ export function ChatGPT({
         ],
       });
 
-      if (completionDescription.choices[0].message.content != null){
+      if (completionDescription.choices[0].message.content != null) {
         setDescription(completionDescription.choices[0].message.content);
       } else {
         setError("No description generated");
         throw error;
       }
-        
+
       const completionSuitedToCareer = await openai.chat.completions.create({
         model: "gpt-4",
         messages: [
@@ -83,10 +86,9 @@ export function ChatGPT({
           },
         ],
       });
-      
-      if (completionSuitedToCareer.choices[0].message.content != null){
-            setSuitedToCareer(completionSuitedToCareer.choices[0].message.content)
 
+      if (completionSuitedToCareer.choices[0].message.content != null) {
+        setSuitedToCareer(completionSuitedToCareer.choices[0].message.content);
       } else {
         setError("No content received from the API.");
         throw error;
@@ -104,15 +106,16 @@ export function ChatGPT({
         ],
       });
 
-      if(completionSimilarCareers.choices[0].message.content != null){
+      if (completionSimilarCareers.choices[0].message.content != null) {
         setSimilarCareers(completionSimilarCareers.choices[0].message.content);
         toggleModal();
         setResponseComplete(true);
       } else {
-        setError("No content received from the API while generating similar careers.");
+        setError(
+          "No content received from the API while generating similar careers."
+        );
         throw error;
       }
-
     } catch (error) {
       console.error(
         "Error fetching completion:",
@@ -125,7 +128,8 @@ export function ChatGPT({
 
   return (
     <div>
-      <Button style={{backgroundColor:"white", color:"black"}}
+      <Button
+        style={{ backgroundColor: "white", color: "black" }}
         onClick={() => {
           handleChatGPTSubmission();
         }}
@@ -141,13 +145,21 @@ export function ChatGPT({
         )}
       </Button>
       {!apiKey && (
-        <Alert style={{backgroundColor:"black", color:"white", border:"black"}} variant="warning" className="mt-3">
+        <Alert
+          style={{ backgroundColor: "black", color: "white", border: "black" }}
+          variant="warning"
+          className="mt-3"
+        >
           Please enter an API key before submitting.
         </Alert>
       )}
 
       {error && (
-        <Alert style={{backgroundColor:"black", color:"white", border:"black"}} variant="danger" className="mt-3">
+        <Alert
+          style={{ backgroundColor: "black", color: "white", border: "black" }}
+          variant="danger"
+          className="mt-3"
+        >
           {error}
         </Alert>
       )}
@@ -158,30 +170,28 @@ export function ChatGPT({
         </Alert>
       )}
 
-{showModal && (<div
-      className="modal show"
-      style={{ display: 'block'}}
-    >
-      <Modal.Dialog>
-        <Modal.Header closeButton onClick={toggleModal}>
-          <Modal.Title>Results</Modal.Title>
-        </Modal.Header>
-
-        <Modal.Body>
-          <strong>{title}</strong>
-          <p text-align = "right">{description}</p>
-          <strong>Why We Think This Career Suits You</strong>
-          <p>{suitedToCareer}</p>
-          <strong>Similar Careers</strong>
-          <p><pre>{similarCareers}</pre></p>
-        </Modal.Body>
-
-        <Modal.Footer>
-          <Button variant="secondary" onClick={toggleModal}>Close</Button>
-        </Modal.Footer>
-      </Modal.Dialog>
-    </div>)}
-
+      {showModal && (
+        <Modal show={showModal} onHide={toggleModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>Results</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <strong>{title}</strong>
+            <p>{description}</p>
+            <strong>Why We Think This Career Suits You</strong>
+            <p>{suitedToCareer}</p>
+            <strong>Similar Careers</strong>
+            <p>
+              <pre>{similarCareers}</pre>
+            </p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={toggleModal}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </div>
   );
 }
