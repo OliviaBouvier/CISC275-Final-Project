@@ -6,16 +6,21 @@ import Modal from 'react-bootstrap/Modal';
 interface ChatGPTProps {
   apiKey: string;
   chatGPTcontents: string;
+  completed: boolean;
 }
 
 export function ChatGPT({
   apiKey,
   chatGPTcontents,
+  completed,
 }: ChatGPTProps): React.JSX.Element {
-  const [response, setResponse] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [title, setTitle] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [suitedToCareer, setSuitedToCareer] = useState<string>("");
+  const [responseComplete, setResponseComplete] = useState<boolean>(false);
 
   function toggleModal() {
     setShowModal(!showModal);
@@ -28,33 +33,65 @@ export function ChatGPT({
     const openai = new OpenAI({ apiKey, dangerouslyAllowBrowser: true });
 
     try {
-      const completion = await openai.chat.completions.create({
+      const completionTitle = await openai.chat.completions.create({
         model: "gpt-4",
         messages: [
           { role: "system", content: "You are a helpful assistant" },
           {
             role: "user",
-            content: `Create a report describing a potential career for me with format: 
-                        "career name
-                        career description
-                        why the user is suited to this career
-                        similar careers"
-                        based on the following: ${chatGPTcontents}`,
+            content: `Give me the title of the career that you think I should pursue based on the following: ${chatGPTcontents} Give me only the title; do not say anything else.`,
           },
         ],
       });
 
       // Extract the response and set it in state
-      if (completion.choices[0].message.content != null) {
-        setResponse(completion.choices[0].message.content);
-        setShowModal(true);
+      if (completionTitle.choices[0].message.content != null && completionTitle.choices[0].message.content !== "") {
+        setTitle(completionTitle.choices[0].message.content);
+        console.log(completionTitle.choices[0].message.content);
+      } else {
+        setError("No title generated");
+        console.log("The title wasn't generated");
+        throw error;
+      }
+      
+      const completionDescription = await openai.chat.completions.create({
+        model: "gpt-4",
+        messages: [
+          { role: "system", content: "You are a helpful assistant" },
+          {
+            role: "user",
+            content: `Briefly describe this career: ${completionTitle.choices[0].message.content}. If there is no career title following the colon, let me know.`,
+          },
+        ],
+      });
+
+      if (completionDescription.choices[0].message.content != null){
+        setDescription(completionDescription.choices[0].message.content);
+      } else {
+        setError("No description generated");
+        throw error;
+      }
+        
+      const completionSuitedToCareer = await openai.chat.completions.create({
+        model: "gpt-4",
+        messages: [
+          { role: "system", content: "You are a helpful assistant" },
+          {
+            role: "user",
+            content: `Based on the following, briefly describe why I would be suited to being a ${completionTitle.choices[0].message.content}: ${chatGPTcontents}`,
+          },
+        ],
+      });
+      
+      if (completionSuitedToCareer.choices[0].message.content != null){
+            setSuitedToCareer(completionSuitedToCareer.choices[0].message.content)
+            toggleModal();
+            setResponseComplete(true);
       } else {
         setError("No content received from the API.");
+        throw error;
       }
     } catch (error) {
-      setError(
-        "Failed to fetch data from OpenAI API. Please make sure your API key was entered correctly and try again."
-      );
       console.error(
         "Error fetching completion:",
         JSON.stringify(error, null, 2)
@@ -68,10 +105,9 @@ export function ChatGPT({
     <div>
       <Button style={{backgroundColor:"white", color:"black"}}
         onClick={() => {
-          setResponse("");
           handleChatGPTSubmission();
         }}
-        disabled={apiKey === ""}
+        disabled={apiKey === "" || !completed}
       >
         {loading ? (
           <div>
@@ -94,7 +130,7 @@ export function ChatGPT({
         </Alert>
       )}
 
-      {response && !error && (
+      {responseComplete && !error && (
         <Alert variant="success" className="mt-3">
           Response successfully recorded!
         </Alert>
@@ -110,7 +146,9 @@ export function ChatGPT({
         </Modal.Header>
 
         <Modal.Body>
-          <p><pre>{response}</pre></p>
+          <strong>{title}</strong>
+          <p>{description}</p>
+          <p>{suitedToCareer}</p>
         </Modal.Body>
 
         <Modal.Footer>

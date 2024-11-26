@@ -716,7 +716,7 @@ return (<div>
         <h4 style={{color:"white"}}>Quiz completed!</h4>
       </div>
     )}
-    <ChatGPT apiKey = {apiKey} chatGPTcontents={ChatGPTContents()}/>
+    <ChatGPT apiKey = {apiKey} chatGPTcontents={ChatGPTContents()} completed = {completed}/>
   </div>
 );
 }
