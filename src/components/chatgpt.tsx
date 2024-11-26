@@ -20,6 +20,7 @@ export function ChatGPT({
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [suitedToCareer, setSuitedToCareer] = useState<string>("");
+  const [similarCareers, setSimilarCareers] = useState<string>("");
   const [responseComplete, setResponseComplete] = useState<boolean>(false);
 
   function toggleModal() {
@@ -85,12 +86,33 @@ export function ChatGPT({
       
       if (completionSuitedToCareer.choices[0].message.content != null){
             setSuitedToCareer(completionSuitedToCareer.choices[0].message.content)
-            toggleModal();
-            setResponseComplete(true);
+
       } else {
         setError("No content received from the API.");
         throw error;
       }
+
+      const completionSimilarCareers = await openai.chat.completions.create({
+        model: "gpt-4",
+        messages: [
+          { role: "system", content: "You are a helpful assistant" },
+          {
+            role: "user",
+            content: `Give a brief list of three careers that are similar to ${completionTitle.choices[0].message.content}: ${chatGPTcontents}
+            in the following format, with each career on its own line:1. career title 2. career title 3. career title`,
+          },
+        ],
+      });
+
+      if(completionSimilarCareers.choices[0].message.content != null){
+        setSimilarCareers(completionSimilarCareers.choices[0].message.content);
+        toggleModal();
+        setResponseComplete(true);
+      } else {
+        setError("No content received from the API while generating similar careers.");
+        throw error;
+      }
+
     } catch (error) {
       console.error(
         "Error fetching completion:",
@@ -147,8 +169,11 @@ export function ChatGPT({
 
         <Modal.Body>
           <strong>{title}</strong>
-          <p>{description}</p>
+          <p text-align = "right">{description}</p>
+          <strong>Why We Think This Career Suits You</strong>
           <p>{suitedToCareer}</p>
+          <strong>Similar Careers</strong>
+          <p><pre>{similarCareers}</pre></p>
         </Modal.Body>
 
         <Modal.Footer>
