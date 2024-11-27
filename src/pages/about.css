@@ -44,6 +44,16 @@
     color: #333;
 }
 
+.modal-body a {
+    color: #2547cf;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.modal-body a:hover {
+    text-decoration: underline;
+}
+
 .page-content{
     padding: 20px;
     max-width: 800px;

@@ -5,13 +5,31 @@ type TeamMember = {
     name: string;
     photo: string;
     info: string;
+    email: string;
+    linkedin: string;
 };
 
 const teamMembers: TeamMember[] = [
-    { name: "Olivia Bouvier", photo: "Olivia's Photo", info: "Info about Olivia." },
-    { name: "Connor Griffith", photo: "Connor's Photo", info: "Info about Connor." },
-    { name: "Chris Yanko", photo: "Chris' Photo", info: "Info about Chris." },
-    { name: "Tarun Baskuran", photo: "Tarun's Photo", info: "Info about Tarun." },
+    { name: "Olivia Bouvier", 
+        photo: "Olivia's Photo", 
+        info: "Olivia is a junior Computer Science major at the University of Delaware with a concentration in AI and minors in English and Cognitive Science. She hopes to pursue a career in software development and to use computer science ethically to improve society.",
+        email: "obouvier@udel.edu",
+        linkedin: "https://linkedin.com/in/oliviabouvier"},
+    { name: "Connor Griffith", 
+        photo: "Connor's Photo", 
+        info: "Info about Connor.",
+        email: "congriff@udel.edu",
+        linkedin: "https://linkedin.com/in/connorgriffith"},
+    { name: "Chris Yanko", 
+        photo: "Chris' Photo", 
+        info: "Info about Chris.",
+        email: "chrisy@udel.edu",
+        linkedin: "https://linkedin.com/in/chrisyanko"},
+    { name: "Tarun Baskuran", 
+        photo: "Tarun's Photo", 
+        info: "Info about Tarun.",
+        email: "tarunb@udel.edu",
+        linkedin: "https://linkedin.com/in/tarunb"},
 ];
 
 export const About = () => {
@@ -54,6 +72,18 @@ export const About = () => {
                     </div>
                     <div className="modal-body">
                         <p>{selectedMember.info}</p>
+                        <p>
+                            <strong>Email:</strong>{" "}
+                            <a href={`mailto:${selectedMember?.email}`} target="_blank" rel="noopener noreferrer">
+                                {selectedMember.email}
+                            </a>
+                        </p>
+                        <p>
+                        <strong>LinkedIn:</strong>{" "}
+                            <a href={selectedMember?.linkedin} target="_blank" rel="noopener noreferrer">
+                                View Profile
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -61,24 +91,3 @@ export const About = () => {
     </>
     );
 };
-//             {/* <div className="team-member">
-//                 <div className="photo-placeholder">Photo 1</div>
-//                 <p>Team Member 1</p>
-//             </div>
-//             <div className="team-member">
-//                 <div className="photo-placeholder">Photo 2</div>
-//                 <p>Team Member 2</p>
-//             </div>
-//             <div className="team-member">
-//                 <div className="photo-placeholder">Photo 3</div>
-//                 <p>Team Member 3</p>
-//             </div>
-//             <div className="team-member">
-//                 <div className="photo-placeholder">Photo 4</div>
-//                 <p>Team Member 4</p>
-//             </div>
-//         </div>
-//     </div>
-// </div>
-// </> */}
-// // );
