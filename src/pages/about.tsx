@@ -32,6 +32,12 @@ const teamMembers: TeamMember[] = [
         linkedin: "https://linkedin.com/in/tarunb"},
 ];
 
+const stars = Array.from({ length: 30 }, () => ({
+    top: `${Math.random() * 100}%`,
+    left: `${Math.random() * 100}%`,
+    delay: `${Math.random() * 2}s`,
+}));
+
 export const About = () => {
     const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);;
 
@@ -42,9 +48,10 @@ export const About = () => {
     const closePopup = () => {
         setSelectedMember(null);
     };
+
     return (
     <>
-        <div className="night-sky"></div>
+        {/* <div className="night-sky"></div> */}
         <div className="page-content">
             <div className="about-header">
                 <h1>ABOUT CAREER HELPI</h1>
@@ -52,6 +59,7 @@ export const About = () => {
             <div className="about-body">
                 <p>Our mission is to help individuals discover fulfilling careers through personalized assessments and guidance</p>
                 <h2>Meet the Team</h2>
+                <div className="team-box-wrapper">
                 <div className="team-box">
                     {teamMembers.map((member, index) => (
                         <div key={index} className="team-member" onClick={() => handleMemberClick(member)}>
@@ -59,6 +67,21 @@ export const About = () => {
                             <p>{member.name}</p>
                         </div>
                     ))}
+                </div>
+
+                <div className="stars-around">
+                    {stars.map((star, index) => (
+                        <span
+                            key={index}
+                            className="star"
+                            style={{
+                                top: star.top,
+                                left: star.left,
+                                animationDelay: star.delay,
+                            }}
+                        ></span>
+                    ))}
+                    </div>
                 </div>
             </div>
         </div>
