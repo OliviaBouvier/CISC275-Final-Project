@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/starter-helpi/static/css/main.b533a87c.css",
-    "main.js": "/starter-helpi/static/js/main.04c7eb7a.js",
+    "main.css": "/starter-helpi/static/css/main.c0105218.css",
+    "main.js": "/starter-helpi/static/js/main.27ed0ca5.js",
     "static/js/453.bad6c33a.chunk.js": "/starter-helpi/static/js/453.bad6c33a.chunk.js",
     "static/media/starry_sky.jpg": "/starter-helpi/static/media/starry_sky.878bcde962da7bcbc7df.jpg",
     "index.html": "/starter-helpi/index.html",
-    "main.b533a87c.css.map": "/starter-helpi/static/css/main.b533a87c.css.map",
-    "main.04c7eb7a.js.map": "/starter-helpi/static/js/main.04c7eb7a.js.map",
+    "main.c0105218.css.map": "/starter-helpi/static/css/main.c0105218.css.map",
+    "main.27ed0ca5.js.map": "/starter-helpi/static/js/main.27ed0ca5.js.map",
     "453.bad6c33a.chunk.js.map": "/starter-helpi/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b533a87c.css",
-    "static/js/main.04c7eb7a.js"
+    "static/css/main.c0105218.css",
+    "static/js/main.27ed0ca5.js"
   ]
 }
