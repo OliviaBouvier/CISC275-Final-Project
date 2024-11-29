@@ -1,0 +1,9 @@
+.modal-content{
+  background-color: lightblue;
+  max-width: 200%;
+  margin-left: 10%;
+}
+
+.modal-dialog{
+  max-width: 200%;
+}

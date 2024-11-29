@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Spinner, Alert } from "react-bootstrap";
 import OpenAI from "openai";
 import Modal from "react-bootstrap/Modal";
+import "./chatgpt.css";
 
 interface ChatGPTProps {
   apiKey: string;
@@ -171,7 +172,7 @@ export function ChatGPT({
       )}
 
       {showModal && (
-        <Modal show={showModal} onHide={toggleModal}>
+        <Modal show={showModal} onHide={toggleModal} dialogClasSName="custom-modal" centered>
           <Modal.Header closeButton>
             <Modal.Title>Results</Modal.Title>
           </Modal.Header>
@@ -181,9 +182,9 @@ export function ChatGPT({
             <strong>Why We Think This Career Suits You</strong>
             <p>{suitedToCareer}</p>
             <strong>Similar Careers</strong>
-            <p>
-              <pre>{similarCareers}</pre>
-            </p>
+            <pre><p>
+              {similarCareers}
+            </p></pre>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={toggleModal}>
@@ -193,5 +194,6 @@ export function ChatGPT({
         </Modal>
       )}
     </div>
+    
   );
 }
