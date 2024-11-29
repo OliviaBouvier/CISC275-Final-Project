@@ -44,6 +44,52 @@
     color: #333;
 }
 
+.modal-body a {
+    color: #2547cf;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.modal-body a:hover {
+    text-decoration: underline;
+}
+
+.team-box-wrapper {
+    position: relative;
+    margin-top: 50px;
+}
+
+.stars-around {
+    position: fixed;
+    top: -50px;
+    left: -50px;
+    width: calc(100% + 100px);
+    height: calc(100% + 100px);
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: black;
+    border-radius: 50%;
+    box-shadow: 0 0 10px black;
+    opacity: 0.8;
+    animation: blink 2s infinite ease-in-out;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
 .page-content{
     padding: 20px;
     max-width: 800px;
@@ -63,7 +109,8 @@
     left: 50%;
     transform: translateX(-50%);
     top: 0;
-    margin-bottom: 50px; 
+    margin-bottom: 50px;
+    margin-top: -20px;
     clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 100%, 0% 75%);
 }
 
