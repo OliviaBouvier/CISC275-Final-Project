@@ -1,6 +1,5 @@
 .background-image{
     background-image: url('../../public/starry_sky.jpg');
-    margin-bottom: 1.5%;
 }
 .page-title{
     font-size: 3em; 
@@ -17,7 +16,6 @@
 
 .page-footer{
     background-color: black;
-    margin-top: 25px;
 }
 
 .apikey-submit{
@@ -25,6 +23,6 @@
     color: black;
 }
 
-.form-label{
+/* .form-label{
     margin-top: 2%;
-}
+} */
