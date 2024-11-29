@@ -130,7 +130,7 @@ export function ChatGPT({
   return (
     <div>
       <Button
-        style={{ backgroundColor: "white", color: "black" }}
+        style={{ backgroundColor: "white", color: "black", marginBottom: ".5%" }}
         onClick={() => {
           handleChatGPTSubmission();
         }}
@@ -172,7 +172,7 @@ export function ChatGPT({
       )}
 
       {showModal && (
-        <Modal show={showModal} onHide={toggleModal} dialogClasSName="custom-modal" centered>
+        <Modal show={showModal} onHide={toggleModal} dialogClassName="custom-modal">
           <Modal.Header closeButton>
             <Modal.Title>Results</Modal.Title>
           </Modal.Header>
