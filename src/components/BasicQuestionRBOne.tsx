@@ -713,6 +713,8 @@ return (<div>
       now={progress}
       label={`${Math.round(progress)}%`}
       className="progressBar"
+      striped
+      style={{maxWidth: "90%", marginLeft: "5%", marginRight: "5%"}}
     ></ProgressBar>
     <pre></pre>
     {completed && (
