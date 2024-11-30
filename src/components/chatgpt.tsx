@@ -182,7 +182,7 @@ export function ChatGPT({
             <strong>Why We Think This Career Suits You</strong>
             <p>{suitedToCareer}</p>
             <strong>Similar Careers</strong>
-            <pre><p>
+            <pre><p style={{fontFamily: "arial"}}>
               {similarCareers}
             </p></pre>
           </Modal.Body>
