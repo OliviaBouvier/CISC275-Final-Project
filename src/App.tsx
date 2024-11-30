@@ -20,7 +20,7 @@ function App() {
             <Navbar />
               <NavBarElements />
             <Routes>
-                <Route path="/starter-helpi/" element={
+                <Route path="/" element={
                   <>
                     <Home /> 
                   </>
