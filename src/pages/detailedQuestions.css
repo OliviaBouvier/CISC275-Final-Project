@@ -16,10 +16,11 @@
 
 .page-footer{
     background-color: black;
-    margin-top: -16px;
 }
 
 .apikey-submit{
     background-color: white;
     color: black;
+    margin-bottom: .5%;
+    margin-top: -.7%;
 }
