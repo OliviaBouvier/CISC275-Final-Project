@@ -11,7 +11,7 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
     { name: "Olivia Bouvier", 
-        photo: "Olivia's Photo", 
+        photo: "/Olivia_photo.jpg", 
         info: "Olivia is a junior Computer Science major at the University of Delaware with a concentration in AI and minors in English and Cognitive Science. She hopes to pursue a career in software development and to use computer science ethically to improve society.",
         email: "obouvier@udel.edu",
         linkedin: "https://linkedin.com/in/oliviabouvier"},
@@ -26,7 +26,7 @@ const teamMembers: TeamMember[] = [
         email: "chrisy@udel.edu",
         linkedin: "https://linkedin.com/in/chrisyanko"},
     { name: "Tarun Baskuran", 
-        photo: "Tarun's Photo", 
+        photo: "/Tarun-photo.jpg", 
         info: "Info about Tarun.",
         email: "tarunb@udel.edu",
         linkedin: "https://linkedin.com/in/tarunb"},
@@ -63,7 +63,13 @@ export const About = () => {
                 <div className="team-box">
                     {teamMembers.map((member, index) => (
                         <div key={index} className="team-member" onClick={() => handleMemberClick(member)}>
-                            <div className="photo-placeholder">{member.photo}</div>
+                            <div className="photo-placeholder">
+                                {member.photo ? (
+                                    <img src={member.photo} alt={`${member.name}`} className="team-photo" />
+                                ) : (
+                                    "No Photo"
+                                )}
+                                </div>
                             <p>{member.name}</p>
                         </div>
                     ))}
