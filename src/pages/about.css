@@ -74,9 +74,9 @@
     position: absolute;
     width: 8px;
     height: 8px;
-    background: black;
+    background: rgb(116, 116, 116);
     border-radius: 50%;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px rgb(162, 162, 162);
     opacity: 0.8;
     animation: blink 2s infinite ease-in-out;
 }
