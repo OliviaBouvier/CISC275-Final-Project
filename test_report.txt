@@ -201,7 +201,7 @@ All files                   |    3.28 |        0 |    5.04 |    3.09 |
  src/components/NavBar      |     100 |      100 |     100 |     100 |                   
   NavBarElements.tsx        |     100 |      100 |     100 |     100 |                   
  src/pages                  |   14.28 |        0 |   13.33 |   12.12 |                   
-  about.tsx                 |   28.57 |        0 |    12.5 |      25 | 42-91             
+  about.tsx                 |   28.57 |        0 |    12.5 |      25 | 42-97             
   basicQuestions.tsx        |       0 |        0 |       0 |       0 | 7-25              
   detailedQuestions.tsx     |       0 |        0 |       0 |       0 | 7-26              
   home.tsx                  |     100 |      100 |     100 |     100 |                   
@@ -209,5 +209,5 @@ All files                   |    3.28 |        0 |    5.04 |    3.09 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.577 s
+Time:        3.657 s
 Ran all test suites.
