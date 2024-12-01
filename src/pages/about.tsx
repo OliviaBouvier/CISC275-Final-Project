@@ -26,7 +26,7 @@ const teamMembers: TeamMember[] = [
         email: "chrisy@udel.edu",
         linkedin: "https://linkedin.com/in/chrisyanko"},
     { name: "Tarun Baskuran", 
-        photo: "Tarun's Photo", 
+        photo: "/Tarun-photo.jpg", 
         info: "Info about Tarun.",
         email: "tarunb@udel.edu",
         linkedin: "https://linkedin.com/in/tarunb"},
