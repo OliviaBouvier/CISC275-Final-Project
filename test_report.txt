@@ -209,5 +209,5 @@ All files                   |    3.28 |        0 |    5.04 |    3.09 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.728 s
+Time:        3.577 s
 Ran all test suites.
