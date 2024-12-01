@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {Navbar } from 'react-bootstrap';
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Routes,
     Route
 } from "react-router-dom";
@@ -20,7 +20,7 @@ function App() {
             <Navbar />
               <NavBarElements />
             <Routes>
-                <Route path="/starter-helpi/" element={
+                <Route path="/" element={
                   <>
                     <Home /> 
                   </>

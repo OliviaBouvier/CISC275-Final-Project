@@ -1,0 +1,6 @@
+.custom-modal .modal-content{
+  max-width: 250%;
+  background-color: lightblue;
+  width: 250%;
+  margin-left: -75%;
+}

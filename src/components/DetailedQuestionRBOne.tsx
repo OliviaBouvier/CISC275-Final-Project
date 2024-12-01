@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import { Form, ProgressBar } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { ProgressBar } from "react-bootstrap";
 import { ChatGPT } from "./chatgpt";
+import confetti from "canvas-confetti";
 
 let chatGPTcontents = "";
 
-interface DetailedRadioButtonsProps {
+interface DetailedMultipleChoiceProps {
   apiKey: string;
 }
 
-export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
+export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) {
   const [contents, setContents] = useState<string>("");
 
   const [answer1, setAnswer1] = useState<string>("");
@@ -18,6 +19,13 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
   const [answer5, setAnswer5] = useState<string>("");
   const [answer6, setAnswer6] = useState<string>("");
   const [answer7, setAnswer7] = useState<string>("");
+  const [answer8, setAnswer8] = useState<string>("");
+  const [answer9, setAnswer9] = useState<string>("");
+  const [answer10, setAnswer10] = useState<string>("");
+  const [answer11, setAnswer11] = useState<string>("");
+  const [answer12, setAnswer12] = useState<string>("");
+  const [answer13, setAnswer13] = useState<string>("");
+  const [answer14, setAnswer14] = useState<string>("");
 
   const feedback = [
     answer1,
@@ -27,14 +35,28 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
     answer5,
     answer6,
     answer7,
+    answer8,
+    answer9,
+    answer10,
+    answer11,
+    answer12,
+    answer13,
+    answer14
   ].filter(Boolean).length;
-  const progress = (feedback / 7) * 100;
+  const progress = (feedback / 14) * 100;
   const completed = progress === 100;
+
+  const launch=()=>{confetti({particleCount:750,spread:150,origin:{y:0.6}})}
+    useEffect(()=>{
+        if(completed){
+            launch();
+        }
+    }, [completed]);
 
   function ChangeQuestionOneDT(): React.JSX.Element {
     const [answer, setChangeAnswer] = useState<string>("");
 
-    function updateAnswer(event: React.ChangeEvent<HTMLInputElement>) {
+    function updateAnswer(event: React.ChangeEvent<HTMLSelectElement>) {
       const newAnswer = event.target.value;
       setChangeAnswer(event.target.value);
       setAnswer1(event.target.value);
@@ -64,20 +86,14 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
           One being the least and five being the best, how good is your work
           ethic?
         </div>
-        {answers.map((answersList) => (
-          <Form.Check
-            inline
-            key={answersList.id}
-            type="radio"
-            name="DetailedQuestionOne"
-            onChange={updateAnswer}
-            id={`answer-check-${answersList.id}`}
-            label={answersList.id}
-            value={answersList.id}
-            checked={answer === answersList.id}
-          />
-        ))}
-
+        <select value={answer} onChange={updateAnswer}>
+                <option disabled></option>
+                {answers.map((answerOption)=>(
+                    <option key={answerOption.id} value={answerOption.id}>
+                    {answerOption.id}
+                </option>
+            ))}
+          </select>
         <div>You have picked the answer: {answer}</div>
       </div>
     );
@@ -85,7 +101,7 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
   function ChangeQuestionTwoDT(): React.JSX.Element {
     const [answerTwo, setChangeAnswerTwo] = useState<string>("");
 
-    function updateAnswerTwo(event: React.ChangeEvent<HTMLInputElement>) {
+    function updateAnswerTwo(event: React.ChangeEvent<HTMLSelectElement>) {
       const newAnswer = event.target.value;
       setChangeAnswerTwo(event.target.value);
       setAnswer2(event.target.value);
@@ -115,20 +131,14 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
           One being the least and five being the best, how good would your peers
           say your work ethic is?
         </div>
-        {answersTwo.map((answersListTwo) => (
-          <Form.Check
-            inline
-            key={answersListTwo.id}
-            type="radio"
-            name="DetailedQuestionTwo"
-            onChange={updateAnswerTwo}
-            id={`answer-check-${answersListTwo.id}`}
-            label={answersListTwo.id}
-            value={answersListTwo.id}
-            checked={answerTwo === answersListTwo.id}
-          />
-        ))}
-
+        <select value={answerTwo} onChange={updateAnswerTwo}>
+                <option disabled></option>
+                {answersTwo.map((answerOption)=>(
+                    <option key={answerOption.id} value={answerOption.id}>
+                    {answerOption.id}
+                </option>
+            ))}
+        </select>
         <div>You have picked the answer: {answerTwo}</div>
       </div>
     );
@@ -136,7 +146,7 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
   function ChangeQuestionThreeDT(): React.JSX.Element {
     const [answerThree, setChangeAnswerThree] = useState<string>("");
 
-    function updateAnswerThree(event: React.ChangeEvent<HTMLInputElement>) {
+    function updateAnswerThree(event: React.ChangeEvent<HTMLSelectElement>) {
       const newAnswer = event.target.value;
       setChangeAnswerThree(event.target.value);
       setAnswer3(event.target.value);
@@ -164,19 +174,14 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
     return (
       <div>
         <div>Choose whichever career field you would most likely pursue</div>
-        {answersThree.map((answersListThree) => (
-          <Form.Check
-            inline
-            key={answersListThree.id}
-            type="radio"
-            name="DetailedQuestionThree"
-            onChange={updateAnswerThree}
-            id={`answer-check-${answersListThree.id}`}
-            label={answersListThree.id}
-            value={answersListThree.id}
-            checked={answerThree === answersListThree.id}
-          />
-        ))}
+        <select value={answerThree} onChange={updateAnswerThree}>
+                <option disabled></option>
+                {answersThree.map((answerOption)=>(
+                    <option key={answerOption.id} value={answerOption.id}>
+                    {answerOption.id}
+                </option>
+            ))}
+          </select>
 
         <div>You have picked the answer: {answerThree}</div>
       </div>
@@ -185,7 +190,7 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
   function ChangeQuestionFourDT(): React.JSX.Element {
     const [answerFour, setChangeAnswerFour] = useState<string>("");
 
-    function updateAnswerFour(event: React.ChangeEvent<HTMLInputElement>) {
+    function updateAnswerFour(event: React.ChangeEvent<HTMLSelectElement>) {
       const newAnswer = event.target.value;
       setChangeAnswerFour(event.target.value);
       setAnswer4(event.target.value);
@@ -209,20 +214,14 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
           If you had a choice of working on your own or as a group which would
           your choose?
         </div>
-        {answersFour.map((answersListFour) => (
-          <Form.Check
-            inline
-            key={answersListFour.id}
-            type="radio"
-            name="DetailedQuestionFour"
-            onChange={updateAnswerFour}
-            id={`answer-check-${answersListFour.id}`}
-            label={answersListFour.id}
-            value={answersListFour.id}
-            checked={answerFour === answersListFour.id}
-          />
-        ))}
-
+        <select value={answerFour} onChange={updateAnswerFour}>
+                <option disabled></option>
+                {answersFour.map((answerOption)=>(
+                    <option key={answerOption.id} value={answerOption.id}>
+                    {answerOption.id}
+                </option>
+            ))}
+            </select>
         <div>You have picked the answer: {answerFour}</div>
       </div>
     );
@@ -230,7 +229,7 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
   function ChangeQuestionFiveDT(): React.JSX.Element {
     const [answerFive, setChangeAnswerFive] = useState<string>("");
 
-    function updateAnswerFive(event: React.ChangeEvent<HTMLInputElement>) {
+    function updateAnswerFive(event: React.ChangeEvent<HTMLSelectElement>) {
       const newAnswer = event.target.value;
       setChangeAnswerFive(event.target.value);
       setAnswer5(event.target.value);
@@ -260,20 +259,14 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
     return (
       <div>
         <div>What kind of work environment would best suit you?</div>
-        {answersFive.map((answersListFive) => (
-          <Form.Check
-            inline
-            key={answersListFive.id}
-            type="radio"
-            name="DetailedQuestionFive"
-            onChange={updateAnswerFive}
-            id={`answer-check-${answersListFive.id}`}
-            label={answersListFive.id}
-            value={answersListFive.id}
-            checked={answerFive === answersListFive.id}
-          />
-        ))}
-
+        <select value={answerFive} onChange={updateAnswerFive}>
+                <option disabled></option>
+                {answersFive.map((answerOption)=>(
+                    <option key={answerOption.id} value={answerOption.id}>
+                    {answerOption.id}
+                </option>
+            ))}
+          </select>
         <div>You have picked the answer: {answerFive}</div>
       </div>
     );
@@ -281,7 +274,7 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
   function ChangeQuestionSixDT(): React.JSX.Element {
     const [answerSix, setChangeAnswerSix] = useState<string>("");
 
-    function updateAnswerSix(event: React.ChangeEvent<HTMLInputElement>) {
+    function updateAnswerSix(event: React.ChangeEvent<HTMLSelectElement>) {
       const newAnswer = event.target.value;
       setChangeAnswerSix(event.target.value);
       setAnswer6(event.target.value);
@@ -309,20 +302,14 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
     return (
       <div>
         <div>How would you describe your personality?</div>
-        {answersSix.map((answersListSix) => (
-          <Form.Check
-            inline
-            key={answersListSix.id}
-            type="radio"
-            name="DetailedQuestionSix"
-            onChange={updateAnswerSix}
-            id={`answer-check-${answersListSix.id}`}
-            label={answersListSix.id}
-            value={answersListSix.id}
-            checked={answerSix === answersListSix.id}
-          />
-        ))}
-
+        <select value={answerSix} onChange={updateAnswerSix}>
+                <option disabled></option>
+                {answersSix.map((answerOption)=>(
+                    <option key={answerOption.id} value={answerOption.id}>
+                    {answerOption.id}
+                </option>
+            ))}
+          </select>
         <div>You have picked the answer: {answerSix}</div>
       </div>
     );
@@ -330,7 +317,7 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
   function ChangeQuestionSevenDT(): React.JSX.Element {
     const [answerSeven, setChangeAnswerSeven] = useState<string>("");
 
-    function updateAnswerSeven(event: React.ChangeEvent<HTMLInputElement>) {
+    function updateAnswerSeven(event: React.ChangeEvent<HTMLSelectElement>) {
         const newAnswer = event.target.value;
         setChangeAnswerSeven(event.target.value);
         setAnswer7(event.target.value);
@@ -357,7 +344,7 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
         { id: "Teacher" },
         { id: "IT" },
         { id: "Chemical scientist" },
-        { id: "archaeologist" },
+        { id: "Archaeologist" },
       ];
 
       return (
@@ -365,21 +352,322 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
           <div>
             Out of all the jobs listed, which would you want to be the most?
           </div>
-          {answersSeven.map((answersListSeven) => (
-            <Form.Check
-              inline
-              key={answersListSeven.id}
-              type="radio"
-              name="DetailedQuestionSeven"
-              onChange={updateAnswerSeven}
-              id={`answer-check-${answersListSeven.id}`}
-              label={answersListSeven.id}
-              value={answersListSeven.id}
-              checked={answerSeven === answersListSeven.id}
-            />
-          ))}
-
+          <select value={answerSeven} onChange={updateAnswerSeven}>
+                <option disabled></option>
+                {answersSeven.map((answerOption)=>(
+                    <option key={answerOption.id} value={answerOption.id}>
+                    {answerOption.id}
+                </option>
+            ))}
+          </select>
           <div>You have picked the answer: {answerSeven}</div>
+        </div>
+      );
+    }
+    function ChangeQuestionEightDT(): React.JSX.Element {
+      const [answerEight, setChangeAnswerEight] = useState<string>("");
+  
+      function updateAnswer(event: React.ChangeEvent<HTMLSelectElement>) {
+        const newAnswer = event.target.value;
+        setChangeAnswerEight(event.target.value);
+        setAnswer8(event.target.value);
+  
+        if (chatGPTcontents.includes("What is your optimal yearly salary?")) {
+          chatGPTcontents = chatGPTcontents.replace(
+            /What is your optimal yearly salary? .+?(\. |$)/,
+            `What is your optimal yearly salary? ${newAnswer}. `
+          );
+        } else {
+          chatGPTcontents += `What is your optimal yearly salary? ${newAnswer}. `;
+        }
+        setContents(chatGPTcontents);
+      }
+  
+      const answersEight = [
+        { id: "120k+" },
+        { id: "100-120k" },
+        { id: "80-100k" },
+        { id: "60-80k" },
+        { id: "40-60k" },
+        { id: "Below 40k" }
+      ];
+  
+      return (
+        <div>
+          <div>
+          What is your optimal yearly salary?
+          </div>
+          <select value={answerEight} onChange={updateAnswer}>
+                  <option disabled></option>
+                  {answersEight.map((answerOption)=>(
+                      <option key={answerOption.id} value={answerOption.id}>
+                      {answerOption.id}
+                  </option>
+              ))}
+            </select>
+          <div>You have picked the answer: {answerEight}</div>
+        </div>
+      );
+    }
+    function ChangeQuestionNineDT(): React.JSX.Element {
+      const [answerNine, setChangeAnswerNine] = useState<string>("");
+  
+      function updateAnswer(event: React.ChangeEvent<HTMLSelectElement>) {
+        const newAnswer = event.target.value;
+        setChangeAnswerNine(event.target.value);
+        setAnswer9(event.target.value);
+  
+        if (chatGPTcontents.includes("Do you want to make a positive impact at your job?")) {
+          chatGPTcontents = chatGPTcontents.replace(
+            /Do you want to make a positive impact at your job? .+?(\. |$)/,
+            `Do you want to make a positive impact at your job? ${newAnswer}. `
+          );
+        } else {
+          chatGPTcontents += `Do you want to make a positive impact at your job? ${newAnswer}. `;
+        }
+        setContents(chatGPTcontents);
+      }
+  
+      const answersNine = [
+        { id: "Yes, I want to make change" },
+        { id: "Yes, but its not necessary" },
+        { id: "No, but I can if I need to" },
+        { id: "No, I prefer to work alone" },
+        { id: "No" }
+      ];
+  
+      return (
+        <div>
+          <div>
+          Do you want to make a positive impact at your job?
+          </div>
+          <select value={answerNine} onChange={updateAnswer}>
+                  <option disabled></option>
+                  {answersNine.map((answerOption)=>(
+                      <option key={answerOption.id} value={answerOption.id}>
+                      {answerOption.id}
+                  </option>
+              ))}
+            </select>
+          <div>You have picked the answer: {answerNine}</div>
+        </div>
+      );
+    }
+    function ChangeQuestionTenDT(): React.JSX.Element {
+      const [answerTen, setChangeAnswerTen] = useState<string>("");
+  
+      function updateAnswer(event: React.ChangeEvent<HTMLSelectElement>) {
+        const newAnswer = event.target.value;
+        setChangeAnswerTen(event.target.value);
+        setAnswer10(event.target.value);
+  
+        if (chatGPTcontents.includes("Do you like working more with people, computers, or numbers more?")) {
+          chatGPTcontents = chatGPTcontents.replace(
+            /Do you like working more with people, computers, or numbers more? .+?(\. |$)/,
+            `Do you like working more with people, computers, or numbers more? ${newAnswer}. `
+          );
+        } else {
+          chatGPTcontents += `Do you like working more with people, computers, or numbers more? ${newAnswer}. `;
+        }
+        setContents(chatGPTcontents);
+      }
+  
+      const answersTen = [
+        { id: "People" },
+        { id: "Computers" },
+        { id: "Numbers" }
+      ];
+  
+      return (
+        <div>
+          <div>
+          Do you like working more with people, computers, or numbers more?
+          </div>
+          <select value={answerTen} onChange={updateAnswer}>
+                  <option disabled></option>
+                  {answersTen.map((answerOption)=>(
+                      <option key={answerOption.id} value={answerOption.id}>
+                      {answerOption.id}
+                  </option>
+              ))}
+            </select>
+          <div>You have picked the answer: {answerTen}</div>
+        </div>
+      );
+    }
+    function ChangeQuestionElevenDT(): React.JSX.Element {
+      const [answerEleven, setChangeAnswerEleven] = useState<string>("");
+  
+      function updateAnswer(event: React.ChangeEvent<HTMLSelectElement>) {
+        const newAnswer = event.target.value;
+        setChangeAnswerEleven(event.target.value);
+        setAnswer11(event.target.value);
+  
+        if (chatGPTcontents.includes("On a scale of one to five do you enjoy teaching others?")) {
+          chatGPTcontents = chatGPTcontents.replace(
+            /On a scale of one to five do you enjoy teaching others? .+?(\. |$)/,
+            `On a scale of one to five do you enjoy teaching others? ${newAnswer}. `
+          );
+        } else {
+          chatGPTcontents += `On a scale of one to five, do you enjoy teaching others? ${newAnswer}. `;
+        }
+        setContents(chatGPTcontents);
+      }
+  
+      const answersEleven = [
+        { id: "Five (Most)" },
+        { id: "Four" },
+        { id: "Three (Neutral)" },
+        { id: "Two " },
+        { id: "One (Least)" },
+      ];
+  
+      return (
+        <div>
+          <div>
+          On a scale of one to five do you enjoy teaching others?
+          </div>
+          <select value={answerEleven} onChange={updateAnswer}>
+                  <option disabled></option>
+                  {answersEleven.map((answerOption)=>(
+                      <option key={answerOption.id} value={answerOption.id}>
+                      {answerOption.id}
+                  </option>
+              ))}
+            </select>
+          <div>You have picked the answer: {answerEleven}</div>
+        </div>
+      );
+    }
+    function ChangeQuestionTwelveDT(): React.JSX.Element {
+      const [answerTwelve, setChangeAnswerTwelve] = useState<string>("");
+  
+      function updateAnswer(event: React.ChangeEvent<HTMLSelectElement>) {
+        const newAnswer = event.target.value;
+        setChangeAnswerTwelve(event.target.value);
+        setAnswer12(event.target.value);
+  
+        if (chatGPTcontents.includes("On a scale of one to five, how would you do as a leader?")) {
+          chatGPTcontents = chatGPTcontents.replace(
+            /On a scale of one to five how would you do as a leader? .+?(\. |$)/,
+            `On a scale of one to five how would you do as a leader? ${newAnswer}. `
+          );
+        } else {
+          chatGPTcontents += `On a scale of one to five how would you do as a leader? ${newAnswer}. `;
+        }
+        setContents(chatGPTcontents);
+      }
+  
+      const answersTwelve = [
+        { id: "Five (Great)" },
+        { id: "Four" },
+        { id: "Three (Neutral)" },
+        { id: "Two " },
+        { id: "One (Not great)" },
+      ];
+  
+      return (
+        <div>
+          <div>
+          On a scale of one to five how would you do as a leader?
+          </div>
+          <select value={answerTwelve} onChange={updateAnswer}>
+                  <option disabled></option>
+                  {answersTwelve.map((answerOption)=>(
+                      <option key={answerOption.id} value={answerOption.id}>
+                      {answerOption.id}
+                  </option>
+              ))}
+            </select>
+          <div>You have picked the answer: {answerTwelve}</div>
+        </div>
+      );
+    }
+    function ChangeQuestionThirteenDT(): React.JSX.Element {
+      const [answerThirteen, setChangeAnswerThirteen] = useState<string>("");
+  
+      function updateAnswer(event: React.ChangeEvent<HTMLSelectElement>) {
+        const newAnswer = event.target.value;
+        setChangeAnswerThirteen(event.target.value);
+        setAnswer13(event.target.value);
+  
+        if (chatGPTcontents.includes("On a scale of one to five, how much do you like taking risks?")) {
+          chatGPTcontents = chatGPTcontents.replace(
+            /On a scale of one to five, how much do you like taking risks? .+?(\. |$)/,
+            `On a scale of one to five, how much do you like taking risks? ${newAnswer}. `
+          );
+        } else {
+          chatGPTcontents += `On a scale of one to five, how much do you like taking risks? ${newAnswer}. `;
+        }
+        setContents(chatGPTcontents);
+      }
+  
+      const answersThirteen = [
+        { id: "Five (Most)" },
+        { id: "Four" },
+        { id: "Three (Neutral)" },
+        { id: "Two " },
+        { id: "One (Least)" },
+      ];
+  
+      return (
+        <div>
+          <div>
+          On a scale of one to five, how much do you like taking risks?
+          </div>
+          <select value={answerThirteen} onChange={updateAnswer}>
+                  <option disabled></option>
+                  {answersThirteen.map((answerOption)=>(
+                      <option key={answerOption.id} value={answerOption.id}>
+                      {answerOption.id}
+                  </option>
+              ))}
+            </select>
+          <div>You have picked the answer: {answerThirteen}</div>
+        </div>
+      );
+    }
+    function ChangeQuestionFourteenDT(): React.JSX.Element {
+      const [answerFourteen, setChangeAnswerFourteen] = useState<string>("");
+  
+      function updateAnswer(event: React.ChangeEvent<HTMLSelectElement>) {
+        const newAnswer = event.target.value;
+        setChangeAnswerFourteen(event.target.value);
+        setAnswer14(event.target.value);
+  
+        if (chatGPTcontents.includes("On a scale of one to five, how important is work-life balance?")) {
+          chatGPTcontents = chatGPTcontents.replace(
+            /On a scale of one to five, how important is work-life balance? .+?(\. |$)/,
+            `On a scale of one to five, how important is work-life balance? ${newAnswer}. `
+          );
+        } else {
+          chatGPTcontents += `On a scale of one to five, how important is work-life balance? ${newAnswer}. `;
+        }
+        setContents(chatGPTcontents);
+      }
+  
+      const answersFourteen = [
+        { id: "Five (Most)" },
+        { id: "Four" },
+        { id: "Three (Neutral)" },
+        { id: "Two " },
+        { id: "One (Least)" },
+      ];
+  
+      return (
+        <div>
+          <div>
+          On a scale of one to five, how important is work-life balance?
+          </div>
+          <select value={answerFourteen} onChange={updateAnswer}>
+                  <option disabled></option>
+                  {answersFourteen.map((answerOption)=>(
+                      <option key={answerOption.id} value={answerOption.id}>
+                      {answerOption.id}
+                  </option>
+              ))}
+            </select>
+          <div>You have picked the answer: {answerFourteen}</div>
         </div>
       );
     }
@@ -398,18 +686,26 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
         
           {/* Left column of questions */}
           <div style={{ width: "45%", textAlign: "center" }}>
-            <div>{ChangeQuestionOneDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionOneDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionThreeDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionThreeDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionFiveDT()}</div>
-            </div>
+            <div style={{color:"white"}}>{ChangeQuestionFiveDT()}</div>
+            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
+            <div style={{color:"white"}}>{ChangeQuestionSevenDT()}</div>
+            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
+            <div style={{color:"white"}}>{ChangeQuestionNineDT()}</div>
+            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
+            <div style={{color:"white"}}>{ChangeQuestionElevenDT()}</div>
+            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
+            <div style={{color:"white"}}>{ChangeQuestionThirteenDT()}</div>
+          </div>
 
           {/* Vertical Line */}
           <div style={{ width: "10px", display: "flex", alignItems: "center" }}>
             <div
               style={{
-                height: "115%",
+                height: "105%",
                 borderLeft: "3px solid grey",
                 marginLeft: "5px",
               }}
@@ -418,11 +714,19 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
 
           {/* Right column of questions */}
           <div style={{ width: "45%", textAlign: "center" }}>
-            <div>{ChangeQuestionTwoDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionTwoDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionFourDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionFourDT()}</div>
             <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div>{ChangeQuestionSixDT()}</div>
+            <div style={{color:"white"}}>{ChangeQuestionSixDT()}</div>
+            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
+            <div style={{color:"white"}}>{ChangeQuestionEightDT()}</div>
+            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
+            <div style={{color:"white"}}>{ChangeQuestionTenDT()}</div>
+            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
+            <div style={{color:"white"}}>{ChangeQuestionTwelveDT()}</div>
+            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
+            <div style={{color:"white"}}>{ChangeQuestionFourteenDT()}</div>
           </div>
         </div>
         <div
@@ -432,30 +736,22 @@ export function DetailedRadioButtons({ apiKey }: DetailedRadioButtonsProps) {
             textAlign: "center",
           }}
         >
-          {/* Box with thicker bottom line */}
-          <div
-            style={{
-              border: "3px solid grey",
-              padding: "20px",
-              display: "inline-block",
-              width: "60%",
-            }}
-          >
-            {ChangeQuestionSevenDT()}
-          </div>
         </div>
         <ProgressBar
           now={progress}
           label={`${Math.round(progress)}%`}
           className="progressBar"
+          striped
+          style={{maxWidth: "90%", marginLeft: "5%", marginRight: "5%"}}
         ></ProgressBar>
         <pre></pre>
         {completed && (
           <div className="feedback">
-            <h4>Quiz completed!</h4>
+            <h4 style={{color:"white"}}>Quiz completed!</h4>
           </div>
         )}
-        <ChatGPT apiKey = {apiKey} chatGPTcontents={ChatGPTContents()}/>
+        <ChatGPT apiKey = {apiKey} chatGPTcontents={ChatGPTContents()} completed = {completed}/>
       </div>
     );
   }
+  
