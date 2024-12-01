@@ -22,6 +22,8 @@
     justify-content: space-between;
     width: 100%;
     background-image: url('../../public/starry_sky.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     height: 650px;
     /* margin-top: 50px; */
     /* padding-top: 80px; */
