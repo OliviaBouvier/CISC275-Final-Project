@@ -671,72 +671,63 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         </div>
       );
     }
+    
+    function NextPrevQuestionSelect():React.JSX.Element{
+    const questions=[
+      {id:1,function:ChangeQuestionOneDT()},
+      {id:2,function:ChangeQuestionTwoDT()},
+      {id:3,function:ChangeQuestionThreeDT()},
+      {id:4,function:ChangeQuestionFourDT()},
+      {id:5,function:ChangeQuestionFiveDT()},
+      {id:6,function:ChangeQuestionSixDT()},
+      {id:7,function:ChangeQuestionSevenDT()},
+      {id:8,function:ChangeQuestionEightDT()},
+      {id:9,function:ChangeQuestionNineDT()},
+      {id:10,function:ChangeQuestionTenDT()},
+      {id:11,function:ChangeQuestionElevenDT()},
+      {id:12,function:ChangeQuestionTwelveDT()},
+      {id:13,function:ChangeQuestionThirteenDT()},
+      {id:14,function:ChangeQuestionFourteenDT()},
+    ];
+    const [currentIndex,setCurrentIndex]=useState(0);
+
+    const handleNext=()=>{
+      if(currentIndex<questions.length-1){
+        setCurrentIndex(currentIndex+1);
+      }
+    }
+    const handlePrevious=()=>{
+      if(currentIndex>0){
+        setCurrentIndex(currentIndex-1);
+      }
+    }
+
+    return(
+      <div style={{ textAlign: "center", marginTop: "40px" }}>
+      <div>{questions[currentIndex].function}</div>
+      <div style={{ marginTop: "20px" }}>
+        <button onClick={handlePrevious} disabled={currentIndex === 0}>
+          Previous
+        </button>
+        <button
+          onClick={handleNext}
+          disabled={currentIndex === questions.length - 1}
+        >
+          Next
+        </button>
+      </div>
+    </div>
+    );
+    }
+  
 
     function ChatGPTContents(){
         return contents;
     }
 
     return (<div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "40px",
-          }}>
-        
-          {/* Left column of questions */}
-          <div style={{ width: "45%", textAlign: "center" }}>
-            <div style={{color:"white"}}>{ChangeQuestionOneDT()}</div>
-            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div style={{color:"white"}}>{ChangeQuestionThreeDT()}</div>
-            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div style={{color:"white"}}>{ChangeQuestionFiveDT()}</div>
-            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div style={{color:"white"}}>{ChangeQuestionSevenDT()}</div>
-            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div style={{color:"white"}}>{ChangeQuestionNineDT()}</div>
-            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div style={{color:"white"}}>{ChangeQuestionElevenDT()}</div>
-            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div style={{color:"white"}}>{ChangeQuestionThirteenDT()}</div>
-          </div>
-
-          {/* Vertical Line */}
-          <div style={{ width: "10px", display: "flex", alignItems: "center" }}>
-            <div
-              style={{
-                height: "105%",
-                borderLeft: "3px solid grey",
-                marginLeft: "5px",
-              }}
-            ></div>
-          </div>
-
-          {/* Right column of questions */}
-          <div style={{ width: "45%", textAlign: "center" }}>
-            <div style={{color:"white"}}>{ChangeQuestionTwoDT()}</div>
-            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div style={{color:"white"}}>{ChangeQuestionFourDT()}</div>
-            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div style={{color:"white"}}>{ChangeQuestionSixDT()}</div>
-            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div style={{color:"white"}}>{ChangeQuestionEightDT()}</div>
-            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div style={{color:"white"}}>{ChangeQuestionTenDT()}</div>
-            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div style={{color:"white"}}>{ChangeQuestionTwelveDT()}</div>
-            <hr style={{ borderTop: "3px solid black", margin: "20px 0" }} />
-            <div style={{color:"white"}}>{ChangeQuestionFourteenDT()}</div>
-          </div>
-        </div>
-        <div
-          style={{
-            display: "inline-block",
-            padding: "20px",
-            textAlign: "center",
-          }}
-        >
-        </div>
+      <div>{NextPrevQuestionSelect()}</div>
+      <pre></pre>
         <ProgressBar
           now={progress}
           label={`${Math.round(progress)}%`}
@@ -747,7 +738,7 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         <pre></pre>
         {completed && (
           <div className="feedback">
-            <h4 style={{color:"white"}}>Quiz completed!</h4>
+            <h4>Quiz completed!</h4>
           </div>
         )}
         <ChatGPT apiKey = {apiKey} chatGPTcontents={ChatGPTContents()} completed = {completed}/>
