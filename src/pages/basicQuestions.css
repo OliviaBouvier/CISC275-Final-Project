@@ -27,7 +27,7 @@
 }
 .question-box{
     width: 700px;
-    height: 275px;
+    height: 310px;
     background-color: lightskyblue;
     border-radius: 10px;
     border: 4px;
@@ -38,7 +38,4 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-    margin-bottom: .5%;
-    margin-top: -.7%;
 }
