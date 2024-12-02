@@ -1,5 +1,7 @@
 .background-image{
     background-image: url('../../public/starry_sky.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 .page-title{
     font-size: 3em; 

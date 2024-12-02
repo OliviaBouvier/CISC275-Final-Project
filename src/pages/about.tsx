@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import './about.css';
+import olivia_photo from '../assets/Olivia_photo.jpg';
+import tarun_photo from '../assets/Tarun-photo.jpg';
 
 type TeamMember = {
     name: string;
@@ -11,7 +13,7 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
     { name: "Olivia Bouvier", 
-        photo: "/Olivia_photo.jpg", 
+        photo: olivia_photo, 
         info: "Olivia is a junior Computer Science major at the University of Delaware with a concentration in AI and minors in English and Cognitive Science. She hopes to pursue a career in software development and to use computer science ethically to improve society.",
         email: "obouvier@udel.edu",
         linkedin: "https://linkedin.com/in/oliviabouvier"},
@@ -26,7 +28,7 @@ const teamMembers: TeamMember[] = [
         email: "chrisy@udel.edu",
         linkedin: "https://linkedin.com/in/chrisyanko"},
     { name: "Tarun Baskuran", 
-        photo: "/Tarun-photo.jpg", 
+        photo: tarun_photo, 
         info: "Info about Tarun.",
         email: "tarunb@udel.edu",
         linkedin: "https://linkedin.com/in/tarunb"},
