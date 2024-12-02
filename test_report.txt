@@ -26,6 +26,7 @@ FAIL src/App.test.tsx
                 [36m<a[39m
                   [33mclass[39m=[32m"nav-link"[39m
                   [33mhref[39m=[32m"#/"[39m
+                  [33mstyle[39m=[32m"color: white; text-shadow: 0 0 1em white, 0 0 0.2em white;"[39m
                 [36m>[39m
                   [0mHome[0m
                 [36m</a>[39m
@@ -184,7 +185,7 @@ go away.[0m
 ----------------------------|---------|----------|---------|---------|-------------------
 File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ----------------------------|---------|----------|---------|---------|-------------------
-All files                   |    3.15 |        0 |     4.8 |    2.97 |                   
+All files                   |    3.83 |        0 |    4.65 |    3.66 |                   
  src                        |    8.33 |        0 |   33.33 |    8.33 |                   
   App.tsx                   |     100 |      100 |     100 |     100 |                   
   index.tsx                 |       0 |      100 |     100 |       0 | 8-20              
@@ -195,8 +196,8 @@ All files                   |    3.15 |        0 |     4.8 |    2.97 |
   basicButton.tsx           |      75 |      100 |      50 |      75 | 8                 
   chatgpt.tsx               |       0 |        0 |       0 |       0 | 18-135            
   detailedButton.tsx        |      75 |      100 |      50 |      75 | 8                 
- src/components/NavBar      |     100 |      100 |     100 |     100 |                   
-  NavBarElements.tsx        |     100 |      100 |     100 |     100 |                   
+ src/components/NavBar      |    23.8 |      100 |      20 |    23.8 |                   
+  NavBarElements.tsx        |    23.8 |      100 |      20 |    23.8 | 12-37             
  src/pages                  |   14.28 |        0 |   13.33 |   12.12 |                   
   about.tsx                 |   28.57 |        0 |    12.5 |      25 | 44-99             
   basicQuestions.tsx        |       0 |        0 |       0 |       0 | 7-25              
@@ -206,5 +207,5 @@ All files                   |    3.15 |        0 |     4.8 |    2.97 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.592 s
+Time:        3.759 s
 Ran all test suites.
