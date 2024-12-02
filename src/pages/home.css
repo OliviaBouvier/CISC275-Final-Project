@@ -112,9 +112,18 @@
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    animation-play-state: running;
 }
 
 @keyframes twinkle {
-    from {box-shadow: 0 0 25px #fefefe;}
-    to {box-shadow: 0 0 75px #fefefe;}
+    from {box-shadow: 0 0 0px #fefefedd;}
+    to {box-shadow: 0 0 35px #fefefedd;}
+}
+
+.detailed-button:hover, .basic-button:hover{
+    background-color: white;
+    border-color: white;
+    color: black;
+    box-shadow: 0 0 25px #fefefe;
+    animation-duration: 0s;
 }
