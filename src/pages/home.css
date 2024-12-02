@@ -1,14 +1,11 @@
 .home-top-left-title{
-    /* position: absolute;
-    top: 25px;
-    left: 550px; */
     font-size: 3em; 
     font-weight: bold;
     color: white; 
     text-shadow: 0 0 1em white, 0 0 0.2em white;
     margin: 0;
     font-family: "Arial", Arial, Helvetica, sans-serif, sans-serif;
-    margin-top: -12%;
+    /* margin-top: -12%; */
 }
   
 .home-container {
@@ -83,6 +80,7 @@
     margin-right: 30px;
     margin-bottom: 60px;
     margin-left: 30%;
+    margin-top: 7%;
     border-radius: 8px;
 }
 
@@ -112,9 +110,18 @@
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    animation-play-state: running;
 }
 
 @keyframes twinkle {
-    from {box-shadow: 0 0 25px #fefefe;}
-    to {box-shadow: 0 0 75px #fefefe;}
+    from {box-shadow: 0 0 0px #fefefedd;}
+    to {box-shadow: 0 0 35px #fefefedd;}
+}
+
+.detailed-button:hover, .basic-button:hover{
+    background-color: white;
+    border-color: white;
+    color: black;
+    box-shadow: 0 0 25px #fefefe;
+    animation-duration: 0s;
 }

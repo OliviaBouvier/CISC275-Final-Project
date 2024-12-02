@@ -66,7 +66,6 @@
     border-radius: 50%; 
     border: 2px solid #ddd; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    /* margin-bottom: 10px; */
 }
 
 .stars-around {
@@ -105,7 +104,6 @@
     max-width: 800px;
     margin: 0 auto;
     text-align: left;
-    /* background-color: black; */
 }
 
 .about-header {
