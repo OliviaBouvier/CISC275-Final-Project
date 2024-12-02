@@ -23,6 +23,18 @@
 .apikey-submit{
     background-color: white;
     color: black;
-    margin-bottom: .5%;
-    margin-top: -.7%;
+}
+.question-box{
+    width: 700px;
+    height: 310px;
+    background-color: lightskyblue;
+    border-radius: 10px;
+    border: 4px;
+    border-color: black;
+    margin-bottom: 284px;
+}
+.question-box-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

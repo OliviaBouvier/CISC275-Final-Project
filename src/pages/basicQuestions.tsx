@@ -24,20 +24,23 @@ export function BasicQuestions() {
   }
     return (
             
-        <div>
-          <div className="background-image">
+      <div className="background-image">
         <h1 className="page-title">Basic Questions</h1>
         <p className="page-subtitle">A simplified version of the quiz containing only multiple choice questions. There is no time limit.</p>
-        <BasicMultipleChoice apiKey={key}/>
+        <pre></pre>
+        <div className="question-box-container">
+          <div className="question-box">
+          <BasicMultipleChoice apiKey={key}/>
+          </div>
         </div>
         <div className="page-footer">
         <Form>
-            <Form.Label style={{color:"white"}}>API Key:</Form.Label>
-            <Form.Control style={{backgroundColor:"black",color:"white"}} type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
-            <br></br>
-            <Button className="apikey-submit" onClick={handleSubmit}>Submit API key</Button>
+          <Form.Label style={{color:"white"}}>API Key:</Form.Label>
+          <Form.Control style={{backgroundColor:"black",color:"white"}} type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
+          <br></br>
+          <Button className="apikey-submit" onClick={handleSubmit}>Submit API key</Button>
         </Form>
         </div>
-        </div>
+      </div>
     );
 }
