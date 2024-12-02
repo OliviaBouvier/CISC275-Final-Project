@@ -22,7 +22,7 @@ const teamMembers: TeamMember[] = [
         linkedin: "https://linkedin.com/in/connorgriffith"},
     { name: "Chris Yanko", 
         photo: "Chris' Photo", 
-        info: "Info about Chris.",
+        info: "Chris is a junior Computer Science major at the University of Delaware with a concentration in Cybersecurity. He hopes to pursue a career in cybersecurity to be able to protect people on the digital spectrum",
         email: "chrisy@udel.edu",
         linkedin: "https://linkedin.com/in/chrisyanko"},
     { name: "Tarun Baskuran", 
