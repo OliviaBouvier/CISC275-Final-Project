@@ -34,7 +34,7 @@
 
 .quiz-section-1 {
     position: absolute;
-    bottom: 10%;
+    bottom: 20%;
     left: 2%;
     align-items: center;
     margin-bottom: 40px;
@@ -44,7 +44,7 @@
 
 .quiz-section-2 {
     position: absolute;
-    bottom: 10%;
+    bottom: 20%;
     right: 2%;
     align-items: center;
     margin-bottom: 40px;
