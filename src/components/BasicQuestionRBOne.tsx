@@ -682,7 +682,7 @@ function NextPrevQuestionSelect():React.JSX.Element{
         </button>
         <button
           onClick={handleNext}
-          disabled={currentIndex === questions.length - 1}
+          disabled={currentIndex === questions.length - 1  || apiKey === ""}
         >
           Next
         </button>

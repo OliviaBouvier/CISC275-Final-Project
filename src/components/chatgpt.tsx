@@ -151,7 +151,8 @@ export function ChatGPT({
           variant="warning"
           className="mt-3"
         >
-          Please enter an API key before submitting.
+          Please enter an API key before continuing. The page will be reloaded when you enter a key, so it's important that you enter a key
+          before starting the quiz.
         </Alert>
       )}
 
