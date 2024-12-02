@@ -703,6 +703,8 @@ return (<div>
         now={progress}
         label={`${Math.round(progress)}%`}
         className="progressBar"
+        striped
+        style={{maxWidth: "90%", marginLeft: "5%", marginRight: "5%"}}
       ></ProgressBar>
       <pre></pre>
       {completed && (
@@ -710,7 +712,7 @@ return (<div>
           <h4>Quiz completed!</h4>
         </div>
       )}
-      <ChatGPT apiKey = {apiKey} chatGPTcontents={ChatGPTContents()}/>
+      <ChatGPT apiKey = {apiKey} chatGPTcontents={ChatGPTContents()} completed = {completed}/>
     </div>
   );
 }
