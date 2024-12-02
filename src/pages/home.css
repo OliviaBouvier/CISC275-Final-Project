@@ -8,6 +8,7 @@
     text-shadow: 0 0 1em white, 0 0 0.2em white;
     margin: 0;
     font-family: "Arial", Arial, Helvetica, sans-serif, sans-serif;
+    margin-top: -12%;
 }
   
 .home-container {
@@ -20,9 +21,9 @@
 
 .main-content {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     width: 100%;
-    height: 650px;
+    height: auto;
 }
 
 .title-emoji {
@@ -32,21 +33,29 @@
 
 .quiz-sections {
     display: flex;
-    flex-direction: column;
-    max-width: 40%;
-    margin-left: 20px;
 }
 
-.quiz-section {
-    display: flex;
-    flex-direction: column;
+.quiz-section-1 {
+    position: absolute;
+    bottom: 10%;
+    left: 2%;
     align-items: center;
     margin-bottom: 40px;
+    vertical-align: middle;
+    width: 22%;
+}
+
+.quiz-section-2 {
+    position: absolute;
+    bottom: 10%;
+    right: 2%;
+    align-items: center;
+    margin-bottom: 40px;
+    vertical-align: middle;
 }
 
 .quiz-description {
     padding: 15px;
-    background-color: lightskyblue;
     border-radius: 8px;
     margin-bottom: 15px;
     text-align: center;
@@ -55,24 +64,25 @@
 
 .description-text {
     font-size: .7em;
-    color: #222;
     line-height: 1.6;
+    color: white;
+    text-shadow: 0 0 1em white, 0 0 0.2em white;
 }
 
 .description-header-text {
-    color: #000000
+    color: white;
+    text-shadow: 0 0 1em white, 0 0 0.2em white;
 }
 
 .intro-box {
-    max-width: 30%;
-    margin-top: 60px;
+    max-width: 40%;
     padding: 20px;
-    background-color: lightskyblue;
-    color: #333;
+    color: white;
+    text-shadow: 0 0 1em white, 0 0 0.2em white;
     line-height: 1.8;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
     margin-right: 30px;
     margin-bottom: 60px;
+    margin-left: 30%;
     border-radius: 8px;
 }
 
@@ -81,7 +91,7 @@
     text-align: center;
     padding: 20px;
     width: 100%;
-    color: lightskyblue
+    color: white;
 }
 
 .detailed-button,

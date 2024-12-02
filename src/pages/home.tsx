@@ -8,8 +8,16 @@ export function Home() {
       <header className="App-header">
         <h1 className="home-top-left-title">Career Helpi</h1>
         <div className="main-content">
+        <div className="intro-box">
+            <p>
+              Welcome to Career Helpi! Our platform is dedicated to helping you
+              discover your ideal career path. Start with a quick quiz or delve
+              into a detailed analysis to understand your career preferences and
+              opportunities.
+            </p>
+          </div>
           <div className="quiz-sections">
-            <div className="quiz-section">
+            <div className="quiz-section-1">
               <div className="quiz-description">
                 <h2 className="description-header-text">
                   Option 1: Basic Questions
@@ -25,7 +33,7 @@ export function Home() {
               </div>
             </div>
 
-            <div className="quiz-section">
+            <div className="quiz-section-2">
               <div className="quiz-description">
                 <h2 className="description-header-text">
                   Option 2: Detailed Questions
@@ -40,15 +48,7 @@ export function Home() {
             </div>
           </div>
 
-          <div className="intro-box">
-            <h2>About Career Helpi</h2>
-            <p>
-              Welcome to Career Helpi! Our platform is dedicated to helping you
-              discover your ideal career path. Start with a quick quiz or delve
-              into a detailed analysis to understand your career preferences and
-              opportunities.
-            </p>
-          </div>
+          
         </div>
       </header>
 
