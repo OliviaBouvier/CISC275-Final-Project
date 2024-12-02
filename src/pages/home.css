@@ -1,14 +1,11 @@
 .home-top-left-title{
-    /* position: absolute;
-    top: 25px;
-    left: 550px; */
     font-size: 3em; 
     font-weight: bold;
     color: white; 
     text-shadow: 0 0 1em white, 0 0 0.2em white;
     margin: 0;
     font-family: "Arial", Arial, Helvetica, sans-serif, sans-serif;
-    margin-top: -12%;
+    /* margin-top: -12%; */
 }
   
 .home-container {
@@ -83,6 +80,7 @@
     margin-right: 30px;
     margin-bottom: 60px;
     margin-left: 30%;
+    margin-top: 7%;
     border-radius: 8px;
 }
 
