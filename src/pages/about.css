@@ -1,28 +1,134 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: o;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 80%;
+    position: relative;
+    text-align: center;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #555;
+    cursor: pointer;
+}
+
+.modal-body {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.modal-body a {
+    color: #2547cf;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.modal-body a:hover {
+    text-decoration: underline;
+}
+
+.team-box-wrapper {
+    position: relative;
+    margin-top: 50px;
+}
+
+.team-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%; 
+    border: 2px solid #ddd; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    /* margin-bottom: 10px; */
+}
+
+.stars-around {
+    position: fixed;
+    top: -50px;
+    left: -50px;
+    width: calc(100% + 100px);
+    height: calc(100% + 100px);
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #7b8ddf;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #6472ae;
+    opacity: 0.8;
+    animation: blink 2s infinite ease-in-out;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
 .page-content{
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
     text-align: left;
+    /* background-color: black; */
 }
 
 .about-header {
-    background-color: #8498e8;
+    background: linear-gradient(135deg, #8498e8, #6371c6);
     padding: 80px;
     text-align: center;
     color: white;
-    width: 200vw;
+    width: 100vw;
     margin: 0;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     top: 0;
     margin-bottom: 50px;
+    margin-top: -20px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 50% 100%, 0% 75%);
 }
 
 .about-header h1{
     font-size: 3rem;
     font-weight: bold;
     margin: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .page-content h2{
@@ -35,20 +141,21 @@
 .page-content p {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: #333;
+    color: black;
     text-align: center;
 }
 
 .team-box {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.95);
+    position: relative;
+    z-index: 1;
     padding: 30px;
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px
+    grid-gap: 20px;
 }
 
 .team-member {
@@ -57,6 +164,7 @@
     border-radius: 10px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .photo-placeholder {
@@ -72,9 +180,10 @@
     color: #555;
 }
 
-.team-box:hover {
-    transform: scale(1.05);
+.team-member:hover {
+    transform: scale(1.1);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    background-color: #f5f5f5
 }
 
 @media (max-width: 768px) { 

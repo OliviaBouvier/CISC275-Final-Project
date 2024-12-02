@@ -102,10 +102,13 @@ function ChangeQuestionTwoB(): React.JSX.Element {
     }
 
     const answersTwo = [
-        { id: "Technological" },
+        { id: "Technology" },
         { id: "Healthcare" },
         { id: "Construction" },
         { id: "Business" },
+        { id: "Education"},
+        { id: "Law"},
+        { id: "I'm not sure"},
     ];
 
     return (
@@ -242,7 +245,8 @@ function ChangeQuestionFiveB(): React.JSX.Element {
         { id: "Science" },
         { id: "History" },
         { id: "English" },
-        { id: "Art" }
+        { id: "Art" },
+        { id: "Physical Education"}
     ];
 
     return (
@@ -284,7 +288,7 @@ function ChangeQuestionSixB(): React.JSX.Element {
     }
 
     const answersSix = [
-        { id: "Structure office setting" },
+        { id: "Structured office setting" },
         { id: "Open workspace" },
         { id: "Fast-paced, dynamic environment" },
         { id: "Quiet space" },
@@ -329,7 +333,7 @@ function ChangeQuestionSevenB(): React.JSX.Element {
     }
 
     const answersSeven = [
-        { id: "Solving Problems" },
+        { id: "Solving problems" },
         { id: "Being creative" },
         { id: "Communicating" },
         { id: "Managing plans/people" },
@@ -454,7 +458,7 @@ function ChangeQuestionTenB(): React.JSX.Element {
         setContents(chatGPTcontents);
     }
     const answersTen = [
-        { id: "Yes, " },
+        { id: "Yes" },
         { id: "No" },
     ];
 
@@ -611,7 +615,7 @@ function ChangeQuestionFourteenB(): React.JSX.Element {
                 `What is your ideal work schedule? ${newAnswer}. `
             );
         } else {
-            chatGPTcontents += `What is your ideal work schedule? ${newAnswer}. `;
+            chatGPTcontents += `My ideal work schedule is ${newAnswer}. `;
         }
         setContents(chatGPTcontents);
     }

@@ -15,12 +15,11 @@ import {About} from "./pages/about";
 function App() {
   return (
     <div className="App">
-      
       <Router>
             <Navbar />
               <NavBarElements />
             <Routes>
-                <Route path="/starter-helpi/" element={
+                <Route path="/" element={
                   <>
                     <Home /> 
                   </>

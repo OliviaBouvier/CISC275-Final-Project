@@ -5,6 +5,7 @@
     font-size: 3em; 
     font-weight: bold;
     color: white; 
+    text-shadow: 0 0 1em white, 0 0 0.2em white;
     margin: 0;
     font-family: "Arial", Arial, Helvetica, sans-serif, sans-serif;
 }
@@ -21,10 +22,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    background-image: url('../../public/starry_sky.jpg');
     height: 650px;
-    /* margin-top: 50px; */
-    /* padding-top: 80px; */
 }
 
 .title-emoji {
@@ -75,10 +73,11 @@
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
     margin-right: 30px;
     margin-bottom: 60px;
+    border-radius: 8px;
 }
 
 .home-footer {
-    background-color: #212429;
+    background-color: #090d16;
     text-align: center;
     padding: 20px;
     width: 100%;

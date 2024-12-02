@@ -1,5 +1,7 @@
 .background-image{
     background-image: url('../../public/starry_sky.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 .page-title{
     font-size: 3em; 
@@ -16,11 +18,11 @@
 
 .page-footer{
     background-color: black;
-    margin-top: -16px;
 }
 
 .apikey-submit{
     background-color: white;
+    border-color: black;
     color: black;
 }
 .question-box{
@@ -36,4 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+    margin-bottom: .5%;
+    margin-top: -.7%;
 }
