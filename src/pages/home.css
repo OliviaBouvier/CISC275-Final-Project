@@ -94,6 +94,8 @@
     color: white;
 }
 
+
+
 .detailed-button,
 .basic-button {
     margin-top: 20px;
@@ -104,6 +106,15 @@
     z-index: 1;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    animation-name: twinkle;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes twinkle {
+    from {box-shadow: 0 0 25px #fefefe;}
+    to {box-shadow: 0 0 75px #fefefe;}
 }
