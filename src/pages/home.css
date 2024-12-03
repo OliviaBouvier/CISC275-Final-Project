@@ -115,7 +115,7 @@
 
 .detailed-button,
 .basic-button {
-    width: 100px;
+    width: 400px;
     height: 100px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -131,13 +131,13 @@
     animation-play-state: running;
 }
 
-.home-container .basic-button {
+/* .home-container .basic-button {
     background-image: url("../assets/shooting_star.png");
 }
 
 .home-container .detailed-button {
     background-image: url("../assets/comet.png");
-}
+} */
 
 @keyframes twinkle {
     from {box-shadow: 0 0 0px #fefefedd;}
@@ -146,9 +146,9 @@
 
 .detailed-button:hover, .basic-button:hover{
     transform: scale(1.1);
-    border-color: white;
+    /* border-color: white; */
     color: black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
     animation-duration: 0s;
 }
 
