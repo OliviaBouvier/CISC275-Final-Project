@@ -94,7 +94,7 @@
 
 
 
-.detailed-button,
+/* .detailed-button,
 .basic-button {
     margin-top: 20px;
     font-size: medium;
@@ -111,6 +111,32 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-play-state: running;
+} */
+
+.detailed-button,
+.basic-button {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    animation-name: twinkle;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+.home-container .basic-button {
+    background-image: url("../assets/shooting_star.png");
+}
+
+.home-container .detailed-button {
+    background-image: url("../assets/comet.png");
 }
 
 @keyframes twinkle {
@@ -119,9 +145,17 @@
 }
 
 .detailed-button:hover, .basic-button:hover{
+    transform: scale(1.1);
+    border-color: white;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation-duration: 0s;
+}
+
+/* .detailed-button:hover, .basic-button:hover{
     background-color: white;
     border-color: white;
     color: black;
     box-shadow: 0 0 25px #fefefe;
     animation-duration: 0s;
-}
+} */
