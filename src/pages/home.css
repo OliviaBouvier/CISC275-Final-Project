@@ -34,7 +34,7 @@
 
 .quiz-section-1 {
     position: absolute;
-    bottom: 10%;
+    bottom: 40%;
     left: 2%;
     align-items: center;
     margin-bottom: 40px;
@@ -131,26 +131,36 @@
     animation-play-state: running;
 }
 
-/* .home-container .basic-button {
-    background-image: url("../assets/shooting_star.png");
+.basic-button {
+    transform: scaleX(-1);
+    margin-top: 10px;
 }
 
-.home-container .detailed-button {
-    background-image: url("../assets/comet.png");
-} */
-
-@keyframes twinkle {
+/* @keyframes twinkle {
     from {box-shadow: 0 0 0px #fefefedd;}
     to {box-shadow: 0 0 35px #fefefedd;}
+} */
+
+@keyframes twinkle  {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.5);
+    }
+    100% {
+        filter: brightness(1);
+    }
 }
 
+/* 
 .detailed-button:hover, .basic-button:hover{
-    transform: scale(1.1);
-    /* border-color: white; */
+    transform: scale(1.1) rotate(180deg);
+    border-color: white;
     color: black;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     animation-duration: 0s;
-}
+} */
 
 /* .detailed-button:hover, .basic-button:hover{
     background-color: white;
