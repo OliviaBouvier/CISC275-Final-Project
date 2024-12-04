@@ -7,7 +7,15 @@
     font-family: "Arial", Arial, Helvetica, sans-serif, sans-serif;
     /* margin-top: -12%; */
 }
-  
+
+.home-subtitle { 
+    font-weight: bold;
+    color: white; 
+    text-shadow: 0 0 1em white, 0 0 0.2em white;
+    margin: 0;
+    font-family: "Arial", Arial, Helvetica, sans-serif, sans-serif;
+}
+
 .home-container {
     display: flex;
     /* padding: 15px; */
@@ -34,7 +42,7 @@
 
 .quiz-section-1 {
     position: absolute;
-    bottom: 40%;
+    bottom: 10%;
     left: 2%;
     align-items: center;
     margin-bottom: 40px;
@@ -169,3 +177,4 @@
     box-shadow: 0 0 25px #fefefe;
     animation-duration: 0s;
 } */
+ 
