@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (51 ms)
+  ✕ renders learn react link (54 ms)
 
   ● renders learn react link
 
@@ -74,6 +74,11 @@ FAIL src/App.test.tsx
               [36m>[39m
                 [0mCareer Helpi[0m
               [36m</h1>[39m
+              [36m<h2[39m
+                [33mclass[39m=[32m"home-subtitle"[39m
+              [36m>[39m
+                [0mShooting for the Stars[0m
+              [36m</h2>[39m
               [36m<div[39m
                 [33mclass[39m=[32m"main-content"[39m
               [36m>[39m
@@ -105,12 +110,11 @@ FAIL src/App.test.tsx
                       [36m</p>[39m
                     [36m</div>[39m
                     [36m<div>[39m
-                      [36m<button[39m
-                        [33mclass[39m=[32m"basic-button btn btn-primary"[39m
-                        [33mtype[39m=[32m"button"[39m
-                      [36m>[39m
-                        [0mBasic Questions[0m
-                      [36m</button>[39m
+                      [36m<div[39m
+                        [33mclass[39m=[32m"basic-button"[39m
+                        [33mstyle[39m=[32m"background-image: url(shooting_star.png);"[39m
+                        [33mtitle[39m=[32m"Basic Questions"[39m
+                      [36m/>[39m
                     [36m</div>[39m
                   [36m</div>[39m
                   [36m<div[39m
@@ -130,12 +134,11 @@ FAIL src/App.test.tsx
                         [0mThis in-depth quiz offers comprehensive insights based on a range of questions to better understand your career preferences. Perfect for those wanting a deeper analysis.[0m
                       [36m</p>[39m
                     [36m</div>[39m
-                    [36m<button[39m
-                      [33mclass[39m=[32m"detailed-button btn btn-primary"[39m
-                      [33mtype[39m=[32m"button"[39m
-                    [36m>[39m
-                      [0mDetailed Questions[0m
-                    [36m</button>[39m
+                    [36m<div[39m
+                      [33mclass[39m=[32m"detailed-button"[39m
+                      [33mstyle[39m=[32m"background-image: url(comet.png);"[39m
+                      [33mtitle[39m=[32m"Detailed Questions"[39m
+                    [36m/>[39m
                   [36m</div>[39m
                 [36m</div>[39m
               [36m</div>[39m
@@ -193,9 +196,9 @@ All files                   |    3.83 |        0 |    4.65 |    3.66 |
  src/components             |    1.87 |        0 |    1.88 |    1.88 |                   
   BasicQuestionRBOne.tsx    |    0.52 |        0 |       0 |    0.53 | 13-699            
   DetailedQuestionRBOne.tsx |    0.52 |        0 |       0 |    0.53 | 13-728            
-  basicButton.tsx           |      75 |      100 |      50 |      75 | 8                 
+  basicButton.tsx           |      75 |      100 |      50 |      75 | 9                 
   chatgpt.tsx               |       0 |        0 |       0 |       0 | 18-135            
-  detailedButton.tsx        |      75 |      100 |      50 |      75 | 8                 
+  detailedButton.tsx        |      75 |      100 |      50 |      75 | 9                 
  src/components/NavBar      |    23.8 |      100 |      20 |    23.8 |                   
   NavBarElements.tsx        |    23.8 |      100 |      20 |    23.8 | 12-37             
  src/pages                  |   14.28 |        0 |   13.33 |   12.12 |                   
@@ -207,5 +210,5 @@ All files                   |    3.83 |        0 |    4.65 |    3.66 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.759 s
+Time:        4.065 s
 Ran all test suites.
