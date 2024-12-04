@@ -7,7 +7,15 @@
     font-family: "Arial", Arial, Helvetica, sans-serif, sans-serif;
     /* margin-top: -12%; */
 }
-  
+
+.home-subtitle { 
+    font-weight: bold;
+    color: white; 
+    text-shadow: 0 0 1em white, 0 0 0.2em white;
+    margin: 0;
+    font-family: "Arial", Arial, Helvetica, sans-serif, sans-serif;
+}
+
 .home-container {
     display: flex;
     /* padding: 15px; */
@@ -94,7 +102,7 @@
 
 
 
-.detailed-button,
+/* .detailed-button,
 .basic-button {
     margin-top: 20px;
     font-size: medium;
@@ -111,17 +119,62 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-play-state: running;
+} */
+
+.detailed-button,
+.basic-button {
+    width: 400px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    animation-name: twinkle;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
 }
 
-@keyframes twinkle {
+.basic-button {
+    transform: scaleX(-1);
+    margin-top: 10px;
+}
+
+/* @keyframes twinkle {
     from {box-shadow: 0 0 0px #fefefedd;}
     to {box-shadow: 0 0 35px #fefefedd;}
+} */
+
+@keyframes twinkle  {
+    0% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.5);
+    }
+    100% {
+        filter: brightness(1);
+    }
 }
 
+/* 
 .detailed-button:hover, .basic-button:hover{
+    transform: scale(1.1) rotate(180deg);
+    border-color: white;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation-duration: 0s;
+} */
+
+/* .detailed-button:hover, .basic-button:hover{
     background-color: white;
     border-color: white;
     color: black;
     box-shadow: 0 0 25px #fefefe;
     animation-duration: 0s;
-}
+} */
+ 

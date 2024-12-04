@@ -7,6 +7,7 @@ export function Home() {
     <div className="home-container">
       <header className="App-header">
         <h1 className="home-top-left-title">Career Helpi</h1>
+        <h2 className="home-subtitle">Shooting for the Stars</h2>
         <div className="main-content">
         <div className="intro-box">
             <p>
@@ -48,7 +49,7 @@ export function Home() {
             </div>
           </div>
 
-          
+      
         </div>
       </header>
 
