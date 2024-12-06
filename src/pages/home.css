@@ -150,15 +150,24 @@
 } */
 
 @keyframes twinkle  {
-    0% {
-        filter: brightness(1);
+    from {
+        filter: brightness(1) drop-shadow(white 0em 0em 0em);
     }
-    50% {
-        filter: brightness(1.5);
+    to {
+        filter: brightness(1.5) drop-shadow(white 0em 0em 1em);
     }
-    100% {
-        filter: brightness(1);
-    }
+}
+
+.detailed-button:hover {
+    transform: scale(1.1);
+    animation-duration: 0s;
+    filter: brightness(1.5) drop-shadow(white 0em 0em .75em)
+}
+
+.basic-button:hover {
+    transform: scale(1.1) scaleX(-1);
+    animation-duration: 0s;
+    filter: brightness(1.5) drop-shadow(white 0em 0em .75em)
 }
 
 /* 
