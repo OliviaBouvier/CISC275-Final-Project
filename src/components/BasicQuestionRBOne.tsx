@@ -700,7 +700,7 @@ function ChatGPTContents(){
 }
 
 return (<div>
-    <div>{NextPrevQuestionSelect()}</div>
+    <div style={{fontWeight:'bold',color:'white'}}>{NextPrevQuestionSelect()}</div>
     <pre></pre>
       <ProgressBar
         now={progress}
@@ -712,7 +712,7 @@ return (<div>
       <pre></pre>
       {completed && (
         <div className="feedback">
-          <h4>Quiz completed!</h4>
+          <h4 style={{color:'white'}}>Quiz completed!</h4>
         </div>
       )}
       <ChatGPT apiKey = {apiKey} chatGPTcontents={ChatGPTContents()} completed = {completed}/>

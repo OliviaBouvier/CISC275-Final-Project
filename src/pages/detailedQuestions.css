@@ -24,17 +24,16 @@
     background-color: white;
     color: black;
 }
-.question-box{
-    width: 700px;
-    height: 310px;
-    background-color: lightskyblue;
-    border-radius: 10px;
-    border: 4px;
-    border-color: black;
-    margin-bottom: 284px;
-}
-.question-box-container{
+.question-box-container-detailed{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.question-box-detailed{
+    width: 700px;
+    height: 430px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    border: 4px;
+    margin-bottom: 284px;
 }
