@@ -626,13 +626,15 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
       <div style={{ textAlign: "center", marginTop: "40px" }}>
       <div>{questions[currentIndex].function}</div>
       <div style={{ marginTop: "20px" }}>
-        <Button style={{color:"#212429",backgroundColor:"white",marginRight:"60%", boxShadow: '0 0 9em white, 0 0 0.9em white'}} 
+        <Button style={{color:"#212429",backgroundColor:"white",marginRight:"60%", 
+        boxShadow: '0 0 9em white, 0 0 0.9em white', borderColor:'white'}} 
         onClick={handlePrevious} 
         disabled={currentIndex === 0}
         >
           Previous
         </Button>
-        <Button style={{color:"#212429",backgroundColor:"white", marginLeft:"5%", boxShadow: '0 0 9em white, 0 0 0.9em white'}}
+        <Button style={{color:"#212429",backgroundColor:"white", marginLeft:"5%", 
+        boxShadow: '0 0 9em white, 0 0 0.9em white', borderColor:'white'}}
           onClick={handleNext}
           disabled={currentIndex === questions.length - 1}
         >
@@ -655,8 +657,15 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
           now={progress}
           label={`${Math.round(progress)}%`}
           className="progressBar"
-          style={{maxWidth: "90%", marginLeft: "5%", marginRight: "5%"}}
-        ></ProgressBar>
+          style={{maxWidth: "90%", marginLeft: "5%", marginRight: "5%", background:'black'}}
+        >
+          <ProgressBar
+            now={progress}
+            style={{
+              backgroundColor:'white'
+            }}
+          />
+        </ProgressBar>
         <pre></pre>
         {completed && (
           <div className="feedback">
