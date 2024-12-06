@@ -130,7 +130,7 @@ export function ChatGPT({
   return (
     <div>
       <Button
-        style={{ backgroundColor: "white", color: "black", borderColor: "black", marginBottom: ".5%" }}
+        style={{ backgroundColor: "white", color: "black", borderColor: "black", marginBottom: ".5%", boxShadow: '0 0 9em white, 0 0 0.9em white' }}
         onClick={() => {
           handleChatGPTSubmission();
         }}
