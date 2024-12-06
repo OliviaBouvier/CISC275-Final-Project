@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import './about.css';
 import olivia_photo from '../assets/Olivia_photo.jpg';
 import tarun_photo from '../assets/Tarun-photo.jpg';
+import connor_photo from "../assets/Connor_photo.jpg";
+import chris_photo from "../assets/Chris_photo.jpg";
 
 type TeamMember = {
     name: string;
@@ -18,12 +20,12 @@ const teamMembers: TeamMember[] = [
         email: "obouvier@udel.edu",
         linkedin: "https://linkedin.com/in/oliviabouvier"},
     { name: "Connor Griffith", 
-        photo: "Connor's Photo", 
+        photo: connor_photo,
         info: "Connor is a junior Computer Science Student at the University of Delaware with a concentration in Cybersecurity. He plans to pursue his masters degree and break into the field of digital forensics. ",
         email: "congriff@udel.edu",
         linkedin: "https://linkedin.com/in/connorgriffith"},
     { name: "Chris Yanko", 
-        photo: "Chris' Photo", 
+        photo: chris_photo,
         info: "Chris is a junior Computer Science major at the University of Delaware with a concentration in Cybersecurity. He hopes to pursue a career in cybersecurity to be able to protect people on the digital spectrum",
         email: "chrisy@udel.edu",
         linkedin: "https://linkedin.com/in/chrisyanko"},
