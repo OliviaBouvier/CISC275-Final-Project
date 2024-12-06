@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ProgressBar } from "react-bootstrap";
+import { ProgressBar, Button } from "react-bootstrap";
 import { ChatGPT } from "./chatgpt";
 import confetti from "canvas-confetti";
 
@@ -677,15 +677,18 @@ function NextPrevQuestionSelect():React.JSX.Element{
       <div style={{ textAlign: "center", marginTop: "40px" }}>
       <div>{questions[currentIndex].function}</div>
       <div style={{ marginTop: "20px" }}>
-        <button onClick={handlePrevious} disabled={currentIndex === 0}>
+        <Button style={{color:"#212429",backgroundColor:"white",marginRight:"60%", boxShadow: '0 0 9em white, 0 0 0.9em white'}} 
+        onClick={handlePrevious} 
+        disabled={currentIndex === 0}
+        >
           Previous
-        </button>
-        <button
+        </Button>
+        <Button style={{color:"#212429",backgroundColor:"white", marginLeft:"5%", boxShadow: '0 0 9em white, 0 0 0.9em white'}}
           onClick={handleNext}
           disabled={currentIndex === questions.length - 1}
         >
           Next
-        </button>
+        </Button>
       </div>
     </div>
     );
