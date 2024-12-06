@@ -3,6 +3,7 @@ import { ProgressBar, Button } from "react-bootstrap";
 import { ChatGPT } from "./chatgpt";
 import confetti from "canvas-confetti";
 
+
 let chatGPTcontents = "";
 
 interface DetailedMultipleChoiceProps {
@@ -146,7 +147,7 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
   function ChangeQuestionThreeDT(): React.JSX.Element {
     const [answerThree, setChangeAnswerThree] = useState<string>("");
 
-    function updateAnswerThree(event: React.ChangeEvent<HTMLSelectElement>) {
+    function updateAnswerThree(event: React.ChangeEvent<HTMLTextAreaElement>) {
       const newAnswer = event.target.value;
       setChangeAnswerThree(event.target.value);
       setAnswer3(event.target.value);
@@ -162,35 +163,24 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
       setContents(chatGPTcontents);
     }
 
-    const answersThree = [
-      { id: "Technology Field" },
-      { id: "Medical Field" },
-      { id: "Science Field" },
-      { id: "Teaching" },
-      { id: "Trades" },
-      { id: "Manual Labor" },
-    ];
-
     return (
       <div>
-        <div>Choose whichever career field you would most likely pursue</div>
-        <select value={answerThree} onChange={updateAnswerThree}>
-                <option disabled></option>
-                {answersThree.map((answerOption)=>(
-                    <option key={answerOption.id} value={answerOption.id}>
-                    {answerOption.id}
-                </option>
-            ))}
-          </select>
-
-        <div>You have picked the answer: {answerThree}</div>
-      </div>
+          <div>
+            In a couple sentences, state which job field you are most likely to pursue and why?
+          </div>
+          <textarea
+            value={answerThree}
+            onChange={updateAnswerThree}
+            placeholder="Type Answer here"
+            style={{width:"600px",height: "75px" }}
+          />
+        </div>
     );
   }
   function ChangeQuestionFourDT(): React.JSX.Element {
     const [answerFour, setChangeAnswerFour] = useState<string>("");
 
-    function updateAnswerFour(event: React.ChangeEvent<HTMLSelectElement>) {
+    function updateAnswerFour(event: React.ChangeEvent<HTMLTextAreaElement>) {
       const newAnswer = event.target.value;
       setChangeAnswerFour(event.target.value);
       setAnswer4(event.target.value);
@@ -205,31 +195,24 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
       }
       setContents(chatGPTcontents);
     }
-
-    const answersFour = [{ id: "On my own" }, { id: "In a group" }];
-
     return (
       <div>
-        <div>
-          If you had a choice of working on your own or as a group which would
-          your choose?
+          <div>
+            In a couple sentences, if you had the choice to work on your own or in a group. Which would you choose and why?
+          </div>
+          <textarea
+            value={answerFour}
+            onChange={updateAnswerFour}
+            placeholder="Type Answer here"
+            style={{width:"600px",height: "75px" }}
+          />
         </div>
-        <select value={answerFour} onChange={updateAnswerFour}>
-                <option disabled></option>
-                {answersFour.map((answerOption)=>(
-                    <option key={answerOption.id} value={answerOption.id}>
-                    {answerOption.id}
-                </option>
-            ))}
-            </select>
-        <div>You have picked the answer: {answerFour}</div>
-      </div>
     );
   }
   function ChangeQuestionFiveDT(): React.JSX.Element {
     const [answerFive, setChangeAnswerFive] = useState<string>("");
 
-    function updateAnswerFive(event: React.ChangeEvent<HTMLSelectElement>) {
+    function updateAnswerFive(event: React.ChangeEvent<HTMLTextAreaElement>) {
       const newAnswer = event.target.value;
       setChangeAnswerFive(event.target.value);
       setAnswer5(event.target.value);
@@ -249,32 +232,24 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
       setContents(chatGPTcontents);
     }
 
-    const answersFive = [
-      { id: "High stress, always something going on" },
-      { id: "Laid back, little to no stress" },
-      { id: "Bouncing between high and low stress" },
-      { id: "Right in the middle of high and low stress" },
-    ];
-
     return (
       <div>
-        <div>What kind of work environment would best suit you?</div>
-        <select value={answerFive} onChange={updateAnswerFive}>
-                <option disabled></option>
-                {answersFive.map((answerOption)=>(
-                    <option key={answerOption.id} value={answerOption.id}>
-                    {answerOption.id}
-                </option>
-            ))}
-          </select>
-        <div>You have picked the answer: {answerFive}</div>
-      </div>
+          <div>
+            In a couple sentences, what is your optimal work environment and why?
+          </div>
+          <textarea
+            value={answerFive}
+            onChange={updateAnswerFive}
+            placeholder="Type Answer here"
+            style={{width:"600px",height: "75px" }}
+          />
+        </div>
     );
   }
   function ChangeQuestionSixDT(): React.JSX.Element {
     const [answerSix, setChangeAnswerSix] = useState<string>("");
 
-    function updateAnswerSix(event: React.ChangeEvent<HTMLSelectElement>) {
+    function updateAnswerSix(event: React.ChangeEvent<HTMLTextAreaElement>) {
       const newAnswer = event.target.value;
       setChangeAnswerSix(event.target.value);
       setAnswer6(event.target.value);
@@ -290,84 +265,61 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
       setContents(chatGPTcontents);
     }
 
-    const answersSix = [
-      { id: "Very outgoing, love to be around others" },
-      {
-        id: "Don't mind being around people or alone but prefer to be around people",
-      },
-      { id: "Don't mind being around people or alone but prefer to be alone" },
-      { id: "Don't like being around other people at all" },
-    ];
-
     return (
       <div>
-        <div>How would you describe your personality?</div>
-        <select value={answerSix} onChange={updateAnswerSix}>
-                <option disabled></option>
-                {answersSix.map((answerOption)=>(
-                    <option key={answerOption.id} value={answerOption.id}>
-                    {answerOption.id}
-                </option>
-            ))}
-          </select>
-        <div>You have picked the answer: {answerSix}</div>
-      </div>
+          <div>
+            In a couple sentences, how would you describe your own personality?
+          </div>
+          <textarea
+            value={answerSix}
+            onChange={updateAnswerSix}
+            placeholder="Type Answer here"
+            style={{width:"600px",height: "75px" }}
+          />
+        </div>
     );
   }
   function ChangeQuestionSevenDT(): React.JSX.Element {
     const [answerSeven, setChangeAnswerSeven] = useState<string>("");
 
-    function updateAnswerSeven(event: React.ChangeEvent<HTMLSelectElement>) {
+    function updateAnswerSeven(event: React.ChangeEvent<HTMLTextAreaElement>) {
         const newAnswer = event.target.value;
-        setChangeAnswerSeven(event.target.value);
-        setAnswer7(event.target.value);
+        setChangeAnswerSeven(newAnswer);
+        setAnswer7(newAnswer);
 
         if (
           chatGPTcontents.includes(
-            "Out of doctor, plumber, construction worker, teacher, IT specialist, chemist, and archaeologist, I would choose"
+            "Out of a doctor, plumber, construction worker, teacher, IT specialist, chemist, and archaeologist, I would choose"
           )
         ) {
           chatGPTcontents = chatGPTcontents.replace(
-            /Out of doctor, plumber, construction worker, teacher, IT specialist, chemist, and archaeologist, I would choose .+?(\. |$)/,
-            `Out of doctor, plumber, construction worker, teacher, IT specialist, chemist, and archaeologist, I would choose ${newAnswer}. `
+            /Out of a doctor, plumber, construction worker, teacher, IT specialist, chemist, and archaeologist, I would choose .+?(\. |$)/,
+            `Out of a doctor, plumber, construction worker, teacher, IT specialist, chemist, and archaeologist, I would choose ${newAnswer}. `
           );
         } else {
-          chatGPTcontents += `Out of doctor, plumber, construction worker, teacher, IT specialist, chemist, and archaeologist, I would choose ${newAnswer}. `;
+          chatGPTcontents += `Out of a doctor, plumber, construction worker, teacher, IT specialist, chemist, and archaeologist, I would choose ${newAnswer}. `;
         }
         setContents(chatGPTcontents);
-      }
-
-      const answersSeven = [
-        { id: "Docture/nurse" },
-        { id: "Plumber" },
-        { id: "Construction" },
-        { id: "Teacher" },
-        { id: "IT" },
-        { id: "Chemical scientist" },
-        { id: "Archaeologist" },
-      ];
+    }
 
       return (
         <div>
           <div>
-            Out of all the jobs listed, which would you want to be the most?
+            In a couple sentences, out of all the jobs in the world, which would you want to be the most and why?
           </div>
-          <select value={answerSeven} onChange={updateAnswerSeven}>
-                <option disabled></option>
-                {answersSeven.map((answerOption)=>(
-                    <option key={answerOption.id} value={answerOption.id}>
-                    {answerOption.id}
-                </option>
-            ))}
-          </select>
-          <div>You have picked the answer: {answerSeven}</div>
+          <textarea
+            value={answerSeven}
+            onChange={updateAnswerSeven}
+            placeholder="Type Answer here"
+            style={{width:"600px",height: "75px" }}
+          />
         </div>
       );
     }
     function ChangeQuestionEightDT(): React.JSX.Element {
       const [answerEight, setChangeAnswerEight] = useState<string>("");
   
-      function updateAnswer(event: React.ChangeEvent<HTMLSelectElement>) {
+      function updateAnswerEight(event: React.ChangeEvent<HTMLTextAreaElement>) {
         const newAnswer = event.target.value;
         setChangeAnswerEight(event.target.value);
         setAnswer8(event.target.value);
@@ -383,36 +335,24 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         setContents(chatGPTcontents);
       }
   
-      const answersEight = [
-        { id: "120k+" },
-        { id: "100-120k" },
-        { id: "80-100k" },
-        { id: "60-80k" },
-        { id: "40-60k" },
-        { id: "Below 40k" }
-      ];
-  
       return (
         <div>
           <div>
-          What is your optimal yearly salary?
+            What is your optimal yearly salary and why?
           </div>
-          <select value={answerEight} onChange={updateAnswer}>
-                  <option disabled></option>
-                  {answersEight.map((answerOption)=>(
-                      <option key={answerOption.id} value={answerOption.id}>
-                      {answerOption.id}
-                  </option>
-              ))}
-            </select>
-          <div>You have picked the answer: {answerEight}</div>
+          <textarea
+            value={answerEight}
+            onChange={updateAnswerEight}
+            placeholder="Type Answer here"
+            style={{width:"600px",height: "75px" }}
+          />
         </div>
       );
     }
     function ChangeQuestionNineDT(): React.JSX.Element {
       const [answerNine, setChangeAnswerNine] = useState<string>("");
   
-      function updateAnswer(event: React.ChangeEvent<HTMLSelectElement>) {
+      function updateAnswerNine(event: React.ChangeEvent<HTMLTextAreaElement>) {
         const newAnswer = event.target.value;
         setChangeAnswerNine(event.target.value);
         setAnswer9(event.target.value);
@@ -428,35 +368,24 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         setContents(chatGPTcontents);
       }
   
-      const answersNine = [
-        { id: "Yes, I want to make change" },
-        { id: "Yes, but its not necessary" },
-        { id: "No, but I can if I need to" },
-        { id: "No, I prefer to work alone" },
-        { id: "No" }
-      ];
-  
       return (
         <div>
           <div>
-          Do you want to make a positive impact at your job?
+            In a couple sentences, would you like to make a positive impact at your workplace?
           </div>
-          <select value={answerNine} onChange={updateAnswer}>
-                  <option disabled></option>
-                  {answersNine.map((answerOption)=>(
-                      <option key={answerOption.id} value={answerOption.id}>
-                      {answerOption.id}
-                  </option>
-              ))}
-            </select>
-          <div>You have picked the answer: {answerNine}</div>
+          <textarea
+            value={answerNine}
+            onChange={updateAnswerNine}
+            placeholder="Type Answer here"
+            style={{width:"600px",height: "75px" }}
+          />
         </div>
       );
     }
     function ChangeQuestionTenDT(): React.JSX.Element {
       const [answerTen, setChangeAnswerTen] = useState<string>("");
   
-      function updateAnswer(event: React.ChangeEvent<HTMLSelectElement>) {
+      function updateAnswerTen(event: React.ChangeEvent<HTMLTextAreaElement>) {
         const newAnswer = event.target.value;
         setChangeAnswerTen(event.target.value);
         setAnswer10(event.target.value);
@@ -472,26 +401,17 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         setContents(chatGPTcontents);
       }
   
-      const answersTen = [
-        { id: "People" },
-        { id: "Computers" },
-        { id: "Numbers" }
-      ];
-  
       return (
         <div>
           <div>
-          Do you like working more with people, computers, or numbers more?
+            In a couple sentences, would you rather work with people, numbers, or computers more and why?
           </div>
-          <select value={answerTen} onChange={updateAnswer}>
-                  <option disabled></option>
-                  {answersTen.map((answerOption)=>(
-                      <option key={answerOption.id} value={answerOption.id}>
-                      {answerOption.id}
-                  </option>
-              ))}
-            </select>
-          <div>You have picked the answer: {answerTen}</div>
+          <textarea
+            value={answerTen}
+            onChange={updateAnswerTen}
+            placeholder="Type Answer here"
+            style={{width:"600px",height: "75px" }}
+          />
         </div>
       );
     }
@@ -676,18 +596,18 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
     const questions=[
       {id:1,function:ChangeQuestionOneDT()},
       {id:2,function:ChangeQuestionTwoDT()},
-      {id:3,function:ChangeQuestionThreeDT()},
-      {id:4,function:ChangeQuestionFourDT()},
-      {id:5,function:ChangeQuestionFiveDT()},
-      {id:6,function:ChangeQuestionSixDT()},
+      {id:3,function:ChangeQuestionElevenDT()},
+      {id:4,function:ChangeQuestionTwelveDT()},
+      {id:5,function:ChangeQuestionThirteenDT()},
+      {id:6,function:ChangeQuestionFourteenDT()},
       {id:7,function:ChangeQuestionSevenDT()},
       {id:8,function:ChangeQuestionEightDT()},
       {id:9,function:ChangeQuestionNineDT()},
       {id:10,function:ChangeQuestionTenDT()},
-      {id:11,function:ChangeQuestionElevenDT()},
-      {id:12,function:ChangeQuestionTwelveDT()},
-      {id:13,function:ChangeQuestionThirteenDT()},
-      {id:14,function:ChangeQuestionFourteenDT()},
+      {id:11,function:ChangeQuestionThreeDT()},
+      {id:12,function:ChangeQuestionFourDT()},
+      {id:13,function:ChangeQuestionFiveDT()},
+      {id:14,function:ChangeQuestionSixDT()},
     ];
     const [currentIndex,setCurrentIndex]=useState(0);
 
@@ -729,7 +649,7 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
     }
 
     return (<div>
-      <div>{NextPrevQuestionSelect()}</div>
+      <div style={{fontWeight:'bold', color:'white'}}>{NextPrevQuestionSelect()}</div>
       <pre></pre>
         <ProgressBar
           now={progress}
@@ -740,9 +660,10 @@ export function DetailedMultipleChoice({ apiKey }: DetailedMultipleChoiceProps) 
         <pre></pre>
         {completed && (
           <div className="feedback">
-            <h4>Quiz completed!</h4>
+            <h4 style={{color:'white'}}>Quiz completed!</h4>
           </div>
         )}
+        <pre/>
         <ChatGPT apiKey = {apiKey} chatGPTcontents={ChatGPTContents()} completed = {completed}/>
       </div>
     );

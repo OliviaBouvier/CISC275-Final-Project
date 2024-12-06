@@ -147,7 +147,7 @@ export function ChatGPT({
       </Button>
       {!apiKey && (
         <Alert
-          style={{ backgroundColor: "black", color: "white", border: "black" }}
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0)', color: "white", border: "black"}}
           variant="warning"
           className="mt-3"
         >

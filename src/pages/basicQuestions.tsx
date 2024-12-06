@@ -28,8 +28,8 @@ export function BasicQuestions() {
         <h1 className="page-title">Basic Questions</h1>
         <p className="page-subtitle">A simplified version of the quiz containing only multiple choice questions. There is no time limit.</p>
         <pre></pre>
-        <div className="question-box-container">
-          <div className="question-box">
+        <div className="question-box-container-basic">
+          <div className="question-box-basic">
           <BasicMultipleChoice apiKey={key}/>
           </div>
         </div>
