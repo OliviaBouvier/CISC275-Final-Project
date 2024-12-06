@@ -28,12 +28,12 @@ const teamMembers: TeamMember[] = [
         photo: chris_photo,
         info: "Chris is a junior Computer Science major at the University of Delaware with a concentration in Cybersecurity. He hopes to pursue a career in cybersecurity to be able to protect people on the digital spectrum",
         email: "chrisy@udel.edu",
-        linkedin: "https://linkedin.com/in/chrisyanko"},
-    { name: "Tarun Baskuran", 
-        photo: "Tarun's Photo", 
+        linkedin: "https://linkedin.com/in/chris-yanko"},
+    { name: "Tarun Baskaran", 
+        photo: tarun_photo, 
         info: "Tarun is a junior majoring in Computer Science at the University of Delaware",
         email: "tarunb@udel.edu",
-        linkedin: "https://linkedin.com/in/tarunb"},
+        linkedin: "https://linkedin.com/in/taru-baskaran"},
 ];
 
 const stars = Array.from({ length: 30 }, () => ({
