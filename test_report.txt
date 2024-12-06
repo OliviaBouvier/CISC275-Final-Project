@@ -194,8 +194,8 @@ All files                   |    3.96 |        0 |    4.95 |    3.78 |
   index.tsx                 |       0 |      100 |     100 |       0 | 8-20              
   reportWebVitals.ts        |       0 |        0 |       0 |       0 | 3-10              
  src/components             |    1.94 |        0 |    2.04 |    1.95 |                   
-  BasicQuestionRBOne.tsx    |    0.52 |        0 |       0 |    0.53 | 13-702            
-  DetailedQuestionRBOne.tsx |    0.57 |        0 |       0 |    0.58 | 14-651            
+  BasicQuestionRBOne.tsx    |    0.52 |        0 |       0 |    0.53 | 13-704            
+  DetailedQuestionRBOne.tsx |    0.57 |        0 |       0 |    0.58 | 14-653            
   basicButton.tsx           |      75 |      100 |      50 |      75 | 9                 
   chatgpt.tsx               |       0 |        0 |       0 |       0 | 18-135            
   detailedButton.tsx        |      75 |      100 |      50 |      75 | 9                 
@@ -210,5 +210,5 @@ All files                   |    3.96 |        0 |    4.95 |    3.78 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        4.05 s
+Time:        3.98 s
 Ran all test suites.
