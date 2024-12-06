@@ -1,5 +1,7 @@
 .background-image{
     background-image: url('../../public/starry_sky.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 .page-title{
     font-size: 3em; 
@@ -21,6 +23,17 @@
 .apikey-submit{
     background-color: white;
     color: black;
-    margin-bottom: .5%;
-    margin-top: -.7%;
+}
+.question-box-container-detailed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.question-box-detailed{
+    width: 700px;
+    height: 430px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    border: 4px;
+    margin-bottom: 284px;
 }

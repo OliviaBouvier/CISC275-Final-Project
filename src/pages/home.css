@@ -1,14 +1,21 @@
 .home-top-left-title{
-    /* position: absolute;
-    top: 25px;
-    left: 550px; */
     font-size: 3em; 
     font-weight: bold;
     color: white; 
+    text-shadow: 0 0 1em white, 0 0 0.2em white;
+    margin: 0;
+    font-family: "Arial", Arial, Helvetica, sans-serif, sans-serif;
+    /* margin-top: -12%; */
+}
+
+.home-subtitle { 
+    font-weight: bold;
+    color: white; 
+    text-shadow: 0 0 1em white, 0 0 0.2em white;
     margin: 0;
     font-family: "Arial", Arial, Helvetica, sans-serif, sans-serif;
 }
-  
+
 .home-container {
     display: flex;
     /* padding: 15px; */
@@ -19,12 +26,9 @@
 
 .main-content {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     width: 100%;
-    background-image: url('../../public/starry_sky.jpg');
-    height: 650px;
-    /* margin-top: 50px; */
-    /* padding-top: 80px; */
+    height: auto;
 }
 
 .title-emoji {
@@ -34,21 +38,29 @@
 
 .quiz-sections {
     display: flex;
-    flex-direction: column;
-    max-width: 40%;
-    margin-left: 20px;
 }
 
-.quiz-section {
-    display: flex;
-    flex-direction: column;
+.quiz-section-1 {
+    position: absolute;
+    bottom: 10%;
+    left: 2%;
     align-items: center;
     margin-bottom: 40px;
+    vertical-align: middle;
+    width: 22%;
+}
+
+.quiz-section-2 {
+    position: absolute;
+    bottom: 10%;
+    right: 2%;
+    align-items: center;
+    margin-bottom: 40px;
+    vertical-align: middle;
 }
 
 .quiz-description {
     padding: 15px;
-    background-color: lightskyblue;
     border-radius: 8px;
     margin-bottom: 15px;
     text-align: center;
@@ -57,36 +69,40 @@
 
 .description-text {
     font-size: .7em;
-    color: #222;
     line-height: 1.6;
+    color: white;
+    text-shadow: 0 0 1em white, 0 0 0.2em white;
 }
 
 .description-header-text {
-    color: #000000
+    color: white;
+    text-shadow: 0 0 1em white, 0 0 0.2em white;
 }
 
 .intro-box {
-    max-width: 30%;
-    margin-top: 60px;
+    max-width: 40%;
     padding: 20px;
-    background-color: lightskyblue;
-    color: #333;
+    color: white;
+    text-shadow: 0 0 1em white, 0 0 0.2em white;
     line-height: 1.8;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
     margin-right: 30px;
     margin-bottom: 60px;
+    margin-left: 30%;
+    margin-top: 7%;
     border-radius: 8px;
 }
 
 .home-footer {
-    background-color: #212429;
+    background-color: #090d16;
     text-align: center;
     padding: 20px;
     width: 100%;
-    color: lightskyblue
+    color: white;
 }
 
-.detailed-button,
+
+
+/* .detailed-button,
 .basic-button {
     margin-top: 20px;
     font-size: medium;
@@ -96,6 +112,78 @@
     z-index: 1;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    animation-name: twinkle;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+} */
+
+.detailed-button,
+.basic-button {
+    width: 400px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    animation-name: twinkle;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
 }
+
+.basic-button {
+    transform: scaleX(-1);
+    margin-top: 10px;
+}
+
+/* @keyframes twinkle {
+    from {box-shadow: 0 0 0px #fefefedd;}
+    to {box-shadow: 0 0 35px #fefefedd;}
+} */
+
+@keyframes twinkle  {
+    from {
+        filter: brightness(1) drop-shadow(white 0em 0em 0em);
+    }
+    to {
+        filter: brightness(1.5) drop-shadow(white 0em 0em 1em);
+    }
+}
+
+.detailed-button:hover {
+    transform: scale(1.1);
+    animation-duration: 0s;
+    filter: brightness(1.5) drop-shadow(white 0em 0em .75em)
+}
+
+.basic-button:hover {
+    transform: scale(1.1) scaleX(-1);
+    animation-duration: 0s;
+    filter: brightness(1.5) drop-shadow(white 0em 0em .75em)
+}
+
+/* 
+.detailed-button:hover, .basic-button:hover{
+    transform: scale(1.1) rotate(180deg);
+    border-color: white;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation-duration: 0s;
+} */
+
+/* .detailed-button:hover, .basic-button:hover{
+    background-color: white;
+    border-color: white;
+    color: black;
+    box-shadow: 0 0 25px #fefefe;
+    animation-duration: 0s;
+} */
+ 

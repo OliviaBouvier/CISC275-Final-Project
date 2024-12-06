@@ -1,5 +1,19 @@
 .nav-link {
-    color: lightskyblue;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
+}
+
+.nav-link:hover{
+    color: white;
+    text-shadow: 0 0 1em white, 0 0 0.2em white;
+}
+
+.navbar{
+    background-color: #090d16;
+}
+
+.navbar>.active>a{
+    color: white;
+    text-shadow: 0 0 1em white, 0 0 0.2em white;
 }

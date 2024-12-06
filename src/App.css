@@ -15,6 +15,9 @@
 
 .App-header {
   background-color: black;
+  background-image: url('../public/starry_sky.jpg'); 
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,10 +25,11 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  
+  margin-top: -50px;
 }
 
 .App-link {
   color: #61dafb;
 }
+
 

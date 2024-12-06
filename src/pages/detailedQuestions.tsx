@@ -24,30 +24,28 @@ export function DetailedQuestions() {
   }
 
   return (
-    <div>
-      <div className="background-image">
-      <div>
-        <h1 className="page-title">Detailed Questions</h1>
-        <p className="page-subtitle">
-          A more detailed version of the quiz containing more specific
-          questions. There is no time limit.
-        </p>
-      </div>
-      <DetailedMultipleChoice apiKey={key}/>
+    <div className="background-image">
+      <h1 className="page-title">Detailed Questions</h1>
+      <p className="page-subtitle">A more detailed version of the quiz containing more specific questions. There is no time limit.</p>
+      <pre></pre>
+      <div className="question-box-container-detailed">
+        <div className="question-box-detailed">
+          <DetailedMultipleChoice apiKey={key}/>
+        </div>
       </div>
       <div className="page-footer">
-      <Form>
-        <Form.Label style={{color:"white"}}>API Key:</Form.Label>
-        <Form.Control style={{backgroundColor:"black",color:"white"}}
+        <Form>
+          <Form.Label style={{color:"white"}}>API Key:</Form.Label>
+          <Form.Control style={{backgroundColor:"black",color:"white"}}
           type="password"
           placeholder="Insert API Key Here"
           onChange={changeKey}
-        ></Form.Control>
-        <br></br>
-        <Button className="apikey-submit" onClick={handleSubmit}>
-          Submit API key
-        </Button>
-      </Form>
+          ></Form.Control>
+          <br></br>
+          <Button className="apikey-submit" onClick={handleSubmit}>
+            Submit API key
+          </Button>
+        </Form>
       </div>
     </div>
   );

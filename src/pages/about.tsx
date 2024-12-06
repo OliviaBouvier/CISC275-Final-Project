@@ -1,5 +1,9 @@
 import React, {useState} from 'react';
 import './about.css';
+import olivia_photo from '../assets/Olivia_photo.jpg';
+import tarun_photo from '../assets/Tarun-photo.jpg';
+import connor_photo from "../assets/Connor_photo.jpg";
+import chris_photo from "../assets/Chris_photo.jpg";
 
 type TeamMember = {
     name: string;
@@ -11,17 +15,17 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
     { name: "Olivia Bouvier", 
-        photo: "Olivia's Photo", 
+        photo: olivia_photo, 
         info: "Olivia is a junior Computer Science major at the University of Delaware with a concentration in AI and minors in English and Cognitive Science. She hopes to pursue a career in software development and to use computer science ethically to improve society.",
         email: "obouvier@udel.edu",
         linkedin: "https://linkedin.com/in/oliviabouvier"},
     { name: "Connor Griffith", 
-        photo: "Connor's Photo", 
+        photo: connor_photo,
         info: "Connor is a junior Computer Science Student at the University of Delaware with a concentration in Cybersecurity. He plans to pursue his masters degree and break into the field of digital forensics. ",
         email: "congriff@udel.edu",
         linkedin: "https://linkedin.com/in/congriffith"},
     { name: "Chris Yanko", 
-        photo: "Chris' Photo", 
+        photo: chris_photo,
         info: "Chris is a junior Computer Science major at the University of Delaware with a concentration in Cybersecurity. He hopes to pursue a career in cybersecurity to be able to protect people on the digital spectrum",
         email: "chrisy@udel.edu",
         linkedin: "https://linkedin.com/in/chrisyanko"},
@@ -63,7 +67,13 @@ export const About = () => {
                 <div className="team-box">
                     {teamMembers.map((member, index) => (
                         <div key={index} className="team-member" onClick={() => handleMemberClick(member)}>
-                            <div className="photo-placeholder">{member.photo}</div>
+                            <div className="photo-placeholder">
+                                {member.photo ? (
+                                    <img src={member.photo} alt={`${member.name}`} className="team-photo" />
+                                ) : (
+                                    "No Photo"
+                                )}
+                                </div>
                             <p>{member.name}</p>
                         </div>
                     ))}

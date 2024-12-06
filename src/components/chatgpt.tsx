@@ -130,7 +130,7 @@ export function ChatGPT({
   return (
     <div>
       <Button
-        style={{ backgroundColor: "white", color: "black", marginBottom: ".5%" }}
+        style={{ backgroundColor: "white", color: "black", borderColor: "black", marginBottom: ".5%", boxShadow: '0 0 9em white, 0 0 0.9em white' }}
         onClick={() => {
           handleChatGPTSubmission();
         }}
@@ -147,7 +147,7 @@ export function ChatGPT({
       </Button>
       {!apiKey && (
         <Alert
-          style={{ backgroundColor: "black", color: "white", border: "black" }}
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0)', color: "white", border: "black"}}
           variant="warning"
           className="mt-3"
         >
