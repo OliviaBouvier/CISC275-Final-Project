@@ -24,13 +24,15 @@ export function DetailedQuestions() {
   }
 
   return (
-    <div className="background-image">
-      <h1 className="page-title">Detailed Questions</h1>
-      <p className="page-subtitle">A more detailed version of the quiz containing more specific questions. There is no time limit.</p>
-      <pre></pre>
-      <div className="question-box-container-detailed">
-        <div className="question-box-detailed">
-          <DetailedMultipleChoice apiKey={key}/>
+    <div>
+      <div className="background-image">
+        <h1 className="page-title">Detailed Questions</h1>
+        <p className="page-subtitle">A more detailed version of the quiz containing more specific questions. There is no time limit.</p>
+        <pre></pre>
+        <div className="question-box-container-detailed">
+          <div className="question-box-detailed">
+            <DetailedMultipleChoice apiKey={key}/>
+          </div>
         </div>
       </div>
       <div className="page-footer">
