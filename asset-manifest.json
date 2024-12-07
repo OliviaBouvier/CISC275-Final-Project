@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/starter-helpi/static/css/main.a31c5611.css",
-    "main.js": "/starter-helpi/static/js/main.7278c1dd.js",
+    "main.css": "/starter-helpi/static/css/main.06997bdb.css",
+    "main.js": "/starter-helpi/static/js/main.cf5fec81.js",
     "static/js/453.bad6c33a.chunk.js": "/starter-helpi/static/js/453.bad6c33a.chunk.js",
     "static/media/shooting_star.png": "/starter-helpi/static/media/shooting_star.98682fb75ab16d31e47c.png",
     "static/media/comet.png": "/starter-helpi/static/media/comet.9cf2a1cecdad6b62c637.png",
@@ -11,12 +11,12 @@
     "static/media/Tarun-photo.jpg": "/starter-helpi/static/media/Tarun-photo.0484b4fe34615b75d638.jpg",
     "static/media/Connor_photo.jpg": "/starter-helpi/static/media/Connor_photo.0dc4237543992124508e.jpg",
     "index.html": "/starter-helpi/index.html",
-    "main.a31c5611.css.map": "/starter-helpi/static/css/main.a31c5611.css.map",
-    "main.7278c1dd.js.map": "/starter-helpi/static/js/main.7278c1dd.js.map",
+    "main.06997bdb.css.map": "/starter-helpi/static/css/main.06997bdb.css.map",
+    "main.cf5fec81.js.map": "/starter-helpi/static/js/main.cf5fec81.js.map",
     "453.bad6c33a.chunk.js.map": "/starter-helpi/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a31c5611.css",
-    "static/js/main.7278c1dd.js"
+    "static/css/main.06997bdb.css",
+    "static/js/main.cf5fec81.js"
   ]
 }
