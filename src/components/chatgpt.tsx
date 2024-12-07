@@ -151,7 +151,7 @@ export function ChatGPT({
           variant="warning"
           className="mt-3"
         >
-          Please enter an API key before submitting.
+          Please enter an API key before continuing.
         </Alert>
       )}
 
@@ -167,27 +167,27 @@ export function ChatGPT({
 
       {responseComplete && !error && (
         <Alert variant="success" className="mt-3">
-          Response successfully recorded!
+          Response successfully processed!
         </Alert>
       )}
 
       {showModal && (
         <Modal show={showModal} onHide={toggleModal} dialogClassName="custom-modal">
           <Modal.Header closeButton>
-            <Modal.Title>Results</Modal.Title>
+            <Modal.Title style={{textShadow: "0 0 1em white, 0 0 0.2em white"}}>Results</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-            <strong>{title}</strong>
+          <Modal.Body style={{color: "white", fontFamily: "Arial, Helvetica, sans-serif"}}>
+            <strong style={{textShadow: "0 0 1em white, 0 0 0.2em white"}}>{title}</strong>
             <p>{description}</p>
-            <strong>Why We Think This Career Suits You</strong>
+            <strong style={{textShadow: "0 0 1em white, 0 0 0.2em white"}}>Why We Think This Career Suits You</strong>
             <p>{suitedToCareer}</p>
-            <strong>Similar Careers</strong>
-            <pre><p style={{fontFamily: "arial"}}>
+            <strong style={{textShadow: "0 0 1em white, 0 0 0.2em white"}}>Similar Careers</strong>
+            <pre><p style={{fontFamily: "arial", fontSize: "25"}}>
               {similarCareers}
             </p></pre>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={toggleModal}>
+            <Button style={{backgroundColor: "white", color: "rgb(24, 23, 23)", fontWeight: "bold", boxShadow: "0 0 1em white, 0 0 0.2em white", borderColor: "white"}} variant="secondary" onClick={toggleModal}>
               Close
             </Button>
           </Modal.Footer>
