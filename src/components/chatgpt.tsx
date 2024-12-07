@@ -176,13 +176,13 @@ export function ChatGPT({
           <Modal.Header closeButton>
             <Modal.Title>Results</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body style={{color: "white", fontFamily: "Arial, Helvetica, sans-serif"}}>
             <strong>{title}</strong>
             <p>{description}</p>
             <strong>Why We Think This Career Suits You</strong>
             <p>{suitedToCareer}</p>
             <strong>Similar Careers</strong>
-            <pre><p style={{fontFamily: "arial"}}>
+            <pre><p style={{fontFamily: "arial", fontSize: "25"}}>
               {similarCareers}
             </p></pre>
           </Modal.Body>

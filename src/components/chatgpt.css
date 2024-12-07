@@ -1,6 +1,8 @@
 .custom-modal .modal-content{
   max-width: 250%;
-  background-color: lightblue;
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
   width: 250%;
   margin-left: -75%;
 }
