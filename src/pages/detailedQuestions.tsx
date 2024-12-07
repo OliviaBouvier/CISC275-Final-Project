@@ -37,7 +37,7 @@ export function DetailedQuestions() {
       </div>
       <div className="page-footer">
         <Form>
-          <Form.Label style={{color:"white"}}>API Key:</Form.Label>
+          <Form.Label style={{color:"white", textShadow: "0 0 1em white, 0 0 0.2em white"}}>API Key:</Form.Label>
           <Form.Control style={{backgroundColor:"black",color:"white"}}
           type="password"
           placeholder="Insert API Key Here"

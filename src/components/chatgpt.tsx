@@ -142,7 +142,7 @@ export function ChatGPT({
             <div>Please wait while we process your results.</div>
           </div>
         ) : (
-          "Submit to ChatGPT"
+          "Submit Quiz"
         )}
       </Button>
       {!apiKey && (
